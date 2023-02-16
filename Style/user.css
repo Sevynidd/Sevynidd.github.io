@@ -1,0 +1,36 @@
+:root{
+    --primary-color: white;
+    --secondary-color: #f3f3f3;
+    --secondary-color-shadow: #d6d6d6;
+    --dark-color: rgb(0, 64, 121);
+    --highlight: rgb(244, 150, 8);
+  }
+  .dark_mode{
+    --primary-color: #2f2e2c;
+    --secondary-color: #404040;
+    --secondary-color-shadow: #2f2e2c;
+    --dark-color: #e2e2e2;
+    --highlight: rgb(244, 150, 8);
+    transition: background-color 0.3s ease-in-out;
+  }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, sans-serif;
+}
+body{
+    background: var(--primary-color);
+    overflow: hidden;
+    transition: background-color 0.3s ease-in-out;
+}
+.navBar{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(250px, 450px, 450px);
+    background: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 6px 6px 6px var(--secondary-color-shadow);
+}
