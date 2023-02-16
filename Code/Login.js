@@ -10,7 +10,6 @@ var password_visible_icon = document.getElementById("IconPasswordVisible");
 var PopUp = document.getElementById("PopUp");
 var cookies = document.cookie;
 
-
 //DarkMode und Icon entsprechend ändern - Listener und die Funktion
 dark_mode_button.addEventListener("click", function(event){
     document.body.classList.toggle("dark_mode");
