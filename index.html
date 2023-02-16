@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ticketsystem</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+    <script type="text/javascript" src="app.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <img class="SP_Data_Logo" src="Bilder/Logo SP_Data ohne Claim.png" alt="SP_Data Logo ohne Claim" width="150px">
+     <button class="btn" id="btn-darkmode"> <i class="fa-solid fa-moon fa-2x" id="btn-darkmode-icon"></i></button>
+    </div>
+    
+    <div class="center">
+      <h1>SP_Data Ticketsystem</h1>
+      <form method="post">
+        <div class="txt_field">
+          <input type="text" id="EditBenutzername" required pattern=".*\S.*">
+          <label>Benutzername</label>
+        </div>
+        <div class="txt_field">
+          <input type="password" id="PasswortEditPasswort" required pattern=".*\S.*">
+          <button class="btn" id="btn-password-visible">
+            <i class="fa-solid fa-eye fa-lg" id="IconPasswordVisible"></i>
+          </button>
+          <label>Passwort</label>
+        </div>
+        <div class="PopUp" id="PopUp">
+          <p id="popupText"></p>
+        </div>
+        <div class="pass" id="passwortvergessen">Passwort vergessen?</div>
+        <input type="submit" value="Login" id="ButtonLogin">
+      </form>
+    </div>
+    
+    <p class="copyright">(c) 2023 by SP_Data GmbH & Co. KG</p>
+
+  </body>
+</html>
