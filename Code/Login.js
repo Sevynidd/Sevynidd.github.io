@@ -32,10 +32,8 @@ function toggleDarkmode(){
         saveDarkmode("false");    
     }
 }
-
-password_visible_button.addEventListener("click", function(event){
+function togglePasswordVisibility(){
     var passwordFieldInput = document.getElementById("PasswortEditPasswort");
-    event.preventDefault();
     if (passwordFieldInput.type === "password") {
         passwordFieldInput.type = "text";
         password_visible_icon.classList.replace("fa-eye", "fa-eye-slash");
@@ -43,6 +41,12 @@ password_visible_button.addEventListener("click", function(event){
         passwordFieldInput.type = "password";
         password_visible_icon.classList.replace("fa-eye-slash", "fa-eye");    
     }
+
+}
+
+password_visible_button.addEventListener("click", function(event){
+    event.preventDefault();
+    togglePasswordVisibility();
 });
 
 password_reset.addEventListener("click", function(event){
