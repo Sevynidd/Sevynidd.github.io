@@ -8,7 +8,9 @@ var dark_mode_icon = document.getElementById("btn-darkmode-icon");
 var password_visible_icon = document.getElementById("IconPasswordVisible");
 //PopUp
 var PopUp = document.getElementById("PopUp");
-
+//Textfelder
+var BenutzerEdit = document.getElementById("EditBenutzername");
+var PasswortEdit = document.getElementById("PasswortEditPasswort");
 
 //DarkMode und Icon entsprechend ändern - Listener und die Funktion
 dark_mode_button.addEventListener("click", function(event){
@@ -41,7 +43,6 @@ function togglePasswordVisibility(){
         passwordFieldInput.type = "password";
         password_visible_icon.classList.replace("fa-eye-slash", "fa-eye");    
     }
-
 }
 
 password_visible_button.addEventListener("click", function(event){
@@ -84,8 +85,6 @@ function PopUp_Text(text){
     } 
 }
 function LogIn(){
-    var BenutzerEdit = document.getElementById("EditBenutzername");
-    var PasswortEdit = document.getElementById("PasswortEditPasswort");
     if ((BenutzerEdit.value == "admin@spdata.de") && (PasswortEdit.value == "admin")) {
         window.location.href = "/view/admin.html";
     } else if ((BenutzerEdit.value == "benutzer@spdata.de") && (PasswortEdit.value == "benutzer")){
@@ -100,4 +99,16 @@ login_button.addEventListener("click", function(event){
     LogIn();
 });
 
+BenutzerEdit.addEventListener("keypress", function(event){
+    if (event.key === "Enter"){
+        event.preventDefault();
+        LogIn();
+    }
+});
 
+PasswortEdit.addEventListener("keypress", function(event){
+    if (event.key === "Enter"){
+        event.preventDefault();
+        LogIn();
+    }
+});
