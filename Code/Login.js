@@ -8,7 +8,7 @@ var dark_mode_icon = document.getElementById("btn-darkmode-icon");
 var password_visible_icon = document.getElementById("IconPasswordVisible");
 //PopUp
 var PopUp = document.getElementById("PopUp");
-var cookies = document.cookie;
+
 
 //DarkMode und Icon entsprechend ändern - Listener und die Funktion
 dark_mode_button.addEventListener("click", function(event){
@@ -21,11 +21,11 @@ function changeIconDarkMode(icon){
     if (icon.classList.contains("fa-moon")) {
         icon.classList.replace("fa-moon","fa-sun");
         icon.classList.toggle("fa-inverse");        
-        setCookie("darkmode", "true");
+        saveDarkmode("true");
     } else if (icon.classList.contains("fa-sun")) {
         icon.classList.replace("fa-sun","fa-moon");     
         icon.classList.toggle("fa-inverse");      
-        setCookie("darkmode", "false");       
+        saveDarkmode("false");    
     }
 }
 
@@ -49,8 +49,28 @@ password_reset.addEventListener("click", function(event){
     PopUp_Text("Bitte wende dich an den Administrator");
 });
 
-function setCookie(cname,cvalue){
-    cookies = cname + "=" + cvalue;
+function saveDarkmode(value) {
+    localStorage.setItem('darkmode', value);
+    if (value) {
+      document.body.classList.add('dark_mode');
+    } else {
+      document.body.classList.remove('dark_mode');
+    }
+  }
+  
+function getDarkMode() {
+    const value = localStorage.getItem('darkmode');
+    if (value === 'true') {
+        document.body.classList.add('dark_mode');
+        return true;
+    } else {
+        document.body.classList.remove('dark_mode');
+        return false;
+    }
+}
+  
+window.onload = function() {
+    getDarkMode();
 }
 
 function PopUp_Text(text){
