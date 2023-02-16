@@ -52,26 +52,22 @@ password_reset.addEventListener("click", function(event){
 function saveDarkmode(value) {
     value = value === "true"
     localStorage.setItem('darkmode', value);
-    if (value) {
-      document.body.classList.add('dark_mode');
-    } else {
-      document.body.classList.remove('dark_mode');
-    }
-  }
+}
   
 function getDarkMode() {
     const value = localStorage.getItem('darkmode');
     if (value === 'true') {
-        document.body.classList.add('dark_mode');
+        toggleDarkmode();
         return true;
-    } else {
-        document.body.classList.remove('dark_mode');
+    } else if (value === 'false') {
         return false;
+    } else {
+        return null;
     }
 }
   
 window.onload = function() {
-    getDarkMode();
+    getDarkMode(); 
 }
 
 function PopUp_Text(text){
