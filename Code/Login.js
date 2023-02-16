@@ -12,25 +12,25 @@ var PopUp = document.getElementById("PopUp");
 
 //DarkMode und Icon entsprechend ändern - Listener und die Funktion
 dark_mode_button.addEventListener("click", function(event){
-    document.body.classList.toggle("dark_mode");
-    changeIconDarkMode(dark_mode_icon);
-    changeIconPasswordVisible(password_visible_icon);
+    toggleDarkmode();
 });
 
-function changeIconDarkMode(icon){
-    if (icon.classList.contains("fa-moon")) {
-        icon.classList.replace("fa-moon","fa-sun");
-        icon.classList.toggle("fa-inverse");        
+function toggleDarkmode(){
+    if (!document.body.classList.contains("dark_mode")){
+        //Anschalten
+        document.body.classList.toggle("dark_mode");
+        dark_mode_icon.classList.replace("fa-moon","fa-sun");  
+        dark_mode_icon.classList.toggle("fa-inverse");
+        password_visible_icon.classList.toggle("fa-inverse");   
         saveDarkmode("true");
-    } else if (icon.classList.contains("fa-sun")) {
-        icon.classList.replace("fa-sun","fa-moon");     
-        icon.classList.toggle("fa-inverse");      
+    } else {
+        //Ausschalten
+        document.body.classList.toggle("dark_mode")
+        dark_mode_icon.classList.replace("fa-sun","fa-moon"); 
+        dark_mode_icon.classList.toggle("fa-inverse");
+        password_visible_icon.classList.toggle("fa-inverse");       
         saveDarkmode("false");    
     }
-}
-
-function changeIconPasswordVisible(icon){
-    icon.classList.toggle("fa-inverse");    
 }
 
 password_visible_button.addEventListener("click", function(event){
@@ -50,6 +50,7 @@ password_reset.addEventListener("click", function(event){
 });
 
 function saveDarkmode(value) {
+    value = value === "true"
     localStorage.setItem('darkmode', value);
     if (value) {
       document.body.classList.add('dark_mode');
