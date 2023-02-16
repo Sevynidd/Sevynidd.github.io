@@ -67,9 +67,10 @@ login_button.addEventListener("click", function(event){
     var BenutzerEdit = document.getElementById("EditBenutzername");
     var PasswortEdit = document.getElementById("PasswortEditPasswort");
     event.preventDefault(); 
-    if (((BenutzerEdit.value == "admin@spdata.de") && (PasswortEdit.value == "admin")) || 
-        ((BenutzerEdit.value == "benutzer@spdata.de") && (PasswortEdit.value == "benutzer"))) {
-           window.location.href = "/view/admin.html";
+    if ((BenutzerEdit.value == "admin@spdata.de") && (PasswortEdit.value == "admin")) {
+        window.location.href = "/view/admin.html";
+    } else if ((BenutzerEdit.value == "benutzer@spdata.de") && (PasswortEdit.value == "benutzer")){
+        window.location.href = "/view/user.html"; 
     } else {
         PopUp_Text("Die Anmeldedaten sind falsch");
     }
