@@ -45,13 +45,22 @@ password_visible_button.addEventListener("click", function(event){
     }
 });
 
+password_reset.addEventListener("click", function(event){
+    PopUp_Text("Bitte wende dich an den Administrator");
+});
+
 function setCookie(cname,cvalue){
     cookies = cname + "=" + cvalue;
 }
 
 function PopUp_Text(text){
-    PopUp.textContent = text;
-    PopUp.classList.toggle("popupVisible"); 
+    PopUp.textContent = text;    
+    if (PopUp.classList.contains("popupVisible")){
+        PopUp.classList.toggle("popupVisible"); 
+        PopUp.classList.toggle("popupVisible"); 
+    } else{
+        PopUp.classList.toggle("popupVisible"); 
+    } 
 }
 
 login_button.addEventListener("click", function(event){
