@@ -69,7 +69,7 @@ login_button.addEventListener("click", function(event){
     event.preventDefault(); 
     if (((BenutzerEdit.value == "admin@spdata.de") && (PasswortEdit.value == "admin")) || 
         ((BenutzerEdit.value == "benutzer@spdata.de") && (PasswortEdit.value == "benutzer"))) {
-           PopUp_Text("Du hast dich angemeldet")
+           window.location.href = "/view/admin.html";
     } else {
         PopUp_Text("Die Anmeldedaten sind falsch");
     }
