@@ -86,9 +86,9 @@ function PopUp_Text(text){
 }
 function LogIn(){
     if ((BenutzerEdit.value == "admin@spdata.de") && (PasswortEdit.value == "admin")) {
-        window.location.href = "/view/admin.html";
+        window.location.href = "/View/admin.html";
     } else if ((BenutzerEdit.value == "benutzer@spdata.de") && (PasswortEdit.value == "benutzer")){
-        window.location.href = "/view/user.html"; 
+        window.location.href = "/View/user.html"; 
     } else {
         PopUp_Text("Die Anmeldedaten sind falsch");
     }
