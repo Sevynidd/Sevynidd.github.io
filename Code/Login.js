@@ -82,11 +82,9 @@ function PopUp_Text(text){
         PopUp.classList.toggle("popupVisible"); 
     } 
 }
-
-login_button.addEventListener("click", function(event){
+function LogIn(){
     var BenutzerEdit = document.getElementById("EditBenutzername");
     var PasswortEdit = document.getElementById("PasswortEditPasswort");
-    event.preventDefault(); 
     if ((BenutzerEdit.value == "admin@spdata.de") && (PasswortEdit.value == "admin")) {
         window.location.href = "/view/admin.html";
     } else if ((BenutzerEdit.value == "benutzer@spdata.de") && (PasswortEdit.value == "benutzer")){
@@ -94,6 +92,11 @@ login_button.addEventListener("click", function(event){
     } else {
         PopUp_Text("Die Anmeldedaten sind falsch");
     }
+}
+
+login_button.addEventListener("click", function(event){
+    event.preventDefault();
+    LogIn();
 });
 
 
