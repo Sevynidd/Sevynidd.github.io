@@ -1,6 +1,8 @@
-window.onload = function() {
-    getDarkMode(); 
-}
+//Icons
+var icons = [
+    document.getElementById("btn-darkmode-icon"),
+    document.getElementById("IconPasswordVisible")
+]
 
 function getDarkMode() {
     const value = localStorage.getItem('darkmode');
@@ -15,24 +17,29 @@ function getDarkMode() {
 }
 
 function toggleDarkmode(){
+    // Icon des Darkmode-Button entsprechend ändern
     if (!document.body.classList.contains("dark_mode")){
-        //Anschalten
-        document.body.classList.toggle("dark_mode");
-        dark_mode_icon.classList.replace("fa-moon","fa-sun");  
-        dark_mode_icon.classList.toggle("fa-inverse");
-        password_visible_icon.classList.toggle("fa-inverse");   
-        saveDarkmode("true");
-    } else {
-        //Ausschalten
-        document.body.classList.toggle("dark_mode")
-        dark_mode_icon.classList.replace("fa-sun","fa-moon"); 
-        dark_mode_icon.classList.toggle("fa-inverse");
-        password_visible_icon.classList.toggle("fa-inverse");       
-        saveDarkmode("false");    
+        if (icons[0]){
+            icons[0].classList.replace("fa-moon","fa-sun"); 
+            saveDarkmode("true");   
+        }
     }
+    else {
+        if (icons[0]){
+            icons[0].classList.replace("fa-sun","fa-moon");
+            saveDarkmode("false");  
+        }
+    }    
+    document.body.classList.toggle("dark_mode")
+    // Die Icons inversen sodass sie weiss sind wenn der Darkmode aktiv ist
+    if (icons[0]){
+        icons[0].classList.toggle("fa-inverse");
+    }
+    if (icons[1]){
+        icons[1].classList.toggle("fa-inverse");   
+    }    
 }
 
 function saveDarkmode(value) {
-    value = value === "true"
     localStorage.setItem('darkmode', value);
 }
