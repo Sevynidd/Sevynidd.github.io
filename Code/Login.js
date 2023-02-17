@@ -17,23 +17,6 @@ dark_mode_button.addEventListener("click", function(event){
     toggleDarkmode();
 });
 
-function toggleDarkmode(){
-    if (!document.body.classList.contains("dark_mode")){
-        //Anschalten
-        document.body.classList.toggle("dark_mode");
-        dark_mode_icon.classList.replace("fa-moon","fa-sun");  
-        dark_mode_icon.classList.toggle("fa-inverse");
-        password_visible_icon.classList.toggle("fa-inverse");   
-        saveDarkmode("true");
-    } else {
-        //Ausschalten
-        document.body.classList.toggle("dark_mode")
-        dark_mode_icon.classList.replace("fa-sun","fa-moon"); 
-        dark_mode_icon.classList.toggle("fa-inverse");
-        password_visible_icon.classList.toggle("fa-inverse");       
-        saveDarkmode("false");    
-    }
-}
 function togglePasswordVisibility(){
     var passwordFieldInput = document.getElementById("PasswortEditPasswort");
     if (passwordFieldInput.type === "password") {
@@ -54,23 +37,6 @@ password_reset.addEventListener("click", function(event){
     PopUp_Text("Bitte wende dich an den Administrator");
 });
 
-function saveDarkmode(value) {
-    value = value === "true"
-    localStorage.setItem('darkmode', value);
-}
-  
-function getDarkMode() {
-    const value = localStorage.getItem('darkmode');
-    if (value === 'true') {
-        toggleDarkmode();
-        return true;
-    } else if (value === 'false') {
-        return false;
-    } else {
-        return null;
-    }
-}
-  
 window.onload = function() {
     getDarkMode(); 
 }
