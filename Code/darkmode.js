@@ -34,23 +34,14 @@ function toggleDarkmode(){
             saveDarkmode("false");  
         }
     }    
-    document.body.classList.toggle("dark_mode")
+    document.body.classList.toggle("dark_mode");
     // Die Icons inversen sodass sie weiss sind wenn der Darkmode aktiv ist
-    if (icons[0]){
-        icons[0].classList.toggle("fa-inverse");
+
+    for (var i=0; i<=icons.length; i++){
+        if (icons[i]){
+            icons[i].classList.toggle("fa-inverse"); 
+        }
     }
-    if (icons[1]){
-        icons[1].classList.toggle("fa-inverse");   
-    }  
-    if (icons[2]){
-        icons[2].classList.toggle("fa-inverse");
-    }
-    if (icons[3]){
-        icons[3].classList.toggle("fa-inverse");   
-    } 
-    if (icons[4]){
-        icons[4].classList.toggle("fa-inverse");   
-    } 
 }
 
 function saveDarkmode(value) {
