@@ -3,9 +3,6 @@ const login_button = document.getElementById("ButtonLogin");
 const password_reset = document.getElementById("passwortvergessen");
 const password_visible_button = document.getElementById("btn-password-visible");
 const dark_mode_button = document.getElementById("btn-darkmode");
-//Icons
-var dark_mode_icon = document.getElementById("btn-darkmode-icon");
-var password_visible_icon = document.getElementById("IconPasswordVisible");
 //PopUp
 var PopUp = document.getElementById("PopUp");
 //Textfelder
