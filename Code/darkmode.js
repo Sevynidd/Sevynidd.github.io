@@ -1,7 +1,11 @@
 //Icons
 var icons = [
     document.getElementById("btn-darkmode-icon"),
-    document.getElementById("IconPasswordVisible")
+    document.getElementById("IconPasswordVisible"),
+    document.getElementById("btn-dashboard"),
+    document.getElementById("btn-ticketCreate"),
+    document.getElementById("btn-tickets")
+    
 ]
 
 function getDarkMode() {
@@ -37,7 +41,16 @@ function toggleDarkmode(){
     }
     if (icons[1]){
         icons[1].classList.toggle("fa-inverse");   
-    }    
+    }  
+    if (icons[2]){
+        icons[2].classList.toggle("fa-inverse");
+    }
+    if (icons[3]){
+        icons[3].classList.toggle("fa-inverse");   
+    } 
+    if (icons[4]){
+        icons[4].classList.toggle("fa-inverse");   
+    } 
 }
 
 function saveDarkmode(value) {
