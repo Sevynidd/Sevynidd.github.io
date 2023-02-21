@@ -45,4 +45,24 @@ dark_mode_button.addEventListener("click", function(event){
     toggleDarkmode();
 })
 
+function setDashboard(){
+//TODO: Dashboard setzen, heißt die aktuellen tickets und so
+}
+
+function setTicketCreate(){
+//TODO: Ticket erstellung einrichten,
+// ein großes Textfeld in dem gearbeitet werden kann mit allen standard formatierungsmöglichkeiten
+// z.b. wie bei Vemas
+// Eine Betreffzeile
+// Speichern
+// Abbrechen 
+}
+
+function setTickets(){
+//TODO: Ticketeinsicht erstellen
+// Ansicht meiner Tickets
+// Filterung einbauen z.b. nach Datum oder eine volltextsuche
+
+}
+
 

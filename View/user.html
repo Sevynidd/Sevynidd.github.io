@@ -2,12 +2,14 @@
 <html lang="de" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ticketsystem - User</title>
     <link rel="stylesheet" href="/Style/user.css">
     <link rel="stylesheet" href="/Style/global.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
     <script type="text/javascript" src="/Code/user.js" defer></script>
     <script type="text/javascript" src="/Code/darkmode.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-webcomponent@2/dist/tinymce-webcomponent.min.js"></script>
   </head>
   
   <body>
@@ -30,6 +32,28 @@
       </li>
     </ul>
     </nav>
+    <tinymce-editor
+      api-key="be2pkyay8feepi47nibdlaeih6m32kbe832fyazmdadurnd7"
+      height="500"
+      menubar="false"
+      plugins="advlist autolink lists link image charmap preview anchor
+        searchreplace visualblocks code fullscreen
+        insertdatetime media table code help wordcount"
+      toolbar="undo redo | blocks | bold italic backcolor |
+        alignleft aligncenter alignright alignjustify |
+        bullist numlist outdent indent | removeformat | help"
+      content_style="body
+      {
+        font-family:Helvetica,Arial,sans-serif;
+        font-size:14px
+      }"
+      >
+
+      <!-- Adding some initial editor content -->
+      &lt;p&gt;Welcome to the TinyMCE Web Component example!&lt;/p&gt;
+
+    </tinymce-editor>
+
   </body>
 
 </html>
