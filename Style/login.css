@@ -5,7 +5,7 @@ body{
 }
 .SP_Data_Logo{
   vertical-align: middle;
-  margin: 10px 10px;
+  margin: 15px 15px;
   width: 150px;
 }
 .btn{
@@ -14,8 +14,8 @@ body{
   padding: 3px;
   border: none; 
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 15px;
+  right: 15px;
 }
 .center{
   position: absolute;
@@ -123,7 +123,7 @@ input[type="submit"]:hover{
 
 .copyright{
   bottom: 10px; 
-  right: 8px; 
+  right: 15px; 
   position: absolute;
   font-size: 12px;
   color: var(--dark-color);
