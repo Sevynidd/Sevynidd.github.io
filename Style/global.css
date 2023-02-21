@@ -19,3 +19,14 @@
     box-sizing: border-box;
     font-family: Verdana, sans-serif;
 }
+
+#editor—wrapper {
+  border: 1px solid #ccc;
+  z-index: 100; /* If you need */
+}
+#toolbar-container { 
+  border-bottom: 1px solid #ccc; 
+}
+#editor-container { 
+  height: 500px; 
+}

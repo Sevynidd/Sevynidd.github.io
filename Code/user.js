@@ -1,6 +1,7 @@
 const styles = getComputedStyle(document.body);
 const highlightColor = styles.getPropertyValue("--highlight");
 const dark_mode_button = document.getElementById("btn-darkmode");
+const editor = Jodit.make("#editor");
 
 //Liste der Buttons für funktionalitäten auf der Navbar, DarkmodeButton ausgeschlossen
 var Buttons = [
@@ -25,7 +26,8 @@ window.onload = function() {
 for (let i = 0; i < Buttons.length; i++) {
     Buttons[i].addEventListener("click", function(event){  
         resetHighlight();     
-        Buttons[i].style.background = highlightColor;   
+        Buttons[i].style.background = highlightColor;
+ 
     });
 }  
 
@@ -43,6 +45,7 @@ function setButtonText(){
 
 dark_mode_button.addEventListener("click", function(event){
     toggleDarkmode();
+    editor.value;
 })
 
 function setDashboard(){
