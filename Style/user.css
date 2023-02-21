@@ -19,6 +19,7 @@ body{
     box-shadow: 6px 6px 6px var(--secondary-color-shadow);
     overflow: hidden;
     transition: width 0.1s ease-in-out;
+    display: flex;
 }
 .navBar ul{
   transform: translate(12px);
@@ -26,6 +27,7 @@ body{
 .navBar-items{
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 
 }
 .navBar-items img{
@@ -57,5 +59,12 @@ body{
   transition: background-color 0.2s ease;
 }
 .btn i{
+  order: -1;
+  margin-right: 15px;
   padding-right: px;
+}
+#btn-darkmode{
+  position: absolute;
+  bottom: 10px;
+  width: auto;
 }
