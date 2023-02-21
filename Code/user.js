@@ -10,21 +10,36 @@ var Buttons = [
     document.getElementById("btn-tickets")
 ];
 
+var ButtonsText = [
+    "Dashboard",
+    "Ticket erstellen",
+    "Tickets"
+];
+
 window.onload = function() {
     getDarkMode();
-    resetHighlight(); 
+    setButtonText();
+    resetHighlight();
+    Buttons[0].style.background = highlightColor;
+
 }
+
 for (let i = 0; i < Buttons.length; i++) {
     Buttons[i].addEventListener("click", function(event){  
         resetHighlight();     
         Buttons[i].style.background = highlightColor;   
     });
-}
-  
+}  
 
 function resetHighlight(){    
     for (var i = 0; i < Buttons.length; i++) {
         Buttons[i].style.background = '';
     } 
+}
+
+function setButtonText(){
+    for (var i = 0; i < Buttons.length; i++) {
+        Buttons[i].querySelector('#btn-text').textContent = ButtonsText[i];
+        }
 }
 
