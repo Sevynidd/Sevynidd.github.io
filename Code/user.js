@@ -11,6 +11,7 @@ const editor = Jodit.make("#editor", {
     saveSelectionOnBlur: true   
 });
 
+
 //Liste der Buttons für funktionalitäten auf der Navbar, DarkmodeButton ausgeschlossen
 var Buttons = [
     document.getElementById("btn-dashboard"),
@@ -28,6 +29,7 @@ window.onload = function() {
     getDarkMode();
     setButtonText();
     resetHighlight();
+    hideAll();
     Buttons[0].style.background = highlightColor;
 }
 
@@ -35,9 +37,19 @@ for (let i = 0; i < Buttons.length; i++) {
     Buttons[i].addEventListener("click", function(event){  
         resetHighlight();     
         Buttons[i].style.background = highlightColor;
+        if (Buttons[i] === Buttons[0]){
+            setDashboard();
+        } else if (Buttons[i] === Buttons[1]){
+            setTicketCreate();
+        } else if (Buttons[i] === Buttons[2]){
+            setTickets();
+        }
  
     });
-}  
+} 
+function hideAll(){
+    saveButton.style.visibility = "hidden";
+} 
 
 function resetHighlight(){    
     for (var i = 0; i < Buttons.length; i++) {
@@ -54,7 +66,7 @@ function setButtonText(){
 dark_mode_button.addEventListener("click", function(event){
     toggleDarkmode();
     editor.value;
-})
+});
 
 function setDashboard(){
 //TODO: Dashboard setzen, heißt die aktuellen tickets und so
@@ -67,6 +79,9 @@ function setTicketCreate(){
 // Eine Betreffzeile
 // Speichern
 // Abbrechen 
+saveButton.style.visibility = "visible";
+editor.style.visibility = "hidden";
+
 }
 
 function setTickets(){
