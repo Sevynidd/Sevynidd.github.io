@@ -68,10 +68,21 @@ body{
   bottom: 10px;
   width: auto;
 }
+#btn-save {
+  height: 30px;
+  width: 110px;
+  background: var(--highlight);
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 10px;
+}
 
 .editor-container {
   position: relative;
-  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
   width: max-content;
   max-height: 800px;
   top: 200px;
