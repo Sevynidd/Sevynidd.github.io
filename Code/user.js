@@ -1,7 +1,13 @@
 const styles = getComputedStyle(document.body);
 const highlightColor = styles.getPropertyValue("--highlight");
 const dark_mode_button = document.getElementById("btn-darkmode");
-const editor = Jodit.make("#editor");
+const saveButton = document.getElementById("btn-save");
+const editor = Jodit.make("#editor", {
+    iframe: true,
+    saveHeightInStorage: true,
+    height: 500, 
+    maxHeight: 800
+});
 
 //Liste der Buttons für funktionalitäten auf der Navbar, DarkmodeButton ausgeschlossen
 var Buttons = [
