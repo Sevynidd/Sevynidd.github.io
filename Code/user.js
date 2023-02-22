@@ -3,10 +3,10 @@ const highlightColor = styles.getPropertyValue("--highlight");
 const dark_mode_button = document.getElementById("btn-darkmode");
 const saveButton = document.getElementById("btn-save");
 const editor = Jodit.make("#editor", {
-    iframe: true,
     saveHeightInStorage: true,
-    height: 500, 
+    height: 500,
     maxHeight: 800,
+    maxWidth: 1000,
     autofocus: true,
     saveSelectionOnBlur: true   
 });
@@ -26,16 +26,18 @@ var ButtonsText = [
 ];
 
 window.onload = function() {
+    hideAllElements(); 
     getDarkMode();
     setButtonText();
     resetHighlight();
-    hideAll();
     Buttons[0].style.background = highlightColor;
+    setDashboard();
 }
 
 for (let i = 0; i < Buttons.length; i++) {
     Buttons[i].addEventListener("click", function(event){  
-        resetHighlight();     
+        resetHighlight();  
+        hideAllElements();   
         Buttons[i].style.background = highlightColor;
         if (Buttons[i] === Buttons[0]){
             setDashboard();
@@ -43,12 +45,12 @@ for (let i = 0; i < Buttons.length; i++) {
             setTicketCreate();
         } else if (Buttons[i] === Buttons[2]){
             setTickets();
-        }
- 
+        } 
     });
 } 
-function hideAll(){
+function hideAllElements(){
     saveButton.style.visibility = "hidden";
+    document.getElementById("editor-container").classList.add("hidden");
 } 
 
 function resetHighlight(){    
@@ -65,11 +67,11 @@ function setButtonText(){
 
 dark_mode_button.addEventListener("click", function(event){
     toggleDarkmode();
-    editor.value;
 });
 
 function setDashboard(){
 //TODO: Dashboard setzen, heißt die aktuellen tickets und so
+    
 }
 
 function setTicketCreate(){
@@ -79,8 +81,14 @@ function setTicketCreate(){
 // Eine Betreffzeile
 // Speichern
 // Abbrechen 
-saveButton.style.visibility = "visible";
-editor.style.visibility = "hidden";
+
+    
+    if (document.getElementById("editor-container").classList.contains("hidden")){
+        document.getElementById("editor-container").classList.toggle("hidden");
+        
+    }
+    saveButton.style.visibility = "visible";
+
 
 }
 

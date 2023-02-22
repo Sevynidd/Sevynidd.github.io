@@ -22,7 +22,7 @@
 
 #editor—wrapper {
   border: 1px solid #ccc;
-  z-index: 100; /* If you need */
+
 }
 #toolbar-container { 
   border-bottom: 1px solid #ccc; 
