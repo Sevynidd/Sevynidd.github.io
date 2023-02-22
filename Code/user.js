@@ -6,7 +6,9 @@ const editor = Jodit.make("#editor", {
     iframe: true,
     saveHeightInStorage: true,
     height: 500, 
-    maxHeight: 800
+    maxHeight: 800,
+    autofocus: true,
+    saveSelectionOnBlur: true   
 });
 
 //Liste der Buttons für funktionalitäten auf der Navbar, DarkmodeButton ausgeschlossen
