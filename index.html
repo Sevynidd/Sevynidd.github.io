@@ -12,34 +12,40 @@
 </head>
 
 <body>
-  <div>
-    <img class="SP_Data_Logo" src="/Bilder/Logo SP_Data ohne Claim.png" alt="SP_Data Logo ohne Claim" width="150px">
-    <button class="btn" id="btn-darkmode"><i class="fa-solid fa-moon fa-2x" id="btn-darkmode-icon"></i></button>
-  </div>
+  <img class="SP_Data_Logo" src="/Bilder/Logo SP_Data ohne Claim.png" alt="SP_Data Logo ohne Claim" width="150px">
+
   <div class="center">
+    
     <h1>SP_Data Ticketsystem</h1>
 
     <form method="post">
+
       <div class="txt_field">
         <input type="text" id="EditBenutzername" required pattern=".*\S.*">
         <label>Benutzername</label>
       </div>
+
       <div class="txt_field">
         <input type="password" id="PasswortEditPasswort" required pattern=".*\S.*">
         <button class="btn" id="btn-password-visible">
-          <i class="fa-solid fa-eye fa-lg" id="IconPasswordVisible"></i>
+          <i class="fa-solid fa-eye fa-inverse fa-lg" id="IconPasswordVisible"></i>
         </button>
         <label>Passwort</label>
       </div>
+
       <div class="PopUp" id="PopUp">
         <p id="popupText"></p>
       </div>
+
       <div class="pass" id="passwortvergessen">Passwort vergessen?</div>
+
       <input type="submit" value="Login" id="ButtonLogin">
+
     </form>
+
   </div>
 
-  <p class="copyright">(c) 2023 by SP_Data GmbH & Co. KG</p>
+  <p id="copyright">(c) 2023 by SP_Data GmbH & Co. KG</p>
 
 </body>
 

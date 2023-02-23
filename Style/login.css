@@ -1,6 +1,14 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
 body {
-  background: var(--primary-color);
-  overflow: hidden;
+  background: var(--secondary-color);
+  background-image:
+    radial-gradient(at 10% 10%, var(--highlight) 0%, transparent 40%),
+    radial-gradient(at 90% 70%, #f69f1d88 0%, transparent 30%), 
+    radial-gradient(at 20% 90%, #004a7c 0%, transparent 30%);
   transition: background-color 0.3s ease-in-out;
   -webkit-transition: background-color 0.3s ease-in-out;
   -moz-transition: background-color 0.3s ease-in-out;
@@ -33,7 +41,6 @@ body {
   justify-content: flex-start;
   align-items: stretch;
   align-content: stretch;
-
   position: absolute;
   top: 50%;
   left: 50%;
@@ -43,14 +50,12 @@ body {
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   width: clamp(250px, 450px, 450px);
-
-  background: var(--secondary-color);
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  box-shadow: 6px 6px 6px var(--secondary-color-shadow);
+  background-color: var(--primary-color);
 }
 
 .center h1 {
@@ -73,7 +78,7 @@ form .txt_field {
 }
 
 .txt_field input {
-  width: 90%;
+  width: 95%;
   padding: 0 5px;
   height: 40px;
   font-size: 16px;
@@ -100,6 +105,11 @@ form .txt_field {
   -moz-transition: .5s;
   -ms-transition: .5s;
   -o-transition: .5s;
+}
+
+#btn-password-visible {
+  position: absolute;
+  right: 5px;
 }
 
 .txt_field span::before {
@@ -165,7 +175,7 @@ form .txt_field {
 input[type="submit"] {
   width: 100%;
   height: 50px;
-  border: 1px solid;
+  border: 2px solid;
   background: var(--highlight);
   border-radius: 25px;
   -webkit-border-radius: 25px;
@@ -183,14 +193,14 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   border-color: var(--primary-color);
-  transition: .5s;
-  -webkit-transition: .5s;
-  -moz-transition: .5s;
-  -ms-transition: .5s;
-  -o-transition: .5s;
+  transition: .3s;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -ms-transition: .3s;
+  -o-transition: .3s;
 }
 
-.copyright {
+#copyright {
   bottom: 10px;
   right: 15px;
   position: absolute;

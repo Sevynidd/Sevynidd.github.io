@@ -1,18 +1,9 @@
 :root {
-  --primary-color: #f3f3f3;
-  --secondary-color: white;
-  --secondary-color-shadow: #d6d6d6;
-  --dark-color: rgb(0, 64, 121);
-  --highlight: rgb(244, 150, 8);
-}
-
-.dark_mode {
-  --primary-color: #2f2e2c;
-  --secondary-color: #404040;
-  --secondary-color-shadow: #2f2e2c;
+  --primary-color: #2e2e2e;
+  --secondary-color: #383838;
+  --secondary-color-shadow: #272727;
   --dark-color: #e2e2e2;
-  --highlight: rgb(244, 150, 8);
-  transition: background-color 0.3s ease-in-out;
+  --highlight: #f6a01d;
 }
 
 * {
@@ -24,7 +15,6 @@
 
 #editor—wrapper {
   border: 1px solid #ccc;
-
 }
 
 #toolbar-container {
