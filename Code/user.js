@@ -41,9 +41,9 @@ for (let i = 0; i < Buttons.length; i++) {
     });
 } 
 function hideAllElements(){
-    const editorContainer = document.getElementById("editor-container");
-    if (editorContainer){
-        document.body.removeChild(editorContainer);
+    const container = document.getElementById("container");    
+    if (container){
+        document.body.removeChild(container);           
     }
 } 
 
@@ -83,6 +83,7 @@ function setTicketCreate(){
 
     const container = document.createElement("div");
     container.setAttribute("class", "container");
+    container.setAttribute("id", "container");
 
     const editorContainer = document.createElement("div");
     editorContainer.setAttribute("class", "editor-container");
@@ -105,10 +106,7 @@ function setTicketCreate(){
     container.appendChild(editorContainer);
     editorContainer.appendChild(editorTextarea);
     editorContainer.appendChild(buttoncontainer);
-    buttoncontainer.appendChild(saveButton);
-
-
-    
+    buttoncontainer.appendChild(saveButton);   
 
     const editor = Jodit.make("#editor", {
         saveHeightInStorage: true,
@@ -120,9 +118,9 @@ function setTicketCreate(){
         minWidth: 800,        
         maxHeight: 1000,
         maxWidth: 1500,
-        autofocus: true,
         saveSelectionOnBlur: true   
     });
+    editor.focus();
 }
 
 function setTickets(){
