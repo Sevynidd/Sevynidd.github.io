@@ -64,6 +64,11 @@ body{
   margin-right: 15px;
   padding-right: px;
 }
+
+.btn:active{
+  transform: scale(0.98);
+}
+
 #btn-darkmode{
   position: absolute;
   bottom: 10px;
