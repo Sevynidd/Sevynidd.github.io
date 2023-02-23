@@ -1,4 +1,4 @@
-body{
+body {
   background: var(--primary-color);
   overflow: hidden;
   transition: background-color 0.3s ease-in-out;
@@ -7,12 +7,13 @@ body{
   -ms-transition: background-color 0.3s ease-in-out;
   -o-transition: background-color 0.3s ease-in-out;
 }
-.SP_Data_Logo{
-  vertical-align: middle;
+
+.SP_Data_Logo {
   margin: 15px 15px;
   width: 150px;
 }
-.btn{
+
+.btn {
   background: inherit;
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -25,7 +26,14 @@ body{
   top: 15px;
   right: 15px;
 }
-.center{
+
+.center {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+
   position: absolute;
   top: 50%;
   left: 50%;
@@ -35,6 +43,7 @@ body{
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   width: clamp(250px, 450px, 450px);
+
   background: var(--secondary-color);
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -43,23 +52,27 @@ body{
   -o-border-radius: 10px;
   box-shadow: 6px 6px 6px var(--secondary-color-shadow);
 }
-.center h1{
+
+.center h1 {
   text-align: center;
-  padding: 20px 0;
+  padding: 20px;
   font-size: 26px;
   color: var(--dark-color);
   border-bottom: 1px solid var(--dark-color);
 }
-.center form{
+
+.center form {
   padding: 0 40px;
   box-sizing: border-box;
 }
-form .txt_field{
+
+form .txt_field {
   position: relative;
   border-bottom: 2px solid var(--dark-color);
   margin: 30px 0;
 }
-.txt_field input{
+
+.txt_field input {
   width: 90%;
   padding: 0 5px;
   height: 40px;
@@ -69,7 +82,8 @@ form .txt_field{
   background: none;
   outline: none;
 }
-.txt_field label{
+
+.txt_field label {
   position: absolute;
   top: 50%;
   left: 5px;
@@ -87,7 +101,8 @@ form .txt_field{
   -ms-transition: .5s;
   -o-transition: .5s;
 }
-.txt_field span::before{
+
+.txt_field span::before {
   content: '';
   position: absolute;
   top: 40px;
@@ -101,19 +116,22 @@ form .txt_field{
   -ms-transition: .5s;
   -o-transition: .5s;
 }
-.txt_field input:focus ~ label,
-.txt_field input:valid ~ label{
+
+.txt_field input:focus~label,
+.txt_field input:valid~label {
   top: -5px;
+  font-size: 12px;
   color: var(--dark-color);
 }
-.PopUp{
+
+.PopUp {
   background: var(--dark-color);
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
   text-align: center;
   margin: 0%;
   scale: 0.1;
@@ -125,22 +143,26 @@ form .txt_field{
   -o-transition: ease 0.1s;
   font-size: 14px;
   color: var(--primary-color);
- 
+
 }
-.popupVisible{
+
+.popupVisible {
   visibility: visible;
   margin: 3%;
   scale: 1;
 }
-.pass{
+
+.pass {
   margin: -5px 0 20px 5px;
   color: var(--dark-color);
   cursor: pointer;
 }
-.pass:hover{
+
+.pass:hover {
   text-decoration: underline;
 }
-input[type="submit"]{
+
+input[type="submit"] {
   width: 100%;
   height: 50px;
   border: 1px solid;
@@ -156,9 +178,10 @@ input[type="submit"]{
   cursor: pointer;
   outline: none;
   margin-bottom: 25px;
-  
+
 }
-input[type="submit"]:hover{
+
+input[type="submit"]:hover {
   border-color: var(--primary-color);
   transition: .5s;
   -webkit-transition: .5s;
@@ -167,9 +190,9 @@ input[type="submit"]:hover{
   -o-transition: .5s;
 }
 
-.copyright{
-  bottom: 10px; 
-  right: 15px; 
+.copyright {
+  bottom: 10px;
+  right: 15px;
   position: absolute;
   font-size: 12px;
   color: var(--dark-color);

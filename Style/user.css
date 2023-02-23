@@ -1,62 +1,68 @@
-:root{
+:root {
   --navbar-width: 270px;
   --navbar-width-collapsed: 60px;
 }
-body{
-    background: var(--primary-color);
-    overflow: hidden;
-    transition: background-color 0.3s ease-in-out;
-    -webkit-transition: background-color 0.3s ease-in-out;
-    -moz-transition: background-color 0.3s ease-in-out;
-    -ms-transition: background-color 0.3s ease-in-out;
-    -o-transition: background-color 0.3s ease-in-out;
+
+body {
+  background: var(--primary-color);
+  overflow: hidden;
+  transition: background-color 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -moz-transition: background-color 0.3s ease-in-out;
+  -ms-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
 }
-.navBar{
-    display: flex;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    transform: translate(-3px);
-    -webkit-transform: translate(-3px);
-    -moz-transform: translate(-3px);
-    -ms-transform: translate(-3px);
-    -o-transform: translate(-3px);
-    width: var(--navbar-width-collapsed);
-    height: 100%;
-    background: var(--secondary-color);
-    border-radius: 6px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    -ms-border-radius: 6px;
-    -o-border-radius: 6px;
-    box-shadow: 6px 6px 6px var(--secondary-color-shadow);
-    overflow: hidden;
-    transition: width 0.1s ease-in-out;
-    -webkit-transition: width 0.1s ease-in-out;
-    -moz-transition: width 0.1s ease-in-out;
-    -ms-transition: width 0.1s ease-in-out;
-    -o-transition: width 0.1s ease-in-out;
-    z-index: 2;
+
+.navBar {
+  display: flex;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  transform: translate(-3px);
+  -webkit-transform: translate(-3px);
+  -moz-transform: translate(-3px);
+  -ms-transform: translate(-3px);
+  -o-transform: translate(-3px);
+  width: var(--navbar-width-collapsed);
+  height: 100%;
+  background: var(--secondary-color);
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  box-shadow: 6px 6px 6px var(--secondary-color-shadow);
+  overflow: hidden;
+  transition: width 0.1s ease-in-out;
+  -webkit-transition: width 0.1s ease-in-out;
+  -moz-transition: width 0.1s ease-in-out;
+  -ms-transition: width 0.1s ease-in-out;
+  -o-transition: width 0.1s ease-in-out;
+  z-index: 2;
 }
-.navBar ul{
+
+.navBar ul {
   transform: translate(12px);
   -webkit-transform: translate(12px);
   -moz-transform: translate(12px);
   -ms-transform: translate(12px);
   -o-transform: translate(12px);
 }
-.navBar-items{
+
+.navBar-items {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   padding: 2px;
 }
-.navBar-items img{
+
+.navBar-items img {
   margin: 15px;
   margin-left: 48px;
   margin-bottom: 20px;
 }
-.navBar:hover{
+
+.navBar:hover {
   width: var(--navbar-width);
   transition: width 0.1s ease-in-out;
   -webkit-transition: width 0.1s ease-in-out;
@@ -64,7 +70,8 @@ body{
   -ms-transition: width 0.1s ease-in-out;
   -o-transition: width 0.1s ease-in-out;
 }
-.btn{
+
+.btn {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -81,7 +88,8 @@ body{
   padding-left: 10px;
   font-size: 16px;
 }
-.btn:hover{
+
+.btn:hover {
   background: var(--highlight);
   transition: background-color 0.2s ease;
   -webkit-transition: background-color 0.2s ease;
@@ -89,12 +97,13 @@ body{
   -ms-transition: background-color 0.2s ease;
   -o-transition: background-color 0.2s ease;
 }
-.btn i{
+
+.btn i {
   order: -1;
   margin-right: 15px;
 }
 
-.btn:active{
+.btn:active {
   transform: scale(0.98);
   -webkit-transform: scale(0.98);
   -moz-transform: scale(0.98);
@@ -102,7 +111,7 @@ body{
   -o-transform: scale(0.98);
 }
 
-#btn-darkmode{
+#btn-darkmode {
   position: absolute;
   bottom: 10px;
   width: auto;
@@ -120,13 +129,13 @@ body{
   display: flex;
   justify-content: space-evenly;
   padding: 0 10px;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  height: 100vh; 
+  height: 100vh;
 }
 
 .editor-container {
