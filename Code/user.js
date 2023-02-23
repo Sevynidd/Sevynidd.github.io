@@ -81,6 +81,9 @@ function setTicketCreate(){
 // Speichern
 // Abbrechen
 
+    const container = document.createElement("div");
+    container.setAttribute("class", "container");
+
     const editorContainer = document.createElement("div");
     editorContainer.setAttribute("class", "editor-container");
     editorContainer.setAttribute("id", "editor-container");
@@ -89,21 +92,34 @@ function setTicketCreate(){
     editorTextarea.setAttribute("id", "editor");
     editorTextarea.setAttribute("name", "editor");
 
+    const buttoncontainer = document.createElement("div");
+    buttoncontainer.setAttribute("class", "button-container");
+
     const saveButton = document.createElement("button");
     saveButton.setAttribute("class", "btn");
     saveButton.setAttribute("id", "btn-save");
     saveButton.textContent = "Speichern";
-
-    document.body.appendChild(editorContainer);
+    
+    document.body.appendChild(container);
+   
+    container.appendChild(editorContainer);
     editorContainer.appendChild(editorTextarea);
-    editorContainer.appendChild(saveButton);
+    editorContainer.appendChild(buttoncontainer);
+    buttoncontainer.appendChild(saveButton);
+
+
+    
 
     const editor = Jodit.make("#editor", {
         saveHeightInStorage: true,
-        height: 500,
-        width: 800,
-        maxHeight: 800,
-        maxWidth: 1000,
+        allowResizeX: true,
+        allowResizeY: true,
+        resizer: true,
+        height: 600,
+        minHeight: 400,
+        minWidth: 800,        
+        maxHeight: 1000,
+        maxWidth: 1500,
         autofocus: true,
         saveSelectionOnBlur: true   
     });

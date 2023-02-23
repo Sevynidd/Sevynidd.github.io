@@ -29,7 +29,7 @@ body{
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-
+  padding: 2px;
 }
 .navBar-items img{
   margin: 15px;
@@ -69,34 +69,46 @@ body{
   bottom: 10px;
   width: auto;
 }
+
 #btn-save {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 10px;
   height: 30px;
   width: 110px;
   max-height: 30px;
   background: var(--highlight);
-  margin-top: 10px;
   display: flex;
   justify-content: space-evenly;
   padding: 0 10px;
+  margin: 0 auto; 
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; 
 }
 
 .editor-container {
   position: relative;
+  flex: 1;
+  top: 200px;
+  left: 200px;
   display: flex;
   flex-direction: column;
   align-items: normal;
-  width: max-content;
-  height: max-content;
-  min-height: 100px;
-  max-height: 800px;
-  top: 200px;
-  left: 200px;
 }
 
-.editor-container #editor {
+#editor {
+  height: 200px;
+}
+
+.button-container {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  width: 100%; 
-  min-height: 100px;
-  max-height: 800px;
 }
-
