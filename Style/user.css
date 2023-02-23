@@ -6,24 +6,44 @@ body{
     background: var(--primary-color);
     overflow: hidden;
     transition: background-color 0.3s ease-in-out;
+    -webkit-transition: background-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out;
+    -ms-transition: background-color 0.3s ease-in-out;
+    -o-transition: background-color 0.3s ease-in-out;
 }
 .navBar{
+    display: flex;
     position: absolute;
     left: 0px;
     top: 0px;
     transform: translate(-3px);
+    -webkit-transform: translate(-3px);
+    -moz-transform: translate(-3px);
+    -ms-transform: translate(-3px);
+    -o-transform: translate(-3px);
     width: var(--navbar-width-collapsed);
     height: 100%;
     background: var(--secondary-color);
     border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
     box-shadow: 6px 6px 6px var(--secondary-color-shadow);
     overflow: hidden;
     transition: width 0.1s ease-in-out;
-    display: flex;
+    -webkit-transition: width 0.1s ease-in-out;
+    -moz-transition: width 0.1s ease-in-out;
+    -ms-transition: width 0.1s ease-in-out;
+    -o-transition: width 0.1s ease-in-out;
     z-index: 2;
 }
 .navBar ul{
   transform: translate(12px);
+  -webkit-transform: translate(12px);
+  -moz-transform: translate(12px);
+  -ms-transform: translate(12px);
+  -o-transform: translate(12px);
 }
 .navBar-items{
   display: flex;
@@ -39,7 +59,10 @@ body{
 .navBar:hover{
   width: var(--navbar-width);
   transition: width 0.1s ease-in-out;
-  
+  -webkit-transition: width 0.1s ease-in-out;
+  -moz-transition: width 0.1s ease-in-out;
+  -ms-transition: width 0.1s ease-in-out;
+  -o-transition: width 0.1s ease-in-out;
 }
 .btn{
   display: flex;
@@ -50,23 +73,33 @@ body{
   background: var(--secondary-color);
   border: none;
   border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
   margin-right: 20px;
   padding-left: 10px;
   font-size: 16px;
-  /*border-bottom: 1px solid var(--dark-color);*/
 }
 .btn:hover{
   background: var(--highlight);
   transition: background-color 0.2s ease;
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  -ms-transition: background-color 0.2s ease;
+  -o-transition: background-color 0.2s ease;
 }
 .btn i{
   order: -1;
   margin-right: 15px;
-  padding-right: px;
 }
 
 .btn:active{
   transform: scale(0.98);
+  -webkit-transform: scale(0.98);
+  -moz-transform: scale(0.98);
+  -ms-transform: scale(0.98);
+  -o-transform: scale(0.98);
 }
 
 #btn-darkmode{
