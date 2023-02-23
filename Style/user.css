@@ -20,6 +20,7 @@ body{
     overflow: hidden;
     transition: width 0.1s ease-in-out;
     display: flex;
+    z-index: 2;
 }
 .navBar ul{
   transform: translate(12px);
@@ -28,7 +29,7 @@ body{
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-
+  padding: 2px;
 }
 .navBar-items img{
   margin: 15px;
@@ -63,8 +64,56 @@ body{
   margin-right: 15px;
   padding-right: px;
 }
+
+.btn:active{
+  transform: scale(0.98);
+}
+
 #btn-darkmode{
   position: absolute;
   bottom: 10px;
   width: auto;
+}
+
+#btn-save {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 10px;
+  height: 30px;
+  width: 110px;
+  max-height: 30px;
+  background: var(--highlight);
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 10px;
+  margin: 0 auto; 
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; 
+}
+
+.editor-container {
+  position: relative;
+  flex: 1;
+  top: 200px;
+  left: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+}
+
+#editor {
+  height: 200px;
+}
+
+.button-container {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }

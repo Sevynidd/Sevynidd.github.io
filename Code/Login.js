@@ -16,6 +16,7 @@ dark_mode_button.addEventListener("click", function(event){
 
 function togglePasswordVisibility(){
     var passwordFieldInput = document.getElementById("PasswortEditPasswort");
+    const password_visible_icon = document.getElementById("IconPasswordVisible");
     if (passwordFieldInput.type === "password") {
         passwordFieldInput.type = "text";
         password_visible_icon.classList.replace("fa-eye", "fa-eye-slash");
