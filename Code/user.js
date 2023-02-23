@@ -1,16 +1,6 @@
 const styles = getComputedStyle(document.body);
 const highlightColor = styles.getPropertyValue("--highlight");
 const dark_mode_button = document.getElementById("btn-darkmode");
-const saveButton = document.getElementById("btn-save");
-const editor = Jodit.make("#editor", {
-    saveHeightInStorage: true,
-    height: 500,
-    maxHeight: 800,
-    maxWidth: 1000,
-    autofocus: true,
-    saveSelectionOnBlur: true   
-});
-
 
 //Liste der Buttons für funktionalitäten auf der Navbar, DarkmodeButton ausgeschlossen
 var Buttons = [
@@ -25,8 +15,7 @@ var ButtonsText = [
     "Tickets"
 ];
 
-window.onload = function() {
-    hideAllElements(); 
+window.onload = function() { 
     getDarkMode();
     setButtonText();
     resetHighlight();
@@ -36,21 +25,23 @@ window.onload = function() {
 
 for (let i = 0; i < Buttons.length; i++) {
     Buttons[i].addEventListener("click", function(event){  
-        resetHighlight();  
-        hideAllElements();   
-        Buttons[i].style.background = highlightColor;
-        if (Buttons[i] === Buttons[0]){
+        hideAllElements(); 
+        if ((Buttons[i] === Buttons[0]) && Buttons[i].style.background === ''){
             setDashboard();
-        } else if (Buttons[i] === Buttons[1]){
+        } else if (Buttons[i] === Buttons[1] && Buttons[i].style.background === ''){
             setTicketCreate();
-        } else if (Buttons[i] === Buttons[2]){
+        } else if (Buttons[i] === Buttons[2] && Buttons[i].style.background === ''){
             setTickets();
         } 
+        resetHighlight(); 
+        Buttons[i].style.background = highlightColor;
     });
 } 
 function hideAllElements(){
-    saveButton.style.visibility = "hidden";
-    document.getElementById("editor-container").classList.add("hidden");
+    const editorContainer = document.getElementById("editor-container");
+    if (editorContainer){
+        document.body.removeChild(editorContainer);
+    }
 } 
 
 function resetHighlight(){    
@@ -70,8 +61,7 @@ dark_mode_button.addEventListener("click", function(event){
 });
 
 function setDashboard(){
-//TODO: Dashboard setzen, heißt die aktuellen tickets und so
-    
+//TODO: Dashboard setzen, heißt die aktuellen tickets und so    
 }
 
 function setTicketCreate(){
@@ -80,16 +70,34 @@ function setTicketCreate(){
 // z.b. wie bei Vemas
 // Eine Betreffzeile
 // Speichern
-// Abbrechen 
+// Abbrechen
 
-    
-    if (document.getElementById("editor-container").classList.contains("hidden")){
-        document.getElementById("editor-container").classList.toggle("hidden");
-        
-    }
-    saveButton.style.visibility = "visible";
+    const editorContainer = document.createElement("div");
+    editorContainer.setAttribute("class", "editor-container");
+    editorContainer.setAttribute("id", "editor-container");
 
+    const editorTextarea = document.createElement("textarea");
+    editorTextarea.setAttribute("id", "editor");
+    editorTextarea.setAttribute("name", "editor");
 
+    const saveButton = document.createElement("button");
+    saveButton.setAttribute("class", "btn");
+    saveButton.setAttribute("id", "btn-save");
+    saveButton.textContent = "Speichern";
+
+    document.body.appendChild(editorContainer);
+    editorContainer.appendChild(editorTextarea);
+    editorContainer.appendChild(saveButton);
+
+    const editor = Jodit.make("#editor", {
+        saveHeightInStorage: true,
+        height: 500,
+        width: 800,
+        maxHeight: 800,
+        maxWidth: 1000,
+        autofocus: true,
+        saveSelectionOnBlur: true   
+    });
 }
 
 function setTickets(){
