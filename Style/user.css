@@ -168,6 +168,36 @@ body {
   font-size: large;
 }
 
-.label-color{
+.betreffLabel {
   color: white;
+}
+
+.betreffFeld {
+  border-radius: 10px;
+  border: nonew;
+}
+
+.prio-container select {
+  display: block;
+  max-width: 320px;
+  height: 50px;
+  margin: 5px 0px;
+  padding: 0px 24px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #333;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #0ebeff;
+  -ms-word-break: normal;
+  word-break: normal; 
+}
+.prio-container::after {
+  content: '\25BC'; /* Zeige Pfeil als Content */
+  font-size: 12px; /* Pfeilgröße */
+  position: absolute; /* Setze Position auf absolut */
+  top: 50%; /* Zentriere vertikal */
+  right: 10px; /* Positioniere rechts */
+  transform: translateY(-50%); /* Zentriere vertikal */
+  pointer-events: none; /* Ignoriere Klicks */
 }

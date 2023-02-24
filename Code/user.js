@@ -68,7 +68,7 @@ document.body.addEventListener('click', function (event) {
 function createPriorityDropDown() {  
     const priorityDD = document.createElement("select");
     priorityDD.setAttribute("id", "prio");
-    priorityDD.setAttribute("name", "pro");
+    priorityDD.setAttribute("class", "prio");
     
     const options = ["Niedrig", "Mittel", "Hoch"];
     options.forEach(option => {
@@ -111,8 +111,8 @@ function setTicketCreate() {
     const buttoncontainer = createHTMLElement("div", {class: "button-container", id: "button-container"});
     const saveButton = createHTMLElement("button", {class: "btn", id: "btn-save"}, "Speichern");
     const betreffContainer = createHTMLElement("div", {class: "betreff-container", id: "betreff-container"});
-    const betreffFeld = createHTMLElement("input", {type: "text", id: "betreffFeld"});
-    const betreffLabel = createHTMLElement("label", {for: "betreffFeld", class: "label-color"}, "Betreff");
+    const betreffFeld = createHTMLElement("input", {type: "text", id: "betreffFeld", class: "betreffFeld"});
+    const betreffLabel = createHTMLElement("label", {for: "betreffFeld", class: "betreffLabel"}, "Betreff");
   
     betreffContainer.appendChild(betreffFeld);
     buttoncontainer.appendChild(saveButton);
