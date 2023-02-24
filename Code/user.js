@@ -70,7 +70,7 @@ function createPriorityDropDown() {
     priorityDD.setAttribute("id", "prio");
     priorityDD.setAttribute("name", "pro");
     
-    const options = ["Niedrig", "Mittel", "Hoch", "Sofort bearbeiten", "Hardware"];
+    const options = ["Niedrig", "Mittel", "Hoch"];
     options.forEach(option => {
         const opt = document.createElement("option");
         opt.value = option;
@@ -89,50 +89,56 @@ function createPriorityDropDown() {
 function setDashboard() {
     //TODO: Dashboard setzen, heißt die aktuellen tickets und so    
 }
+function createHTMLElement(tagName, attributes = {}, textContent = '') {
+    const element = document.createElement(tagName);
+    for (let key in attributes) {
+      element.setAttribute(key, attributes[key]);
+    }
+    element.textContent = textContent;
+    return element;
+  }
 
 function setTicketCreate() {
-    //TODO: Ticket erstellung einrichten,
-    // ein großes Textfeld in dem gearbeitet werden kann mit allen standard formatierungsmöglichkeiten
-    // z.b. wie bei Vemas
-    // Eine Betreffzeile
-    // Speichern
-    // Abbrechen
-    const container = createEl("div", {class: "container", id: "container"});
-    const editorContainer = createEl("div", {class: "editor-container", id: "editor-container"});
-    const editorTextarea = createEl("textarea", {id: "editor", name: "editor"});
-    const betreffLabel = createEl("label", {for: "betreffFeld", innerHTML: "Betreff", class: "label-color"});
-    const betreffFeld = createEl("input", {type: "text", id: "betreffFeld"});
-    const betreffContainer = createEl("div", {class: "betreff-container", id: "betreff-container"}, [betreffFeld]);
-
-    const buttoncontainer = createEl("div", {class: "button-container", id: "button-container"}, [
-        createEl("button", {class: "btn", id: "btn-save", textContent: "Speichern"})
-    ]);
-    
-    editorContainer.append(betreffLabel, betreffContainer, editorTextarea, buttoncontainer, createPriorityDropDown());
+//TODO: Ticket erstellung einrichten,
+// ein großes Textfeld in dem gearbeitet werden kann mit allen standard formatierungsmöglichkeiten
+// z.b. wie bei Vemas
+// Eine Betreffzeile
+// Speichern
+// Abbrechen
+    const container = createHTMLElement("div", {class: "container", id: "container"});
+    const editorContainer = createHTMLElement("div", {class: "editor-container", id: "editor-container"});
+    const editorTextarea = createHTMLElement("textarea", {id: "editor", name: "editor"});
+    const buttoncontainer = createHTMLElement("div", {class: "button-container", id: "button-container"});
+    const saveButton = createHTMLElement("button", {class: "btn", id: "btn-save"}, "Speichern");
+    const betreffContainer = createHTMLElement("div", {class: "betreff-container", id: "betreff-container"});
+    const betreffFeld = createHTMLElement("input", {type: "text", id: "betreffFeld"});
+    const betreffLabel = createHTMLElement("label", {for: "betreffFeld", class: "label-color"}, "Betreff");
+  
+    betreffContainer.appendChild(betreffFeld);
+    buttoncontainer.appendChild(saveButton);
+    editorContainer.appendChild(betreffLabel);
+    editorContainer.appendChild(betreffContainer);
+    editorContainer.appendChild(editorTextarea);
+    editorContainer.appendChild(buttoncontainer);
+    editorContainer.appendChild(createPriorityDropDown());
     container.appendChild(editorContainer);
     document.body.appendChild(container);
-    
+  
     const editor = Jodit.make("#editor", {
-        saveHeightInStorage: true,
-        allowResizeX: true,
-        allowResizeY: true,
-        resizer: true,
-        height: 600,
-        minHeight: 400,
-        minWidth: 800,
-        maxHeight: 1000,
-        maxWidth: 1500,
-        saveSelectionOnBlur: true
+      saveHeightInStorage: true,
+      allowResizeX: true,
+      allowResizeY: true,
+      resizer: true,
+      height: 600,
+      minHeight: 400,
+      minWidth: 800,
+      maxHeight: 1000,
+      maxWidth: 1500,
+      saveSelectionOnBlur: true
     });
     editor.focus();
-}
-
-function createEl(tag, attributes = {}, children = []) {
-    const element = document.createElement(tag);
-    for (let attr in attributes) element.setAttribute(attr, attributes[attr]);
-        children.forEach(child => element.appendChild(child));
-    return element;
-}
+  }
+  
 
 function setTickets() {
     //TODO: Ticketeinsicht erstellen
