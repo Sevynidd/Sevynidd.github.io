@@ -97,52 +97,21 @@ function setTicketCreate() {
     // Eine Betreffzeile
     // Speichern
     // Abbrechen
+    const container = createEl("div", {class: "container", id: "container"});
+    const editorContainer = createEl("div", {class: "editor-container", id: "editor-container"});
+    const editorTextarea = createEl("textarea", {id: "editor", name: "editor"});
+    const betreffLabel = createEl("label", {for: "betreffFeld", innerHTML: "Betreff", class: "label-color"});
+    const betreffFeld = createEl("input", {type: "text", id: "betreffFeld"});
+    const betreffContainer = createEl("div", {class: "betreff-container", id: "betreff-container"}, [betreffFeld]);
 
-    const container = document.createElement("div");
-    container.setAttribute("class", "container");
-    container.setAttribute("id", "container");
-
-    const editorContainer = document.createElement("div");
-    editorContainer.setAttribute("class", "editor-container");
-    editorContainer.setAttribute("id", "editor-container");
-
-    const editorTextarea = document.createElement("textarea");
-    editorTextarea.setAttribute("id", "editor");
-    editorTextarea.setAttribute("name", "editor");
-
-    const buttoncontainer = document.createElement("div");
-    buttoncontainer.setAttribute("class", "button-container");
-    buttoncontainer.setAttribute("id", "button-container");
-
-    const saveButton = document.createElement("button");
-    saveButton.setAttribute("class", "btn");
-    saveButton.setAttribute("id", "btn-save");
-    saveButton.textContent = "Speichern";
-
-    const betreffContainer = document.createElement("div");
-    betreffContainer.setAttribute("class", "betreff-container");
-    betreffContainer.setAttribute("id", "betreff-container");
-
-    const betreffFeld = document.createElement("input");
-    betreffFeld.setAttribute("type", "text");
-    betreffFeld.setAttribute("id", "betreffFeld"); 
+    const buttoncontainer = createEl("div", {class: "button-container", id: "button-container"}, [
+        createEl("button", {class: "btn", id: "btn-save", textContent: "Speichern"})
+    ]);
     
-    const betreffLabel = document.createElement("label");
-    betreffLabel.setAttribute("for", "betreffFeld");
-    betreffLabel.innerHTML = "Betreff";
-    betreffLabel.classList.add("label-color");
-
-    betreffContainer.appendChild(betreffFeld);       
-    buttoncontainer.appendChild(saveButton);
-    editorContainer.appendChild(betreffLabel);
-    editorContainer.appendChild(betreffContainer); 
-    editorContainer.appendChild(editorTextarea);
-    editorContainer.appendChild(buttoncontainer);
-   
-    editorContainer.appendChild(createPriorityDropDown());
+    editorContainer.append(betreffLabel, betreffContainer, editorTextarea, buttoncontainer, createPriorityDropDown());
     container.appendChild(editorContainer);
     document.body.appendChild(container);
-
+    
     const editor = Jodit.make("#editor", {
         saveHeightInStorage: true,
         allowResizeX: true,
@@ -156,6 +125,13 @@ function setTicketCreate() {
         saveSelectionOnBlur: true
     });
     editor.focus();
+}
+
+function createEl(tag, attributes = {}, children = []) {
+    const element = document.createElement(tag);
+    for (let attr in attributes) element.setAttribute(attr, attributes[attr]);
+        children.forEach(child => element.appendChild(child));
+    return element;
 }
 
 function setTickets() {
