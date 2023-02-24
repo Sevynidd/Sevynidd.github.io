@@ -95,18 +95,28 @@ function setTicketCreate(){
 
     const buttoncontainer = document.createElement("div");
     buttoncontainer.setAttribute("class", "button-container");
+    buttoncontainer.setAttribute("id", "button-container");
 
     const saveButton = document.createElement("button");
     saveButton.setAttribute("class", "btn");
     saveButton.setAttribute("id", "btn-save");
     saveButton.textContent = "Speichern";
-    
-    document.body.appendChild(container);
-   
-    container.appendChild(editorContainer);
+
+    const betreffContainer = document.createElement("div");
+    betreffContainer.setAttribute("class", "betreff-container");
+    betreffContainer.setAttribute("id", "betreff-container");
+
+    const betreffFeld = document.createElement("input");
+    betreffFeld.setAttribute("type", "text");
+    betreffFeld.setAttribute("id", "betreffFeld");
+
+    document.body.appendChild(container);   
     editorContainer.appendChild(editorTextarea);
     editorContainer.appendChild(buttoncontainer);
-    buttoncontainer.appendChild(saveButton);   
+    buttoncontainer.appendChild(saveButton);
+    betreffContainer.appendChild(betreffFeld);
+    editorContainer.appendChild(betreffContainer);
+    container.appendChild(editorContainer);
 
     const editor = Jodit.make("#editor", {
         saveHeightInStorage: true,

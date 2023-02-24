@@ -117,3 +117,14 @@ body{
   justify-content: center;
   position: relative;
 }
+
+.betreff-container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.betreff-container input{
+  width: 20%;
+  display: flex;
+  align-items: stretch;
+}
