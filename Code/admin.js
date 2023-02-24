@@ -1,3 +1,3 @@
-window.onload = function() {
-    getDarkMode(); 
+window.onload = function () {
+    getDarkMode();
 }
