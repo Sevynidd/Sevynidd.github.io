@@ -1,7 +1,7 @@
 const styles = getComputedStyle(document.body);
 const highlightColor = styles.getPropertyValue("--highlight");
 const dark_mode_button = document.getElementById("btn-darkmode");
-var editorText;
+var editorText, betreffText;
 
 //Liste der Buttons für funktionalitäten auf der Navbar, DarkmodeButton ausgeschlossen
 var Buttons = [
@@ -61,8 +61,30 @@ function setButtonText() {
 document.body.addEventListener('click', function (event) {
     if (event.target.id === 'btn-save') {
         editorText = editor.value;
+        betreffText = betreffFeld.value;
     }
 });
+
+function createPriorityDropDown() {  
+    const priorityDD = document.createElement("select");
+    priorityDD.setAttribute("id", "prio");
+    priorityDD.setAttribute("name", "pro");
+    
+    const options = ["Niedrig", "Mittel", "Hoch", "Sofort bearbeiten", "Hardware"];
+    options.forEach(option => {
+        const opt = document.createElement("option");
+        opt.value = option;
+        opt.text = option;
+        priorityDD.appendChild(opt);
+    });
+    
+    const priorityDDContainer = document.createElement("div");
+    priorityDDContainer.setAttribute("class", "prio-container");
+    priorityDDContainer.setAttribute("id", "prio-container");
+    priorityDDContainer.appendChild(priorityDD);
+    
+    return priorityDDContainer;
+}
 
 function setDashboard() {
     //TODO: Dashboard setzen, heißt die aktuellen tickets und so    
@@ -103,21 +125,23 @@ function setTicketCreate() {
 
     const betreffFeld = document.createElement("input");
     betreffFeld.setAttribute("type", "text");
-    betreffFeld.setAttribute("id", "betreffFeld");
+    betreffFeld.setAttribute("id", "betreffFeld"); 
+    
+    const betreffLabel = document.createElement("label");
+    betreffLabel.setAttribute("for", "betreffFeld");
+    betreffLabel.innerHTML = "Betreff";
+    betreffLabel.classList.add("label-color");
 
-    document.body.appendChild(container);   
+    betreffContainer.appendChild(betreffFeld);       
+    buttoncontainer.appendChild(saveButton);
+    editorContainer.appendChild(betreffLabel);
+    editorContainer.appendChild(betreffContainer); 
     editorContainer.appendChild(editorTextarea);
     editorContainer.appendChild(buttoncontainer);
-    buttoncontainer.appendChild(saveButton);
-    betreffContainer.appendChild(betreffFeld);
-    editorContainer.appendChild(betreffContainer);
+   
+    editorContainer.appendChild(createPriorityDropDown());
     container.appendChild(editorContainer);
     document.body.appendChild(container);
-
-    container.appendChild(editorContainer);
-    editorContainer.appendChild(editorTextarea);
-    editorContainer.appendChild(buttoncontainer);
-    buttoncontainer.appendChild(saveButton);
 
     const editor = Jodit.make("#editor", {
         saveHeightInStorage: true,
