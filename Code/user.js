@@ -17,7 +17,6 @@ var ButtonsText = [
 ];
 
 window.onload = function () {
-    getDarkMode();
     setButtonText();
     resetHighlight();
     Buttons[0].style.background = highlightColor;
@@ -58,10 +57,6 @@ function setButtonText() {
         Buttons[i].querySelector('#btn-text').textContent = ButtonsText[i];
     }
 }
-
-dark_mode_button.addEventListener("click", function (event) {
-    toggleDarkmode();
-});
 
 document.body.addEventListener('click', function (event) {
     if (event.target.id === 'btn-save') {

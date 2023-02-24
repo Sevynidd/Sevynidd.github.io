@@ -9,11 +9,6 @@ var PopUp = document.getElementById("PopUp");
 var BenutzerEdit = document.getElementById("EditBenutzername");
 var PasswortEdit = document.getElementById("PasswortEditPasswort");
 
-//DarkMode und Icon entsprechend ändern - Listener und die Funktion
-dark_mode_button.addEventListener("click", function (event) {
-    toggleDarkmode();
-});
-
 function togglePasswordVisibility() {
     var passwordFieldInput = document.getElementById("PasswortEditPasswort");
     const password_visible_icon = document.getElementById("IconPasswordVisible");
@@ -33,11 +28,7 @@ password_visible_button.addEventListener("click", function (event) {
 
 password_reset.addEventListener("click", function (event) {
     PopUp_Text("Bitte wende dich an den Administrator");
-});
-
-window.onload = function () {
-    getDarkMode();
-}
+})
 
 function PopUp_Text(text) {
     PopUp.textContent = text;
