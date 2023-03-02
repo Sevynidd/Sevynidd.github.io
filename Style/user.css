@@ -66,7 +66,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(118, 118, 118);
+  background: #767676;
   width: 40px;
   height: 40px;
   border-radius: 20px;
@@ -86,7 +86,7 @@ body {
   margin-left: 15px;
   height: 20px;
   width: fit-content;
-  background: white;
+  background: var(--white-color);
   font: inherit;
   font-size: 14px;
   border-radius: 4px;
@@ -96,7 +96,7 @@ body {
   -o-border-radius: 4px;
   padding-right: 15px;
 }
-#version-background i {
+#version-status {
   width: 10px;
   height: 10px;
   background: #38dd23;
@@ -150,95 +150,4 @@ body {
   -moz-transform: scale(0.98);
   -ms-transform: scale(0.98);
   -o-transform: scale(0.98);
-}
-
-#btn-save {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  margin: 10px;
-  height: 30px;
-  width: 110px;
-  max-height: 30px;
-  background: var(--highlight);
-  display: flex;
-  justify-content: space-evenly;
-  padding: 0 10px;
-  margin: 0 auto;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
-.editor-container {
-  position: relative;
-  flex: 1;
-  top: 200px;
-  left: calc(var(--navbar-width) + 100px);
-  display: flex;
-  flex-direction: column;
-  align-items: normal;
-}
-
-#editor {
-  height: 200px;
-}
-
-.button-container {
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.betreff-container{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 100px;
-}
-.betreff-container input{
-  width: 20%;
-  display: flex;
-  align-items: stretch;
-  height: 30px;
-  font-size: large;
-}
-
-.betreffLabel {
-  color: white;
-}
-
-.betreffFeld {
-  border-radius: 10px;
-  border: none;
-}
-
-.prio-container select {
-  display: block;
-  max-width: 320px;
-  height: 50px;
-  margin: 5px 0px;
-  padding: 0px 24px;
-  font-size: 16px;
-  line-height: 1.75;
-  color: #333;
-  background-color: #ffffff;
-  background-image: none;
-  border: 1px solid #0ebeff;
-  -ms-word-break: normal;
-  word-break: normal; 
-}
-.prio-container::after {
-  content: '\25BC'; /* Zeige Pfeil als Content */
-  font-size: 12px; /* Pfeilgröße */
-  position: absolute; /* Setze Position auf absolut */
-  top: 50%; /* Zentriere vertikal */
-  right: 10px; /* Positioniere rechts */
-  transform: translateY(-50%); /* Zentriere vertikal */
-  pointer-events: none; /* Ignoriere Klicks */
 }
