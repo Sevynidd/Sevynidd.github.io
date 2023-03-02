@@ -1,78 +1,94 @@
-:root{
-  --navbar-width: 270px;
-  --navbar-width-collapsed: 60px;
+:root {
+  --navbar-width: 250px;
 }
-body{
-    background: var(--primary-color);
-    overflow: hidden;
-    transition: background-color 0.3s ease-in-out;
-}
-.navBar{
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    transform: translate(-3px);
-    width: var(--navbar-width-collapsed);
-    height: 100%;
-    background: var(--secondary-color);
-    border-radius: 6px;
-    box-shadow: 6px 6px 6px var(--secondary-color-shadow);
-    overflow: hidden;
-    transition: width 0.1s ease-in-out;
-    display: flex;
-    z-index: 2;
-}
-.navBar ul{
-  transform: translate(12px);
-}
-.navBar-items{
+
+body {
+  background: var(--primary-color);
   display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  padding: 2px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;  
 }
-.navBar-items img{
+
+.navBar {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: var(--navbar-width);
+  background: var(--secondary-color);
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+.navBar img {
+  display: block;
+  text-align: center;
   margin: 15px;
-  margin-left: 48px;
   margin-bottom: 20px;
 }
-.navBar:hover{
-  width: var(--navbar-width);
-  transition: width 0.1s ease-in-out;
-  
+.navBar-items-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
 }
-.btn{
+.navBar-buttons {
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+}
+
+#btn-text {
+  color: var(--white-color);
+}
+
+.content-container {
+  display: block;
+  position: absolute;
+  width: calc(100% - var(--navbar-width));
+  margin-left: var(--navbar-width);
+  height: 100%;
+}
+
+.btn {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   height: 45px;
-  width: var(--navbar-width - 8px);
   background: var(--secondary-color);
   border: none;
   border-radius: 5px;
-  margin-right: 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
   padding-left: 10px;
   font-size: 16px;
-  /*border-bottom: 1px solid var(--dark-color);*/
 }
-.btn:hover{
+
+.btn:hover {
   background: var(--highlight);
   transition: background-color 0.2s ease;
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  -ms-transition: background-color 0.2s ease;
+  -o-transition: background-color 0.2s ease;
 }
-.btn i{
-  order: -1;
+
+.btn i {
   margin-right: 15px;
-  padding-right: px;
 }
 
-.btn:active{
+.btn:active {
   transform: scale(0.98);
-}
-
-#btn-darkmode{
-  position: absolute;
-  bottom: 10px;
-  width: auto;
+  -webkit-transform: scale(0.98);
+  -moz-transform: scale(0.98);
+  -ms-transform: scale(0.98);
+  -o-transform: scale(0.98);
 }
 
 #btn-save {
@@ -87,20 +103,20 @@ body{
   display: flex;
   justify-content: space-evenly;
   padding: 0 10px;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  height: 100vh; 
+  height: 100vh;
 }
 
 .editor-container {
   position: relative;
   flex: 1;
   top: 200px;
-  left: 200px;
+  left: calc(var(--navbar-width) + 100px);
   display: flex;
   flex-direction: column;
   align-items: normal;
@@ -116,4 +132,52 @@ body{
   align-items: center;
   justify-content: center;
   position: relative;
+}
+
+.betreff-container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 100px;
+}
+.betreff-container input{
+  width: 20%;
+  display: flex;
+  align-items: stretch;
+  height: 30px;
+  font-size: large;
+}
+
+.betreffLabel {
+  color: white;
+}
+
+.betreffFeld {
+  border-radius: 10px;
+  border: nonew;
+}
+
+.prio-container select {
+  display: block;
+  max-width: 320px;
+  height: 50px;
+  margin: 5px 0px;
+  padding: 0px 24px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #333;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #0ebeff;
+  -ms-word-break: normal;
+  word-break: normal; 
+}
+.prio-container::after {
+  content: '\25BC'; /* Zeige Pfeil als Content */
+  font-size: 12px; /* Pfeilgröße */
+  position: absolute; /* Setze Position auf absolut */
+  top: 50%; /* Zentriere vertikal */
+  right: 10px; /* Positioniere rechts */
+  transform: translateY(-50%); /* Zentriere vertikal */
+  pointer-events: none; /* Ignoriere Klicks */
 }
