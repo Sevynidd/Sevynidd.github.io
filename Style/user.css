@@ -82,6 +82,30 @@ body {
   margin-left: 15px;
   color: var(--white-color);
 }
+#version-background {
+  margin-left: 15px;
+  height: 20px;
+  width: fit-content;
+  background: white;
+  font: inherit;
+  font-size: 14px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  padding-right: 15px;
+}
+#version-background i {
+  width: 10px;
+  height: 10px;
+  background: #38dd23;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+#Benutzer {
+  margin-top: 20px;
+}
 .content-container {
   display: block;
   position: absolute;
@@ -191,7 +215,7 @@ body {
 
 .betreffFeld {
   border-radius: 10px;
-  border: nonew;
+  border: none;
 }
 
 .prio-container select {
