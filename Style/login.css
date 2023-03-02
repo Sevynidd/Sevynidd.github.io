@@ -5,15 +5,6 @@ html {
 
 body {
   background: var(--secondary-color);
-  background-image:
-    radial-gradient(at 10% 10%, var(--highlight) 0%, transparent 40%),
-    radial-gradient(at 90% 70%, #f69f1d88 0%, transparent 30%), 
-    radial-gradient(at 20% 90%, #004a7c 0%, transparent 30%);
-  transition: background-color 0.3s ease-in-out;
-  -webkit-transition: background-color 0.3s ease-in-out;
-  -moz-transition: background-color 0.3s ease-in-out;
-  -ms-transition: background-color 0.3s ease-in-out;
-  -o-transition: background-color 0.3s ease-in-out;
 }
 
 .SP_Data_Logo {
@@ -62,8 +53,8 @@ body {
   text-align: center;
   padding: 20px;
   font-size: 26px;
-  color: var(--dark-color);
-  border-bottom: 1px solid var(--dark-color);
+  color: var(--white-color);
+  border-bottom: 1px solid var(--white-color);
 }
 
 .center form {
@@ -73,7 +64,7 @@ body {
 
 form .txt_field {
   position: relative;
-  border-bottom: 2px solid var(--dark-color);
+  border-bottom: 2px solid var(--white-color);
   margin: 30px 0;
 }
 
@@ -82,7 +73,7 @@ form .txt_field {
   padding: 0 5px;
   height: 40px;
   font-size: 16px;
-  color: var(--dark-color);
+  color: var(--white-color);
   border: none;
   background: none;
   outline: none;
@@ -92,7 +83,7 @@ form .txt_field {
   position: absolute;
   top: 50%;
   left: 5px;
-  color: var(--dark-color);
+  color: var(--white-color);
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
@@ -119,7 +110,7 @@ form .txt_field {
   left: 0;
   width: 0%;
   height: 2px;
-  background: var(--dark-color);
+  background: var(--white-color);
   transition: .5s;
   -webkit-transition: .5s;
   -moz-transition: .5s;
@@ -131,11 +122,11 @@ form .txt_field {
 .txt_field input:valid~label {
   top: -5px;
   font-size: 12px;
-  color: var(--dark-color);
+  color: var(--white-color);
 }
 
 .PopUp {
-  background: var(--dark-color);
+  background: var(--white-color);
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -164,7 +155,7 @@ form .txt_field {
 
 .pass {
   margin: -5px 0 20px 5px;
-  color: var(--dark-color);
+  color: var(--white-color);
   cursor: pointer;
 }
 
@@ -205,5 +196,5 @@ input[type="submit"]:hover {
   right: 15px;
   position: absolute;
   font-size: 12px;
-  color: var(--dark-color);
+  color: var(--white-color);
 }

@@ -2,15 +2,15 @@
   --primary-color: #2e2e2e;
   --secondary-color: #383838;
   --secondary-color-shadow: #272727;
-  --dark-color: #e2e2e2;
+  --white-color: #e2e2e2;
   --highlight: #f6a01d;
+  font-family: Verdana, sans-serif;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Verdana, sans-serif;
 }
 
 #editor—wrapper {
