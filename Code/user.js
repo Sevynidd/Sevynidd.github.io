@@ -9,14 +9,9 @@ var Buttons = [
     document.getElementById("btn-tickets")
 ];
 
-var ButtonsText = [
-    "Dashboard",
-    "Ticket erstellen",
-    "Tickets"
-];
 
 window.onload = function () {
-    setButtonText();
+
     resetHighlight();
     Buttons[0].style.background = highlightColor;
     setDashboard();
@@ -48,12 +43,6 @@ function hideAllElements() {
 function resetHighlight() {
     for (var i = 0; i < Buttons.length; i++) {
         Buttons[i].style.background = '';
-    }
-}
-
-function setButtonText() {
-    for (var i = 0; i < Buttons.length; i++) {
-        Buttons[i].querySelector('#btn-text').textContent = ButtonsText[i];
     }
 }
 
