@@ -18,25 +18,19 @@ window.onload = function () {
 for (let i = 0; i < Buttons.length; i++) {
     Buttons[i].addEventListener("click", function (event) {
         if ((Buttons[i] === Buttons[0]) && Buttons[i].style.background === '') {
-            hideAllElements();
             setDashboard();
         } else if (Buttons[i] === Buttons[1] && Buttons[i].style.background === '') {
-            hideAllElements();
+
             setTicketCreate();
         } else if (Buttons[i] === Buttons[2] && Buttons[i].style.background === '') {
-            hideAllElements();
+
             setTickets();
         }
         resetHighlight();
         Buttons[i].style.background = highlightColor;
     });
 }
-function hideAllElements() {
-    const container = document.getElementById("container");
-    if (container) {
-        document.body.removeChild(container);
-    }
-}
+
 
 function resetHighlight() {
     for (var i = 0; i < Buttons.length; i++) {
@@ -94,10 +88,7 @@ function setTicketCreate() {
 // Eine Betreffzeile
 // Speichern
 // Abbrechen
-$(function(){
     $("#content-container").load("/UserIncludes/TicketCreate.php"); 
-});
- 
 }
   
 
@@ -109,7 +100,4 @@ $(function(){
     $("#content-container").load("/UserIncludes/Tickets.php"); 
 });
 }
-
-
-
 
