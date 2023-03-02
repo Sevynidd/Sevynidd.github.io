@@ -66,7 +66,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(118, 118, 118);
+  background: #767676;
   width: 40px;
   height: 40px;
   border-radius: 20px;
@@ -86,7 +86,7 @@ body {
   margin-left: 15px;
   height: 20px;
   width: fit-content;
-  background: white;
+  background: var(--white-color);
   font: inherit;
   font-size: 14px;
   border-radius: 4px;
@@ -96,7 +96,7 @@ body {
   -o-border-radius: 4px;
   padding-right: 15px;
 }
-#version-background i {
+#version-status {
   width: 10px;
   height: 10px;
   background: #38dd23;
