@@ -11,7 +11,6 @@ var Buttons = [
 
 
 window.onload = function () {
-
     resetHighlight();
     Buttons[0].style.background = highlightColor;
     setDashboard();
@@ -93,39 +92,8 @@ function setTicketCreate() {
 // Eine Betreffzeile
 // Speichern
 // Abbrechen
-    const editorContainer = createHTMLElement("div", {class: "editor-container", id: "editor-container"});
-    const editorTextarea = createHTMLElement("textarea", {id: "editor", name: "editor"});
-    const buttoncontainer = createHTMLElement("div", {class: "button-container", id: "button-container"});
-    const saveButton = createHTMLElement("button", {class: "btn", id: "btn-save"}, "Speichern");
-    const betreffContainer = createHTMLElement("div", {class: "betreff-container", id: "betreff-container"});
-    const betreffFeld = createHTMLElement("input", {type: "text", id: "betreffFeld", class: "betreffFeld"});
-    const betreffLabel = createHTMLElement("label", {for: "betreffFeld", class: "betreffLabel"}, "Betreff");
-  
-    
-    betreffContainer.appendChild(betreffFeld);
-    buttoncontainer.appendChild(saveButton);
-    editorContainer.appendChild(betreffLabel);
-    editorContainer.appendChild(betreffContainer);
-    editorContainer.appendChild(editorTextarea);
-    editorContainer.appendChild(buttoncontainer);
-    editorContainer.appendChild(createPriorityDropDown());
-    container.appendChild(editorContainer);
-    document.body.appendChild(container);
-  
-    const editor = Jodit.make("#editor", {
-      saveHeightInStorage: true,
-      allowResizeX: true,
-      allowResizeY: true,
-      resizer: true,
-      height: 600,
-      minHeight: 400,
-      minWidth: 800,
-      maxHeight: 1000,
-      maxWidth: 1500,
-      saveSelectionOnBlur: true
-    });
-    editor.focus();
-  }
+ 
+}
   
 
 function setTickets() {
