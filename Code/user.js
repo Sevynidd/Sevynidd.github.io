@@ -20,10 +20,8 @@ for (let i = 0; i < Buttons.length; i++) {
         if ((Buttons[i] === Buttons[0]) && Buttons[i].style.background === '') {
             setDashboard();
         } else if (Buttons[i] === Buttons[1] && Buttons[i].style.background === '') {
-
             setTicketCreate();
         } else if (Buttons[i] === Buttons[2] && Buttons[i].style.background === '') {
-
             setTickets();
         }
         resetHighlight();
@@ -89,6 +87,7 @@ function setTicketCreate() {
 // Speichern
 // Abbrechen
     $("#content-container").load("/UserIncludes/TicketCreate.php"); 
+    
 }
   
 
