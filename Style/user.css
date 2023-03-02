@@ -35,23 +35,60 @@ body {
   display: flex;
   flex-direction: column;
   margin: 10px;
+  list-style: none;
 }
 .navBar-buttons {
   display: flex;
   flex-direction: column;
   padding: 4px;
 }
-
-#btn-text {
+.navBar-buttons p {
   color: var(--white-color);
 }
+.user-container {
+  position: absolute;
+  bottom: 5px;
+  margin: 15px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: var(--navbar-width);
 
+}
+.navBar-buttons-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.navBar-buttons-bottom i{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(118, 118, 118);
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.navBar-buttons-bottom p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15px;
+  color: var(--white-color);
+}
 .content-container {
   display: block;
   position: absolute;
   width: calc(100% - var(--navbar-width));
   margin-left: var(--navbar-width);
   height: 100%;
+  padding: 15px;
 }
 
 .btn {

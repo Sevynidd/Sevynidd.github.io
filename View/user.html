@@ -6,7 +6,7 @@
   <title>Ticketsystem - User</title>
   <link rel="stylesheet" href="/Style/user.css">
   <link rel="stylesheet" href="/Style/global.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />s
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
   <link rel="stylesheet" href="/jodit-3.24.5/build/jodit.min.css" />
   <script type="text/javascript" src="/jodit-3.24.5\build\jodit.min.js" defer></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -16,25 +16,35 @@
 <body>
   <nav class="navBar">
     <img class="SP_Data_Logo" src="/Bilder/Logo SP_Data ohne Claim.png" alt="SP_Data Logo ohne Claim" width="150px">
-    
-    <ul class="navBar-items-container">      
+
+    <ul class="navBar-items-container">
       <li class="navBar-buttons">
         <button class="btn" id="btn-dashboard"><i class="fa-solid fa-house fa-inverse fa-xl"></i>
-          <p id="btn-text">Dashboard</p>
+          <p>Dashboard</p>
         </button>
       </li>
       <li class="navBar-buttons">
         <button class="btn" id="btn-ticketCreate"><i class="fa-solid fa-pen fa-inverse  fa-xl"></i>
-          <p id="btn-text">Ticket erstellen</p>
+          <p>Ticket erstellen</p>
         </button>
       </li>
       <li class="navBar-buttons">
         <button class="btn" id="btn-tickets"><i class="fa-solid fa-ticket fa-inverse  fa-xl"></i>
-          <p id="btn-text">Tickets</p>
+          <p>Tickets</p>
         </button>
       </li>
     </ul>
   </nav>
+  <ul class="user-container">
+    <li class="navBar-buttons-bottom">
+      <p>Version</p>
+    </li>
+    <li class="navBar-buttons-bottom">
+      <i class="fa-solid fa-b fa-inverse fa-l"></i> 
+      <p>Benutzer</p>
+    </li>
+  </ul>
+
   <div class="content-container" id="content-container">
 
   </div>
