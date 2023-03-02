@@ -1,6 +1,5 @@
 const styles = getComputedStyle(document.body);
 const highlightColor = styles.getPropertyValue("--highlight");
-const dark_mode_button = document.getElementById("btn-darkmode");
 var editorText, betreffText;
 
 //Liste der Buttons für funktionalitäten auf der Navbar, DarkmodeButton ausgeschlossen
@@ -105,7 +104,6 @@ function setTicketCreate() {
 // Eine Betreffzeile
 // Speichern
 // Abbrechen
-    const container = createHTMLElement("div", {class: "container", id: "container"});
     const editorContainer = createHTMLElement("div", {class: "editor-container", id: "editor-container"});
     const editorTextarea = createHTMLElement("textarea", {id: "editor", name: "editor"});
     const buttoncontainer = createHTMLElement("div", {class: "button-container", id: "button-container"});
@@ -114,6 +112,7 @@ function setTicketCreate() {
     const betreffFeld = createHTMLElement("input", {type: "text", id: "betreffFeld", class: "betreffFeld"});
     const betreffLabel = createHTMLElement("label", {for: "betreffFeld", class: "betreffLabel"}, "Betreff");
   
+    
     betreffContainer.appendChild(betreffFeld);
     buttoncontainer.appendChild(saveButton);
     editorContainer.appendChild(betreffLabel);
