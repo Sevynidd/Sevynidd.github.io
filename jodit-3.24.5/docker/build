@@ -1,3 +1,0 @@
-#!/bin/bash
-
-docker run --rm -v $PWD/..:/app --user jodit jodit bash -c "npm run build"
