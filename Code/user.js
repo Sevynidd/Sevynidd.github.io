@@ -1,6 +1,5 @@
 const styles = getComputedStyle(document.body);
 const highlightColor = styles.getPropertyValue("--highlight");
-const dark_mode_button = document.getElementById("btn-darkmode");
 var editorText, betreffText;
 
 //Liste der Buttons für funktionalitäten auf der Navbar, DarkmodeButton ausgeschlossen
@@ -10,14 +9,7 @@ var Buttons = [
     document.getElementById("btn-tickets")
 ];
 
-var ButtonsText = [
-    "Dashboard",
-    "Ticket erstellen",
-    "Tickets"
-];
-
 window.onload = function () {
-    setButtonText();
     resetHighlight();
     Buttons[0].style.background = highlightColor;
     setDashboard();
@@ -26,35 +18,23 @@ window.onload = function () {
 for (let i = 0; i < Buttons.length; i++) {
     Buttons[i].addEventListener("click", function (event) {
         if ((Buttons[i] === Buttons[0]) && Buttons[i].style.background === '') {
-            hideAllElements();
             setDashboard();
         } else if (Buttons[i] === Buttons[1] && Buttons[i].style.background === '') {
-            hideAllElements();
+
             setTicketCreate();
         } else if (Buttons[i] === Buttons[2] && Buttons[i].style.background === '') {
-            hideAllElements();
+
             setTickets();
         }
         resetHighlight();
         Buttons[i].style.background = highlightColor;
     });
 }
-function hideAllElements() {
-    const container = document.getElementById("container");
-    if (container) {
-        document.body.removeChild(container);
-    }
-}
+
 
 function resetHighlight() {
     for (var i = 0; i < Buttons.length; i++) {
         Buttons[i].style.background = '';
-    }
-}
-
-function setButtonText() {
-    for (var i = 0; i < Buttons.length; i++) {
-        Buttons[i].querySelector('#btn-text').textContent = ButtonsText[i];
     }
 }
 
@@ -87,7 +67,10 @@ function createPriorityDropDown() {
 }
 
 function setDashboard() {
-    //TODO: Dashboard setzen, heißt die aktuellen tickets und so    
+    //TODO: Dashboard setzen, heißt die aktuellen tickets und so 
+    $(function(){
+        $("#content-container").load("/UserIncludes/Dashboard.php"); 
+    });   
 }
 function createHTMLElement(tagName, attributes = {}, textContent = '') {
     const element = document.createElement(tagName);
@@ -105,46 +88,16 @@ function setTicketCreate() {
 // Eine Betreffzeile
 // Speichern
 // Abbrechen
-    const container = createHTMLElement("div", {class: "container", id: "container"});
-    const editorContainer = createHTMLElement("div", {class: "editor-container", id: "editor-container"});
-    const editorTextarea = createHTMLElement("textarea", {id: "editor", name: "editor"});
-    const buttoncontainer = createHTMLElement("div", {class: "button-container", id: "button-container"});
-    const saveButton = createHTMLElement("button", {class: "btn", id: "btn-save"}, "Speichern");
-    const betreffContainer = createHTMLElement("div", {class: "betreff-container", id: "betreff-container"});
-    const betreffFeld = createHTMLElement("input", {type: "text", id: "betreffFeld", class: "betreffFeld"});
-    const betreffLabel = createHTMLElement("label", {for: "betreffFeld", class: "betreffLabel"}, "Betreff");
-  
-    betreffContainer.appendChild(betreffFeld);
-    buttoncontainer.appendChild(saveButton);
-    editorContainer.appendChild(betreffLabel);
-    editorContainer.appendChild(betreffContainer);
-    editorContainer.appendChild(editorTextarea);
-    editorContainer.appendChild(buttoncontainer);
-    editorContainer.appendChild(createPriorityDropDown());
-    container.appendChild(editorContainer);
-    document.body.appendChild(container);
-  
-    const editor = Jodit.make("#editor", {
-      saveHeightInStorage: true,
-      allowResizeX: true,
-      allowResizeY: true,
-      resizer: true,
-      height: 600,
-      minHeight: 400,
-      minWidth: 800,
-      maxHeight: 1000,
-      maxWidth: 1500,
-      saveSelectionOnBlur: true
-    });
-    editor.focus();
-  }
+    $("#content-container").load("/UserIncludes/TicketCreate.php"); 
+}
   
 
 function setTickets() {
     //TODO: Ticketeinsicht erstellen
     // Ansicht meiner Tickets
     // Filterung einbauen z.b. nach Datum oder eine volltextsuche
-
+$(function(){
+    $("#content-container").load("/UserIncludes/Tickets.php"); 
+});
 }
-
 

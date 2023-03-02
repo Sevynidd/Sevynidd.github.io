@@ -35,23 +35,84 @@ body {
   display: flex;
   flex-direction: column;
   margin: 10px;
+  list-style: none;
 }
 .navBar-buttons {
   display: flex;
   flex-direction: column;
   padding: 4px;
 }
-
-#btn-text {
+.navBar-buttons p {
   color: var(--white-color);
 }
+.user-container {
+  position: absolute;
+  bottom: 5px;
+  margin: 15px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: var(--navbar-width);
 
+}
+.navBar-buttons-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.navBar-buttons-bottom i{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(118, 118, 118);
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.navBar-buttons-bottom p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15px;
+  color: var(--white-color);
+}
+#version-background {
+  margin-left: 15px;
+  height: 20px;
+  width: fit-content;
+  background: white;
+  font: inherit;
+  font-size: 14px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  padding-right: 15px;
+}
+#version-background i {
+  width: 10px;
+  height: 10px;
+  background: #38dd23;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+#Benutzer {
+  margin-top: 20px;
+}
 .content-container {
   display: block;
   position: absolute;
   width: calc(100% - var(--navbar-width));
   margin-left: var(--navbar-width);
   height: 100%;
+  padding: 15px;
 }
 
 .btn {
@@ -154,7 +215,7 @@ body {
 
 .betreffFeld {
   border-radius: 10px;
-  border: nonew;
+  border: none;
 }
 
 .prio-container select {
