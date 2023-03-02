@@ -74,7 +74,10 @@ function createPriorityDropDown() {
 }
 
 function setDashboard() {
-    //TODO: Dashboard setzen, heißt die aktuellen tickets und so    
+    //TODO: Dashboard setzen, heißt die aktuellen tickets und so 
+    $(function(){
+        $("#content-container").load("/UserIncludes/Dashboard.php"); 
+    });   
 }
 function createHTMLElement(tagName, attributes = {}, textContent = '') {
     const element = document.createElement(tagName);
@@ -92,6 +95,9 @@ function setTicketCreate() {
 // Eine Betreffzeile
 // Speichern
 // Abbrechen
+$(function(){
+    $("#content-container").load("/UserIncludes/TicketCreate.php"); 
+});
  
 }
   
@@ -100,7 +106,11 @@ function setTickets() {
     //TODO: Ticketeinsicht erstellen
     // Ansicht meiner Tickets
     // Filterung einbauen z.b. nach Datum oder eine volltextsuche
-
+$(function(){
+    $("#content-container").load("/UserIncludes/Tickets.php"); 
+});
 }
+
+
 
 
