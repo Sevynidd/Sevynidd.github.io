@@ -1,5 +1,5 @@
 :root {
-  --navbar-width: 270px;
+  --navbar-width: 230px;
   --navbar-width-collapsed: 60px;
 }
 
@@ -23,7 +23,7 @@ body {
   -moz-transform: translate(-3px);
   -ms-transform: translate(-3px);
   -o-transform: translate(-3px);
-  width: var(--navbar-width-collapsed);
+  width: var(--navbar-width);
   height: 100%;
   background: var(--secondary-color);
   border-radius: 6px;
@@ -58,18 +58,10 @@ body {
 
 .navBar-items img {
   margin: 15px;
-  margin-left: 48px;
-  margin-bottom: 20px;
+  text-align: center;
 }
 
-.navBar:hover {
-  width: var(--navbar-width);
-  transition: width 0.1s ease-in-out;
-  -webkit-transition: width 0.1s ease-in-out;
-  -moz-transition: width 0.1s ease-in-out;
-  -ms-transition: width 0.1s ease-in-out;
-  -o-transition: width 0.1s ease-in-out;
-}
+
 
 .btn {
   display: flex;
