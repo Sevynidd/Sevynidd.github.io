@@ -9,7 +9,6 @@ var Buttons = [
     document.getElementById("btn-tickets")
 ];
 
-
 window.onload = function () {
     resetHighlight();
     Buttons[0].style.background = highlightColor;
