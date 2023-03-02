@@ -26,15 +26,17 @@ body {
 }
 
 .navBar img {
-  margin: 15px;
+  display: block;
   text-align: center;
+  margin: 15px;
+  margin-bottom: 20px;
 }
 .navBar-items-container {
   display: flex;
   flex-direction: column;
   margin: 10px;
 }
-.navBar-items {
+.navBar-buttons {
   display: flex;
   flex-direction: column;
   padding: 4px;
@@ -42,6 +44,14 @@ body {
 
 #btn-text {
   color: var(--white-color);
+}
+
+.content-container {
+  display: block;
+  position: absolute;
+  width: calc(100% - var(--navbar-width));
+  margin-left: var(--navbar-width);
+  height: 100%;
 }
 
 .btn {
@@ -70,7 +80,6 @@ body {
 }
 
 .btn i {
-  order: -1;
   margin-right: 15px;
 }
 
