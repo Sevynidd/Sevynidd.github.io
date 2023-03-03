@@ -10,7 +10,7 @@
     <body>
         <h1>TicketCreate</h1> <br><br><br>
         <label for="betreff">Betreff</label><br><br>
-        <input type="text" list="dliste" id="betreff"/>
+        <input type="text" list="dliste" id="betreff" placeholder="Betreff"/>
         <datalist id="dliste">
             <option value="Aachener …">
             <option value="Hamburger …">
