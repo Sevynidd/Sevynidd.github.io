@@ -64,7 +64,6 @@ body {
 
 form .txt_field {
   position: relative;
-  border-bottom: 2px solid var(--white-color);
   margin: 30px 0;
 }
 
@@ -74,28 +73,16 @@ form .txt_field {
   height: 40px;
   font-size: 16px;
   color: var(--white-color);
-  border: none;
-  background: none;
-  outline: none;
+  background: var(--secondary-color);
+  border-style: hidden;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
-
-.txt_field label {
-  position: absolute;
-  top: 50%;
-  left: 5px;
-  color: var(--white-color);
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  font-size: 16px;
-  pointer-events: none;
-  transition: .5s;
-  -webkit-transition: .5s;
-  -moz-transition: .5s;
-  -ms-transition: .5s;
-  -o-transition: .5s;
+.txt_field input::-ms-reveal {
+  display: none;
 }
 
 #btn-password-visible {
