@@ -16,10 +16,13 @@
             <option value="Hamburger …">
             <option value="Mitteldeutscher …">
             <option value="Niederrheinische …">
-        </datalist>
+        </datalist><br>
+        <label for="prio">Priorität</label><br>
+        <select name="priority" id="prio">
+            <option>Work in Progress</option>
+        </select>
         <div class="background-color-editor">
-            <div id="editor"></div>
-            
+            <div id="editor"></div>            
                 <script>
                     var quill = new Quill('#editor', {
                         modules: {
@@ -44,6 +47,5 @@
                 </script>
         </div>        
         <button id="btn-submit" type="submit">Speichern</button>
-
     </body>
 </html>

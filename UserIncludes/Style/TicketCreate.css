@@ -47,15 +47,25 @@ body h1 {
     -o-transform: scale(0.95);
 }
 
-#betreff{
-    position: relative;
+#betreff {
+
     width: 300px;
     margin-bottom: 10px;
     height: 25px;
 }
-label[for="betreff"]{
+
+label[for="betreff"] {
    color: white; 
    margin-top: 50px;
    margin-bottom: 50px;
 }
-  
+
+#prio {
+    position: relative;
+    display: flex;
+}
+label[for="prio"] {
+    color: white; 
+    margin-top: 50px;
+    margin-bottom: 50px;
+ }
