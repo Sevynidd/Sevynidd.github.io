@@ -86,7 +86,7 @@ function setTicketCreate() {
 // Eine Betreffzeile
 // Speichern
 // Abbrechen
-    $("#content-container").load("/UserIncludes/TicketCreate.php");     
+    $("#content-container").load("/UserIncludes/TicketCreate.php");    
 }
   
 
