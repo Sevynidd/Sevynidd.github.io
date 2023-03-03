@@ -8,26 +8,35 @@
     <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
     </head>
     <body>
-        <h1>TicketCreate</h1>  
+        <h1>TicketCreate</h1> <br><br><br>
+        <label for="betreff">Betreff</label><br><br>
+        <input type="text" list="dliste" id="betreff"/>
+        <datalist id="dliste">
+            <option value="Aachener …">
+            <option value="Hamburger …">
+            <option value="Mitteldeutscher …">
+            <option value="Niederrheinische …">
+        </datalist>
         <div class="background-color-editor">
             <div id="editor"></div>
+            
                 <script>
                     var quill = new Quill('#editor', {
                         modules: {
-                        toolbar: [
-                            // eine eckige Klammer repräsentiert einen "abschnitt"
-                            // dadurch entsteht ein gewisser abstand zu anderen elementen
-                                [{ 'font': [] }],
-                                ['bold', 'italic', 'underline', 'strike'],
-                                ['blockquote', 'code-block'],
-                                [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-                                [{ 'list': 'ordered'}, { 'list': 'bullet' }],     
-                                [{ 'indent': '-1'}, { 'indent': '+1' }],        
-                                [{ 'direction': 'rtl' }],  
-                                [{ 'color': [] }, { 'background': [] }], 
-                                [{ 'align': [] }],
-
-                            ]
+                            toolbar: [
+                                // eine eckige Klammer repräsentiert einen "abschnitt"
+                                // dadurch entsteht ein gewisser abstand zu anderen elementen
+                                    [{ 'font': [] }],
+                                    ['bold', 'italic', 'underline', 'strike'],
+                                    ['blockquote', 'code-block'],
+                                    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+                                    [{ 'list': 'ordered'}, { 'list': 'bullet' }],     
+                                    [{ 'indent': '-1'}, { 'indent': '+1' }],        
+                                    [{ 'direction': 'rtl' }],  
+                                    [{ 'color': [] }, { 'background': [] }], 
+                                    [{ 'align': [] }],
+                                    ['image', 'link']
+                                ]
                         },
                         placeholder: 'Beschreibung zu deinem Problem',
                         theme: 'snow'  
@@ -35,5 +44,6 @@
                 </script>
         </div>        
         <button id="btn-submit" type="submit">Speichern</button>
+
     </body>
 </html>
