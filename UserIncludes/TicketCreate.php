@@ -29,13 +29,11 @@
 
                             ]
                         },
-                        placeholder: 'Compose an epic...',
-                        theme: 'snow'  // or 'bubble'
-
+                        placeholder: 'Beschreibung zu deinem Problem',
+                        theme: 'snow'  
                     });
                 </script>
-        </div>
-        
+        </div>        
         <button id="btn-submit" type="submit">Speichern</button>
     </body>
 </html>
