@@ -8,14 +8,14 @@
     <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
     </head>
     <body>
-        <h1 style="color: #ffffff">TicketCreate</h1>  
-        <div style="background: white; width: 1500px; height: 500px;">
-        <div id="editor" style="border: none"></div>
-            <script>
-                var quill = new Quill('#editor', {
-                    theme: "snow"
-                });
-            </script>
+        <h1>TicketCreate</h1>  
+        <div class="background-color-editor">
+            <div id="editor"></div>
+                <script>
+                    var quill = new Quill('#editor', {
+                        theme: "snow"
+                    });
+                </script>
         </div>
         
         <button id="btn-submit" type="submit">Speichern</button>
