@@ -1,6 +1,6 @@
 const styles = getComputedStyle(document.body);
 const highlightColor = styles.getPropertyValue("--highlight");
-var editorText, betreffText;
+var editorText;
 
 //Liste der Buttons für funktionalitäten auf der Navbar, DarkmodeButton ausgeschlossen
 var Buttons = [
@@ -37,9 +37,8 @@ function resetHighlight() {
 }
 
 document.body.addEventListener('click', function (event) {
-    if (event.target.id === 'btn-save') {
-        editorText = editor.value;
-        betreffText = betreffFeld.value;
+    if (event.target.id === 'btn-submit') {
+        editorText = quill.getText(0);
     }
 });
 
