@@ -69,3 +69,14 @@ label[for="prio"] {
     margin-top: 50px;
     margin-bottom: 50px;
  }
+
+ #cat {
+    position: relative;
+    display: flex;
+}
+label[for="cat"] {
+    color: white; 
+    margin-top: 50px;
+    margin-bottom: 50px;
+ }
+

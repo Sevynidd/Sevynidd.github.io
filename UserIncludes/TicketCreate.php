@@ -21,6 +21,10 @@
         <select name="priority" id="prio">
             <option>Work in Progress</option>
         </select>
+        <label for="cat">Kategorie</label><br>
+        <select name="category" id="cat">
+            <option>Work in Progress</option>
+        </select>
         <div class="background-color-editor">
             <div id="editor"></div>            
                 <script>
