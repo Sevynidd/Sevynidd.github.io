@@ -1,12 +1,3 @@
-html {
-  height: 100%;
-  width: 100%;
-}
-
-body {
-  background: var(--secondary-color);
-}
-
 .SP_Data_Logo {
   margin: 15px 15px;
   width: 150px;
@@ -27,11 +18,6 @@ body {
 }
 
 .center {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: flex-start;
-  align-items: stretch;
-  align-content: stretch;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -40,76 +26,24 @@ body {
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  width: clamp(250px, 450px, 450px);
+  width: 500px;
+  height: fit-content;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
   background-color: var(--primary-color);
+
 }
 
-.center h1 {
-  text-align: center;
-  padding: 20px;
-  font-size: 26px;
-  color: var(--white-color);
-  border-bottom: 1px solid var(--white-color);
+#containermy-4 {
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .center form {
-  padding: 0 40px;
   box-sizing: border-box;
-}
-
-form .txt_field {
-  position: relative;
-  margin: 30px 0;
-}
-
-.txt_field input {
-  width: 95%;
-  padding: 0 5px;
-  height: 40px;
-  font-size: 16px;
-  color: var(--white-color);
-  background: var(--secondary-color);
-  border-style: hidden;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-}
-.txt_field input::-ms-reveal {
-  display: none;
-}
-
-#btn-password-visible {
-  position: absolute;
-  right: 5px;
-}
-
-.txt_field span::before {
-  content: '';
-  position: absolute;
-  top: 40px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: var(--white-color);
-  transition: .5s;
-  -webkit-transition: .5s;
-  -moz-transition: .5s;
-  -ms-transition: .5s;
-  -o-transition: .5s;
-}
-
-.txt_field input:focus~label,
-.txt_field input:valid~label {
-  top: -5px;
-  font-size: 12px;
-  color: var(--white-color);
 }
 
 .PopUp {
