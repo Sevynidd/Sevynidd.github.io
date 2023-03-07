@@ -48,10 +48,13 @@ body h1 {
 }
 
 #betreff {
-
     width: 300px;
     margin-bottom: 10px;
     height: 25px;
+}
+
+input::-webkit-calendar-picker-indicator {
+    opacity: 100;
 }
 
 label[for="betreff"] {
@@ -64,19 +67,21 @@ label[for="betreff"] {
     position: relative;
     display: flex;
 }
+
 label[for="prio"] {
     color: white; 
     margin-top: 50px;
     margin-bottom: 50px;
- }
+}
 
  #cat {
     position: relative;
     display: flex;
 }
+
 label[for="cat"] {
     color: white; 
     margin-top: 50px;
     margin-bottom: 50px;
- }
+}
 
