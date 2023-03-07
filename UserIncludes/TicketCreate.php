@@ -8,25 +8,26 @@
     <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
     </head>
     <body>
-        <h1>TicketCreate</h1> <br><br><br>
-
-        <div class="container">
-            <label for="betreff">Betreff</label><br><br>
+        <h1>TicketCreate</h1>
+        <div class="container">        
+            <label for="betreff">Betreff</label>
             <input type="text" list="dliste" id="betreff" placeholder="Betreff"/>
             <datalist id="dliste">
                 <option value="Aachener …">
                 <option value="Hamburger …">
                 <option value="Mitteldeutscher …">
                 <option value="Niederrheinische …">
-            </datalist><br>
-            <label for="prio">Priorität</label><br>
-            <select name="priority" id="prio">
-                <option>Work in Progress</option>
-            </select>
-            <label for="cat">Kategorie</label><br>
-            <select name="category" id="cat">
-                <option>Work in Progress</option>
-            </select>
+            </datalist>
+            <div class="container-DD/CB">
+                <label for="prio">Priorität</label>
+                <select name="priority" id="prio">
+                    <option>Work in Progress</option>
+                </select>
+                <label for="cat">Kategorie</label>
+                <select name="category" id="cat">
+                    <option>Work in Progress</option>
+                </select>
+            </div>
             <div class="background-color-editor">
                 <div id="editor"></div>            
                     <script>
@@ -51,9 +52,11 @@
                             theme: 'snow'  
                         });
                     </script>
-            </div>        
-            <button id="btn-submit" type="submit">Speichern</button>
-            <button id="btn-cancel" type="submit">Abbrechen</button>
+            </div>    
+            <div class="container-btns">    
+                <button id="btn-submit" type="submit">Speichern</button>
+                <button id="btn-cancel" type="submit">Abbrechen</button>
+            </div>
         </div>
     </body>
 </html>

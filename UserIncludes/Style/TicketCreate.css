@@ -5,7 +5,7 @@ body h1 {
 .background-color-editor {
     background: white;
     width: 100%;
-    height: 500px;
+    height: 300px;
 }
 
 #editor {
@@ -13,11 +13,22 @@ body h1 {
 }
 
 .container {
-    width: 50%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    column-fill: balance;
+}
+.container-btns {
+    width: 100%;
+}
+
+.container-dropdowns {
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 #btn-submit {
-    width: 10%;
+    width: 15%;
     height: 40px;
     border: 2px solid;
     background: var(--highlight);
@@ -52,9 +63,9 @@ body h1 {
 }
 
 #btn-cancel {
-    width: 10%;
+    width: 15%;
     height: 25px;
-    margin-left: 79%;
+    margin-left: 69%;
     background: var(--secondary-color);
     border-radius: 25px;
     -webkit-border-radius: 25px;
@@ -78,7 +89,6 @@ body h1 {
 }
 
 #betreff {
-    width: 300px;
     margin-bottom: 10px;
     height: 25px;
 }
@@ -88,30 +98,24 @@ input::-webkit-calendar-picker-indicator {
 }
 
 label[for="betreff"] {
-   color: white; 
-   margin-top: 50px;
-   margin-bottom: 50px;
+   color: white;
+   margin-bottom: 2px; 
 }
 
 #prio {
-    position: relative;
-    display: flex;
+   width: 30%;
 }
 
 label[for="prio"] {
     color: white; 
-    margin-top: 50px;
-    margin-bottom: 50px;
 }
 
- #cat {
-    position: relative;
-    display: flex;
+#cat {
+    width: 30%;
 }
 
 label[for="cat"] {
+    margin-left: 16%;
     color: white; 
-    margin-top: 50px;
-    margin-bottom: 50px;
 }
 
