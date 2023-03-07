@@ -3,20 +3,6 @@
   width: 150px;
 }
 
-.btn {
-  background: inherit;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  padding: 3px;
-  border: none;
-  position: absolute;
-  top: 15px;
-  right: 15px;
-}
-
 .center {
   position: absolute;
   top: 50%;
@@ -36,6 +22,10 @@
   background-color: var(--primary-color);
 
 }
+#ButtonLogin {
+  background: var(--highlight);
+  border: var(--highlight);
+}
 
 #containermy-4 {
   padding-left: 25px;
@@ -44,72 +34,6 @@
 
 .center form {
   box-sizing: border-box;
-}
-
-.PopUp {
-  background: var(--white-color);
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
-  text-align: center;
-  margin: 0%;
-  scale: 0.1;
-  visibility: hidden;
-  transition: ease 0.1s;
-  -webkit-transition: ease 0.1s;
-  -moz-transition: ease 0.1s;
-  -ms-transition: ease 0.1s;
-  -o-transition: ease 0.1s;
-  font-size: 14px;
-  color: var(--primary-color);
-
-}
-
-.popupVisible {
-  visibility: visible;
-  margin: 3%;
-  scale: 1;
-}
-
-.pass {
-  margin: -5px 0 20px 5px;
-  color: var(--white-color);
-  cursor: pointer;
-}
-
-.pass:hover {
-  text-decoration: underline;
-}
-
-input[type="submit"] {
-  width: 100%;
-  height: 50px;
-  border: 2px solid;
-  background: var(--highlight);
-  border-radius: 25px;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  -ms-border-radius: 25px;
-  -o-border-radius: 25px;
-  font-size: 18px;
-  color: #e9f4fb;
-  font-weight: 700;
-  cursor: pointer;
-  outline: none;
-  margin-bottom: 25px;
-
-}
-
-input[type="submit"]:hover {
-  border-color: var(--primary-color);
-  transition: .3s;
-  -webkit-transition: .3s;
-  -moz-transition: .3s;
-  -ms-transition: .3s;
-  -o-transition: .3s;
 }
 
 #copyright {

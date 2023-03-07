@@ -10,7 +10,7 @@ function LogIn() {
     } else if ((EmailEdit.value == "benutzer@spdata.de") && (PasswortEdit.value == "benutzer")) {
         window.location.href = "/View/user.html";
     } else {
-        PopUp_Text("Die Anmeldedaten sind falsch");
+        //PopUp_Text("Die Anmeldedaten sind falsch");
     }
 }
 
