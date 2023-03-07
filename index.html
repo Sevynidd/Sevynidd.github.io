@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" dir="ltr">
+<html lang="de" dir="ltr" data-bs-theme="dark">
 
 <head>
   <meta charset="utf-8">
@@ -7,42 +7,59 @@
   <link rel="stylesheet" href="/Style/login.css">
   <link rel="stylesheet" href="/Style/global.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <script type="text/javascript" src="/Code/Login.js" defer></script>
 </head>
 
 <body>
-  <img class="SP_Data_Logo" src="/Bilder/Logo SP_Data ohne Claim inverted.png" alt="SP_Data Logo ohne Claim" width="150px">
 
-  <div class="center">
-    
-    <h1>SP_Data Ticketsystem</h1>
+  <div class="container-fluid">
+    <img class="SP_Data_Logo" 
+    src="/Bilder/Logo SP_Data ohne Claim inverted.png" 
+    alt="SP_Data Logo ohne Claim"
+    width="150px">
 
-    <form method="post">
+    <div class="center">
 
-      <div class="txt_field">
-        <input type="text" id="EditBenutzername" required pattern=".*\S.*" placeholder="Benutzername">
+      <div class="container my-4" id="containermy-4">
+
+        <h1 class="text-light text-center fw-bold mb-5">SP_Data Ticketsystem</h1>
+
+        <form method="post" class="mx-4">
+
+          <div class="mb-3 input-group">
+            <span class="input-group-text">
+              <span class="fa-solid fa-envelope"></span>
+            </span>
+            <input type="email" class="form-control" id="inputEmail" placeholder="E-Mail"> 
+          </div>
+          <div class="mb-3 input-group">
+            <span class="input-group-text">
+              <span class="fa-solid fa-key"></span>
+            </span>
+            <input type="password" class="form-control" id="inputPassword" placeholder="Passwort">
+          </div>
+
+          <div class="PopUp" id="PopUp">
+            <p id="popupText"></p>
+          </div>
+
+          <div class="pass mb-4" id="passwortvergessen">Passwort vergessen?</div>
+
+          <input type="submit" value="Login" id="ButtonLogin">
+
+        </form>
+
       </div>
 
-      <div class="txt_field">
-        <input type="password" id="PasswortEditPasswort" required pattern=".*\S.*" placeholder="Passwort">
-        <button class="btn" id="btn-password-visible">
-          <i class="fa-solid fa-eye fa-inverse fa-lg" id="IconPasswordVisible"></i>
-        </button>
-      </div>
+    </div>
 
-      <div class="PopUp" id="PopUp">
-        <p id="popupText"></p>
-      </div>
 
-      <div class="pass" id="passwortvergessen">Passwort vergessen?</div>
 
-      <input type="submit" value="Login" id="ButtonLogin">
-
-    </form>
+    <p id="copyright">(c) 2023 by SP_Data GmbH & Co. KG</p>
 
   </div>
-
-  <p id="copyright">(c) 2023 by SP_Data GmbH & Co. KG</p>
 
 </body>
 
