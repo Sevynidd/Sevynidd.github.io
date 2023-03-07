@@ -2,6 +2,7 @@ const styles = getComputedStyle(document.body);
 const highlightColor = styles.getPropertyValue("--highlight");
 var editorText;
 
+
 //Liste der Buttons für funktionalitäten auf der Navbar, DarkmodeButton ausgeschlossen
 var Buttons = [
     document.getElementById("btn-dashboard"),
@@ -28,7 +29,25 @@ for (let i = 0; i < Buttons.length; i++) {
         Buttons[i].style.background = highlightColor;
     });
 }
+function saveTicket(){
+    const catDD = document.getElementById("cat");
+    const prioDD = document.getElementById("prio");
 
+    editorText = quill.getText(0);
+    var catValue =  catDD.value;
+    var prioValue = prioDD.value;
+    const date = Date();
+    console.log(date, catValue, prioValue);
+}
+
+function cancelTicket(){
+    const catDD = document.getElementById("cat");
+    const prioDD = document.getElementById("prio");
+
+    quill.deleteText(0,quill.getLength());
+    prioDD.tabIndex = 1;
+    catDD.tabIndex = 1;
+}
 
 function resetHighlight() {
     for (var i = 0; i < Buttons.length; i++) {
@@ -38,7 +57,13 @@ function resetHighlight() {
 
 document.body.addEventListener('click', function (event) {
     if (event.target.id === 'btn-submit') {
-        editorText = quill.getText(0);
+        saveTicket();
+    }
+});
+
+document.body.addEventListener('click', function (event) {
+    if (event.target.id === 'btn-cancel') {
+        cancelTicket();
     }
 });
 
