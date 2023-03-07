@@ -1,30 +1,11 @@
 //Buttons
 const login_button = document.getElementById("ButtonLogin");
 const password_reset = document.getElementById("passwortvergessen");
-const password_visible_button = document.getElementById("btn-password-visible");
-const dark_mode_button = document.getElementById("btn-darkmode");
 //PopUp
 var PopUp = document.getElementById("PopUp");
 //Textfelder
-var BenutzerEdit = document.getElementById("EditBenutzername");
-var PasswortEdit = document.getElementById("PasswortEditPasswort");
-
-function togglePasswordVisibility() {
-    var passwordFieldInput = document.getElementById("PasswortEditPasswort");
-    const password_visible_icon = document.getElementById("IconPasswordVisible");
-    if (passwordFieldInput.type === "password") {
-        passwordFieldInput.type = "text";
-        password_visible_icon.classList.replace("fa-eye", "fa-eye-slash");
-    } else {
-        passwordFieldInput.type = "password";
-        password_visible_icon.classList.replace("fa-eye-slash", "fa-eye");
-    }
-}
-
-password_visible_button.addEventListener("click", function (event) {
-    event.preventDefault();
-    togglePasswordVisibility();
-});
+var EmailEdit = document.getElementById("inputEmail");
+var PasswortEdit = document.getElementById("inputPassword");
 
 password_reset.addEventListener("click", function (event) {
     PopUp_Text("Bitte wende dich an den Administrator");
@@ -35,9 +16,9 @@ function PopUp_Text(text) {
     PopUp.classList.toggle("popupVisible");
 }
 function LogIn() {
-    if ((BenutzerEdit.value == "admin@spdata.de") && (PasswortEdit.value == "admin")) {
+    if ((EmailEdit.value == "admin@spdata.de") && (PasswortEdit.value == "admin")) {
         window.location.href = "/View/admin.html";
-    } else if ((BenutzerEdit.value == "benutzer@spdata.de") && (PasswortEdit.value == "benutzer")) {
+    } else if ((EmailEdit.value == "benutzer@spdata.de") && (PasswortEdit.value == "benutzer")) {
         window.location.href = "/View/user.html";
     } else {
         PopUp_Text("Die Anmeldedaten sind falsch");
@@ -49,7 +30,7 @@ login_button.addEventListener("click", function (event) {
     LogIn();
 });
 
-BenutzerEdit.addEventListener("keypress", function (event) {
+EmailEdit.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         event.preventDefault();
         LogIn();
