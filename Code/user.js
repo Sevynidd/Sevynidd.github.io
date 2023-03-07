@@ -42,41 +42,12 @@ document.body.addEventListener('click', function (event) {
     }
 });
 
-function createPriorityDropDown() {  
-    const priorityDD = document.createElement("select");
-    priorityDD.setAttribute("id", "prio");
-    priorityDD.setAttribute("class", "prio");
-    
-    const options = ["Niedrig", "Mittel", "Hoch"];
-    options.forEach(option => {
-        const opt = document.createElement("option");
-        opt.value = option;
-        opt.text = option;
-        priorityDD.appendChild(opt);
-    });
-    
-    const priorityDDContainer = document.createElement("div");
-    priorityDDContainer.setAttribute("class", "prio-container");
-    priorityDDContainer.setAttribute("id", "prio-container");
-    priorityDDContainer.appendChild(priorityDD);
-    
-    return priorityDDContainer;
-}
-
 function setDashboard() {
     //TODO: Dashboard setzen, heißt die aktuellen tickets und so 
-    $(function(){
-        $("#content-container").load("/UserIncludes/Dashboard.php"); 
-    });   
+ 
+    $("#content-container").load("/UserIncludes/Dashboard.php"); 
+       
 }
-function createHTMLElement(tagName, attributes = {}, textContent = '') {
-    const element = document.createElement(tagName);
-    for (let key in attributes) {
-      element.setAttribute(key, attributes[key]);
-    }
-    element.textContent = textContent;
-    return element;
-  }
 
 function setTicketCreate() {
 //TODO: Ticket erstellung einrichten,
@@ -93,8 +64,8 @@ function setTickets() {
     //TODO: Ticketeinsicht erstellen
     // Ansicht meiner Tickets
     // Filterung einbauen z.b. nach Datum oder eine volltextsuche
-$(function(){
+
     $("#content-container").load("/UserIncludes/Tickets.php"); 
-});
+
 }
 
