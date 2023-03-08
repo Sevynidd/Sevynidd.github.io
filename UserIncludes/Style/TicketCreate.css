@@ -8,13 +8,16 @@
 #editor {
     border: none;
 }
-
 .container {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    column-fill: balance;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 10%);
+    -webkit-transform: translate(-50%, 10%);
+    -moz-transform: translate(-50%, 10%);
+    -ms-transform: translate(-50%, 10%);
+    -o-transform: translate(-50%, 10%);
 }
+
 .container-btns {
     width: 100%;
 }
@@ -108,5 +111,3 @@ label[for="cat"] {
 label[for="cb_alle"] {
     color: white;
 }
-
-
