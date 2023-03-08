@@ -29,16 +29,6 @@
     border: none;
 }
 
-.container-btns {
-    width: 100%;
-}
-
-.container-DD_CB {
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-
 #btn-submit {
     width: 15%;
     height: 40px;
@@ -98,27 +88,4 @@
     -moz-transform: scale(0.95);
     -ms-transform: scale(0.95);
     -o-transform: scale(0.95);
-}
-
-#betreff {
-    margin-bottom: 10px;
-    height: 25px;
-}
-
-label[for="betreff"] {
-   color: white;
-   margin-bottom: 2px; 
-}
- 
-label[for="prio"] {
-     color: white; 
-}
- 
-label[for="cat"] {
-     color: white; 
-     margin-left: 10%;
-}
-
-label[for="cb_alle"] {
-    color: white;
 }
