@@ -40,9 +40,10 @@
 }
 
 #copyright {
+  position: absolute;
   bottom: 10px;
   right: 15px;
-  position: absolute;
+  margin-bottom: 0px;
   font-size: 12px;
   color: var(--white-color);
 }
