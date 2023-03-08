@@ -27,16 +27,13 @@ body {
 .navBar-items-container {
   display: flex;
   flex-direction: column;
-  margin: 15px;
   list-style: none;
   padding-left: 0px;
-  padding: 5px;
 }
 #btn-dashboard,
 #btn-ticketCreate,
 #btn-tickets {
   background: transparent;
-  border: none;
   height: 50px;
 }
 
@@ -44,6 +41,8 @@ body {
   position: absolute;
   bottom: 5px;
   margin: 15px;
+  padding-right: 30px;
+  padding-left: 0px;
   list-style: none;
   display: flex;
   flex-direction: column;
