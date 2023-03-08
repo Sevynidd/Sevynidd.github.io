@@ -3,7 +3,7 @@
   --secondary-color: #383838;
   --secondary-color-shadow: #272727;
   --white-color: #e2e2e2;
-  --highlight: #f6a01d;
+  --highlight: rgb(244, 150, 8);
   font-family: Verdana, sans-serif;
 }
 

@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="de" dir="ltr" bs-dark-theme="dark">
 <head>
     <title>Ticket Create</title> 
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <link rel="stylesheet" href="/UserIncludes/Style/TicketCreate.css" type="text/css">
     <link rel="stylesheet" href="/Style/global.css" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
     </head>
     <body>
-        <h1>TicketCreate</h1>
         <div class="container">        
             <label for="betreff">Betreff</label>
             <input type="text" list="dliste" id="betreff" placeholder="Betreff"/>
