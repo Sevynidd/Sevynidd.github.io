@@ -62,7 +62,7 @@
 
 #btn-cancel {
     width: 15%;
-    height: 25px;
+    height: 40px;
     margin-left: 69%;
     background: var(--secondary-color);
     border-radius: 25px;
@@ -70,7 +70,7 @@
     -moz-border-radius: 25px;
     -ms-border-radius: 25px;
     -o-border-radius: 25px;
-    font-size: 14px;
+    font-size: 18px;
     color: #e9f4fb;
     font-weight: 700;
     cursor: pointer;
@@ -86,15 +86,9 @@
     -o-transform: scale(0.95);
 }
 
-
-
 #betreff {
     margin-bottom: 10px;
     height: 25px;
-}
-
-input::-webkit-calendar-picker-indicator {
-    opacity: 100;
 }
 
 label[for="betreff"] {
