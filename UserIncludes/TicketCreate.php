@@ -14,10 +14,7 @@
             <label for="betreff">Betreff</label>
             <input type="text" list="dliste" id="betreff" placeholder="Betreff"/>
             <datalist id="dliste">
-                <option value="Aachener …">
-                <option value="Hamburger …">
-                <option value="Mitteldeutscher …">
-                <option value="Niederrheinische …">
+                <option value="Work in Progress"></option>
             </datalist>
             <div class="container-DD_CB">
                 <label for="prio">Priorität</label>
