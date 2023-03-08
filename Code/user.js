@@ -38,12 +38,13 @@ function saveTicket() {
     var betrifftAlle = alleCB.checked;
     var betreffText = betreff.value;
     const date = Date();
-    console.log(date, catValue, prioValue);
-    resetValues();
-}
+    console.log(date, catValue, prioValue, betrifftAlle, betreffText);
 
-function cancelTicket() {
     resetValues();
+    
+    resetHighlight();
+    setTickets();
+    Buttons[2].style.background = highlightColor;
 }
 
 function resetValues() {
@@ -74,7 +75,7 @@ document.body.addEventListener('click', function (event) {
 
 document.body.addEventListener('click', function (event) {
     if (event.target.id === 'btn-cancel') {
-        cancelTicket();
+        resetValues();
     }
 });
 
