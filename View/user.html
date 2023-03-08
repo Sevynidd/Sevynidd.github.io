@@ -18,24 +18,29 @@
 
 <body>
   <nav class="navBar">
+
     <img class="SP_Data_Logo" src="/Bilder/Logo SP_Data ohne Claim inverted.png" alt="SP_Data Logo ohne Claim" width="150px">
 
     <ul class="navBar-items-container">
-      <li class="navBar-buttons">
-        <button class="btn" id="btn-dashboard"><i class="fa-solid fa-house fa-inverse fa-xl"></i>
-          <p>Dashboard</p>
+
+      <div class="row">
+        <button class="btn btn-primary my-1 text-start" id="btn-dashboard">
+          <i class="fa-solid fa-house fa-inverse fa-xl me-2"></i>
+          Dashboard
+        </button>  
+      </div>  
+      <div class="row">
+        <button class="btn btn-primary my-1 text-start" id="btn-ticketCreate">
+          <i class="fa-solid fa-pen fa-inverse  fa-xl me-2"></i>
+          Ticket erstellen
         </button>
-      </li>
-      <li class="navBar-buttons">
-        <button class="btn" id="btn-ticketCreate"><i class="fa-solid fa-pen fa-inverse  fa-xl"></i>
-          <p>Ticket erstellen</p>
+      </div>
+      <div class="row">
+        <button class="btn btn-primary my-1 text-start" id="btn-tickets">
+          <i class="fa-solid fa-ticket fa-inverse  fa-xl me-2"></i>
+          Tickets
         </button>
-      </li>
-      <li class="navBar-buttons">
-        <button class="btn" id="btn-tickets"><i class="fa-solid fa-ticket fa-inverse  fa-xl"></i>
-          <p>Tickets</p>
-        </button>
-      </li>
+      </div>
     </ul>
   </nav>
   <ul class="user-container">
