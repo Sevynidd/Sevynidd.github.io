@@ -1,6 +1,7 @@
 const styles = getComputedStyle(document.body);
 const highlightColor = styles.getPropertyValue("--highlight");
-var editorText, betreffText;
+var editorText;
+
 
 //Liste der Buttons für funktionalitäten auf der Navbar, DarkmodeButton ausgeschlossen
 var Buttons = [
@@ -28,7 +29,29 @@ for (let i = 0; i < Buttons.length; i++) {
         Buttons[i].style.background = highlightColor;
     });
 }
+function saveTicket(){
+    const catDD = document.getElementById("cat");
+    const prioDD = document.getElementById("prio");
+    const alleCB = document.getElementById("cb_alle");
 
+    editorText = quill.getText(0);
+    var catValue =  catDD.value;
+    var prioValue = prioDD.value;
+    var betrifftAlle = alleCB.checked;
+    const date = Date();
+    console.log(date, catValue, prioValue);
+}
+
+function cancelTicket(){
+    const catDD = document.getElementById("cat");
+    const prioDD = document.getElementById("prio");
+    const alleCB = document.getElementById("cb_alle");
+
+    quill.deleteText(0,quill.getLength());
+    prioDD.tabIndex = 1;
+    catDD.tabIndex = 1;
+    alleCB.checked = false;
+}
 
 function resetHighlight() {
     for (var i = 0; i < Buttons.length; i++) {
@@ -37,47 +60,23 @@ function resetHighlight() {
 }
 
 document.body.addEventListener('click', function (event) {
-    if (event.target.id === 'btn-save') {
-        editorText = editor.value;
-        betreffText = betreffFeld.value;
+    if (event.target.id === 'btn-submit') {
+        saveTicket();
     }
 });
 
-function createPriorityDropDown() {  
-    const priorityDD = document.createElement("select");
-    priorityDD.setAttribute("id", "prio");
-    priorityDD.setAttribute("class", "prio");
-    
-    const options = ["Niedrig", "Mittel", "Hoch"];
-    options.forEach(option => {
-        const opt = document.createElement("option");
-        opt.value = option;
-        opt.text = option;
-        priorityDD.appendChild(opt);
-    });
-    
-    const priorityDDContainer = document.createElement("div");
-    priorityDDContainer.setAttribute("class", "prio-container");
-    priorityDDContainer.setAttribute("id", "prio-container");
-    priorityDDContainer.appendChild(priorityDD);
-    
-    return priorityDDContainer;
-}
+document.body.addEventListener('click', function (event) {
+    if (event.target.id === 'btn-cancel') {
+        cancelTicket();
+    }
+});
 
 function setDashboard() {
     //TODO: Dashboard setzen, heißt die aktuellen tickets und so 
-    $(function(){
-        $("#content-container").load("/UserIncludes/Dashboard.php"); 
-    });   
+ 
+    $("#content-container").load("/UserIncludes/Dashboard.php"); 
+       
 }
-function createHTMLElement(tagName, attributes = {}, textContent = '') {
-    const element = document.createElement(tagName);
-    for (let key in attributes) {
-      element.setAttribute(key, attributes[key]);
-    }
-    element.textContent = textContent;
-    return element;
-  }
 
 function setTicketCreate() {
 //TODO: Ticket erstellung einrichten,
@@ -86,7 +85,7 @@ function setTicketCreate() {
 // Eine Betreffzeile
 // Speichern
 // Abbrechen
-    $("#content-container").load("/UserIncludes/TicketCreate.php");     
+    $("#content-container").load("/UserIncludes/TicketCreate.php");    
 }
   
 
@@ -94,8 +93,8 @@ function setTickets() {
     //TODO: Ticketeinsicht erstellen
     // Ansicht meiner Tickets
     // Filterung einbauen z.b. nach Datum oder eine volltextsuche
-$(function(){
+
     $("#content-container").load("/UserIncludes/Tickets.php"); 
-});
+
 }
 
