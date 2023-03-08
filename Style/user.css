@@ -1,16 +1,6 @@
 :root {
   --navbar-width: 280px;
 }
-
-body {
-  background: var(--primary-color);
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: stretch;
-  align-content: stretch;  
-}
 .navBar {
   display: block;
   position: absolute;
@@ -36,7 +26,6 @@ body {
   background: transparent;
   height: 50px;
 }
-
 .user-container {
   position: absolute;
   bottom: 5px;
@@ -48,57 +37,12 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   width: var(--navbar-width);
-
 }
 .navBar-buttons-bottom {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: stretch;
-}
-.navBar-buttons-bottom i{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #767676;
-  width: 40px;
-  height: 35px;
-  border-radius: 50px;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -o-border-radius: 50px;
-}
-.navBar-buttons-bottom p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 15px;
-  color: var(--white-color);
-}
-#version-background {
-  margin-left: 15px;
-  height: 20px;
-  width: fit-content;
-  background: var(--white-color);
-  font: inherit;
-  font-size: 14px;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  padding-right: 10px;
-}
-#version-status {
-  width: 10px;
-  height: 10px;
-  background: #38dd23;
-  margin-left: 8px;
-  margin-right: 8px;
-}
-#Benutzer {
-  margin-top: 20px;
 }
 .content-container {
   display: block;
