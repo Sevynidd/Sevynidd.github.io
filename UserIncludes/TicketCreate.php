@@ -11,12 +11,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   </head>
   <body>
-    <div class="container mx-3 px-3">
+    <div class="container-lg mx-3 px-3">
       
       <div class="row mb-5">
         <div class="input-group">        
           <span class="input-group-text">Betreff</span>    
-          <input type="text" class="form-control"
+          <input type="text" class="form-control" id="Betreff"
           placeholder="Betreff" autocomplete="off" list="BetreffListe">
           <datalist id="BetreffListe"> 
             <option value="Audi"></option>
