@@ -35,6 +35,9 @@
 .center form {
   box-sizing: border-box;
 }
+#eye-slash {
+  color: var(--white-color);
+}
 
 #copyright {
   bottom: 10px;
