@@ -1,14 +1,5 @@
-
-.background-color-editor {
-    background: white;
-    width: 100%;
-    height: 300px;
-}
-
-#editor {
-    border: none;
-}
 .container {
+    height: fit-content;
     position: absolute;
     left: 50%;
     transform: translate(-50%, 10%);
@@ -16,6 +7,26 @@
     -moz-transform: translate(-50%, 10%);
     -ms-transform: translate(-50%, 10%);
     -o-transform: translate(-50%, 10%);
+    background: var(--secondary-color);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.background-color-editor {
+    background: white;
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+#editor {
+    border: none;
 }
 
 .container-btns {
