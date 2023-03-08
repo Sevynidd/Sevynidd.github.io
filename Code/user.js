@@ -30,7 +30,7 @@ function saveTicket() {
     const catDD = document.getElementById("cat");
     const prioDD = document.getElementById("prio");
     const alleCB = document.getElementById("cb_alle");
-    const betreff = document.getElementById("betreff");
+    const betreff = document.getElementById("Betreff");
 
     editorText = quill.getText(0);
     var catValue =  catDD.value;
@@ -41,7 +41,7 @@ function saveTicket() {
     console.log(date, catValue, prioValue, betrifftAlle, betreffText);
 
     resetValues();
-    
+
     resetHighlight();
     setTickets();
     Buttons[2].style.background = highlightColor;
@@ -51,8 +51,7 @@ function resetValues() {
     const catDD = document.getElementById("cat");
     const prioDD = document.getElementById("prio");
     const alleCB = document.getElementById("cb_alle");
-    const betreff = document.getElementById("betreff");
-
+    const betreff = document.getElementById("Betreff");
 
     quill.deleteText(0,quill.getLength());
     prioDD.tabIndex = 1;
