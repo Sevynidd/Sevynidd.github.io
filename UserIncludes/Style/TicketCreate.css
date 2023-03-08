@@ -22,10 +22,11 @@ body h1 {
     width: 100%;
 }
 
-.container-dropdowns {
+.container-DD_CB {
     width: 100%;
     margin-bottom: 10px;
 }
+
 
 #btn-submit {
     width: 15%;
@@ -88,6 +89,8 @@ body h1 {
     -o-transform: scale(0.95);
 }
 
+
+
 #betreff {
     margin-bottom: 10px;
     height: 25px;
@@ -101,21 +104,18 @@ label[for="betreff"] {
    color: white;
    margin-bottom: 2px; 
 }
-
-#prio {
-   width: 30%;
-}
-
+ 
 label[for="prio"] {
-    color: white; 
+     color: white; 
 }
-
-#cat {
-    width: 30%;
-}
-
+ 
 label[for="cat"] {
-    margin-left: 16%;
-    color: white; 
+     color: white; 
+     margin-left: 10%;
 }
+
+label[for="cb_alle"] {
+    color: white;
+}
+
 

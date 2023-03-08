@@ -32,10 +32,12 @@ for (let i = 0; i < Buttons.length; i++) {
 function saveTicket(){
     const catDD = document.getElementById("cat");
     const prioDD = document.getElementById("prio");
+    const alleCB = document.getElementById("cb_alle");
 
     editorText = quill.getText(0);
     var catValue =  catDD.value;
     var prioValue = prioDD.value;
+    var betrifftAlle = alleCB.checked;
     const date = Date();
     console.log(date, catValue, prioValue);
 }
@@ -43,10 +45,12 @@ function saveTicket(){
 function cancelTicket(){
     const catDD = document.getElementById("cat");
     const prioDD = document.getElementById("prio");
+    const alleCB = document.getElementById("cb_alle");
 
     quill.deleteText(0,quill.getLength());
     prioDD.tabIndex = 1;
     catDD.tabIndex = 1;
+    alleCB.checked = false;
 }
 
 function resetHighlight() {

@@ -18,15 +18,20 @@
                 <option value="Mitteldeutscher …">
                 <option value="Niederrheinische …">
             </datalist>
-            <div class="container-DD/CB">
+            <div class="container-DD_CB">
                 <label for="prio">Priorität</label>
                 <select name="priority" id="prio">
                     <option>Work in Progress</option>
-                </select>
+                </select> 
+
+                <input type="checkbox" id="cb_alle"></input>
+                <label for="cb_alle">Betrifft alle</label>
+
                 <label for="cat">Kategorie</label>
                 <select name="category" id="cat">
                     <option>Work in Progress</option>
-                </select>
+                </select> 
+                    
             </div>
             <div class="background-color-editor">
                 <div id="editor"></div>            
