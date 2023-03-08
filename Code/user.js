@@ -1,9 +1,6 @@
 const styles = getComputedStyle(document.body);
 const highlightColor = styles.getPropertyValue("--highlight");
-var editorText;
-
-
-//Liste der Buttons für funktionalitäten auf der Navbar, DarkmodeButton ausgeschlossen
+var editorText; 
 var Buttons = [
     document.getElementById("btn-dashboard"),
     document.getElementById("btn-ticketCreate"),
@@ -29,28 +26,38 @@ for (let i = 0; i < Buttons.length; i++) {
         Buttons[i].style.background = highlightColor;
     });
 }
-function saveTicket(){
+function saveTicket() {
     const catDD = document.getElementById("cat");
     const prioDD = document.getElementById("prio");
     const alleCB = document.getElementById("cb_alle");
+    const betreff = document.getElementById("betreff");
 
     editorText = quill.getText(0);
     var catValue =  catDD.value;
     var prioValue = prioDD.value;
     var betrifftAlle = alleCB.checked;
+    var betreffText = betreff.value;
     const date = Date();
     console.log(date, catValue, prioValue);
+    resetValues();
 }
 
-function cancelTicket(){
+function cancelTicket() {
+    resetValues();
+}
+
+function resetValues() {
     const catDD = document.getElementById("cat");
     const prioDD = document.getElementById("prio");
     const alleCB = document.getElementById("cb_alle");
+    const betreff = document.getElementById("betreff");
+
 
     quill.deleteText(0,quill.getLength());
     prioDD.tabIndex = 1;
     catDD.tabIndex = 1;
     alleCB.checked = false;
+    betreff.value = "";
 }
 
 function resetHighlight() {
@@ -79,13 +86,10 @@ function setDashboard() {
 }
 
 function setTicketCreate() {
-//TODO: Ticket erstellung einrichten,
-// ein großes Textfeld in dem gearbeitet werden kann mit allen standard formatierungsmöglichkeiten
-// z.b. wie bei Vemas
-// Eine Betreffzeile
-// Speichern
-// Abbrechen
+
     $("#content-container").load("/UserIncludes/TicketCreate.php");    
+
+
 }
   
 
