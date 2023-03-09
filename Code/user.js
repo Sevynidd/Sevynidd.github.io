@@ -8,6 +8,10 @@ var Buttons = [
 ];
 
 window.onload = function () {
+    if (sessionStorage.getItem("Benutzername") != "benutzer") {
+        window.location.href = "/error.html";   
+    }
+
     resetHighlight();
     Buttons[0].style.background = highlightColor;
     setDashboard();

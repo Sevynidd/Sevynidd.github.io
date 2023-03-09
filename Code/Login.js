@@ -5,9 +5,14 @@ var EmailEdit = document.getElementById("inputEmail");
 var PasswortEdit = document.getElementById("inputPassword");
 
 function LogIn() {
-    if ((EmailEdit.value == "admin@spdata.de") && (PasswortEdit.value == "admin")) {
+    var EmailEditInhalt = EmailEdit.value;
+    var PasswortEditInhalt = PasswortEdit.value;
+
+    if ((EmailEditInhalt == "admin@spdata.de") && (PasswortEditInhalt == "admin")) {
+        sessionStorage.setItem("Benutzername", EmailEditInhalt.split("@")[0]);
         window.location.href = "/View/admin.html";
-    } else if ((EmailEdit.value == "benutzer@spdata.de") && (PasswortEdit.value == "benutzer")) {
+    } else if ((EmailEditInhalt == "benutzer@spdata.de") && (PasswortEditInhalt == "benutzer")) {
+        sessionStorage.setItem("Benutzername", EmailEditInhalt.split("@")[0]);
         window.location.href = "/View/user.html";
     } else {
         const form = document.getElementById("container-error");

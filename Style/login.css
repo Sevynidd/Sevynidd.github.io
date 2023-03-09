@@ -32,11 +32,11 @@
   padding-right: 25px;
 }
 
-.center form {
-  box-sizing: border-box;
-}
 #eye-slash {
   color: var(--white-color);
+}
+.center form {
+  box-sizing: border-box;
 }
 
 #copyright {
