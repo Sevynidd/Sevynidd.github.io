@@ -31,6 +31,8 @@ for (let i = 0; i < Buttons.length; i++) {
     });
 }
 function saveTicket() {    
+    var betreff = document.getElementById("Betreff");
+    var betreffText = betreff.value;
     if (betreffText === "") {
         return;
     }
@@ -38,21 +40,21 @@ function saveTicket() {
     var kategorie = document.getElementById("Kategorie");
     var prioritaet = document.getElementById("Prioritaet");
     var checkBoxVisible = document.getElementById("checkboxVisible");
-    var betreff = document.getElementById("Betreff");
+    
 
     editorText = quill.getText(0);
     var catValue =  kategorie.value;
     var prioValue = prioritaet.value;
     var betrifftAlle = checkBoxVisible.checked;
-    var betreffText = betreff.value;
     const date = Date();
-    console.log(date, catValue, prioValue, betrifftAlle, betreffText);
-
+    console.log(betreffText, prioValue, catValue, betrifftAlle, date);
+ 
 
     resetValues();
-    resetHighlight();
-    setTickets();
-    Buttons[2].style.background = highlightColor;
+    const form = document.getElementById("container-info");
+    if (form.innerHTML === "") {
+        form.innerHTML += '<div class="alert alert-info alert-dismissible fade show"><strong>Info!</strong> Dein Ticket wurde erstellt. Du kannst es unter dem Reiter "Tickets" einsehen. <button type="button" class="btn-close" data-bs-dismiss="alert"></button> </div>';  
+    }
 }
 
 function resetValues() {
