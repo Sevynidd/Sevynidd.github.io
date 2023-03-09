@@ -17,12 +17,11 @@
                 <img class="rounded-circle ms-4" src="/Bilder/Benutzer.png" width=60px height=60px>
                 <div class="card-body">
 
-                    <h5 class="card-title" id="Username">Guten Tag, Test!</h5>
+                    <h5 class="card-title mt-2" id="Username">Guten Tag, Test!</h5>
                     <script type="text/javascript">
                     document.getElementById("Username").innerText =
                         "Guten Tag, " + sessionStorage.getItem("Benutzername") + "!";
                     </script>
-                    <p class="card-text">Some dummy text to make up the card's content. You can replace it anytime.</p>
                 </div>
             </div>
         </div>
