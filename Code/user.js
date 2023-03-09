@@ -69,16 +69,12 @@ function resetHighlight() {
     }
 }
 
-document.body.addEventListener('click', function (event) {
-    if (event.target.id === 'btn-submit') {
-        saveTicket();
-    }
+document.getElementById("btn-submit").addEventListener("click", function (event) {
+    saveTicket();
 });
 
-document.body.addEventListener('click', function (event) {
-    if (event.target.id === 'btn-cancel') {
-        resetValues();
-    }
+document.getElementById("btn-cancel").addEventListener("click", function (event) {
+    resetValues();
 });
 
 function setDashboard() {
