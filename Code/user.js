@@ -27,21 +27,24 @@ for (let i = 0; i < Buttons.length; i++) {
     });
 }
 function saveTicket() {
-    const catDD = document.getElementById("cat");
-    const prioDD = document.getElementById("prio");
-    const alleCB = document.getElementById("cb_alle");
-    const betreff = document.getElementById("Betreff");
+    var kategorie = document.getElementById("Kategorie");
+    var prioritaet = document.getElementById("Prioritaet");
+    var checkBoxVisible = document.getElementById("checkboxVisible");
+    var betreff = document.getElementById("Betreff");
 
     editorText = quill.getText(0);
-    var catValue =  catDD.value;
-    var prioValue = prioDD.value;
-    var betrifftAlle = alleCB.checked;
+    var catValue =  kategorie.value;
+    var prioValue = prioritaet.value;
+    var betrifftAlle = checkBoxVisible.checked;
     var betreffText = betreff.value;
     const date = Date();
     console.log(date, catValue, prioValue, betrifftAlle, betreffText);
 
-    resetValues();
+    if (betreffText === "") {
+        return;
+    }
 
+    resetValues();
     resetHighlight();
     setTickets();
     Buttons[2].style.background = highlightColor;
