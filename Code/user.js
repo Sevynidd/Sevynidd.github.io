@@ -26,7 +26,11 @@ for (let i = 0; i < Buttons.length; i++) {
         Buttons[i].style.background = highlightColor;
     });
 }
-function saveTicket() {
+function saveTicket() {    
+    if (betreffText === "") {
+        return;
+    }
+    
     var kategorie = document.getElementById("Kategorie");
     var prioritaet = document.getElementById("Prioritaet");
     var checkBoxVisible = document.getElementById("checkboxVisible");
@@ -40,9 +44,6 @@ function saveTicket() {
     const date = Date();
     console.log(date, catValue, prioValue, betrifftAlle, betreffText);
 
-    if (betreffText === "") {
-        return;
-    }
 
     resetValues();
     resetHighlight();
@@ -69,35 +70,28 @@ function resetHighlight() {
     }
 }
 
-document.getElementById("btn-submit").addEventListener("click", function (event) {
-    saveTicket();
+document.body.addEventListener('click', function (event) {
+    if (event.target.id === 'btn-submit') {
+        saveTicket();
+    }
 });
 
-document.getElementById("btn-cancel").addEventListener("click", function (event) {
-    resetValues();
+document.body.addEventListener('click', function (event) {
+    if (event.target.id === 'btn-cancel') {
+        resetValues();
+    }
 });
 
 function setDashboard() {
-    //TODO: Dashboard setzen, heißt die aktuellen tickets und so 
- 
-    $("#content-container").load("/UserIncludes/Dashboard.php"); 
-       
+    $("#content-container").load("/UserIncludes/Dashboard.php");      
 }
 
 function setTicketCreate() {
-
     $("#content-container").load("/UserIncludes/TicketCreate.php");    
-
-
 }
   
 
 function setTickets() {
-    //TODO: Ticketeinsicht erstellen
-    // Ansicht meiner Tickets
-    // Filterung einbauen z.b. nach Datum oder eine volltextsuche
-
     $("#content-container").load("/UserIncludes/Tickets.php"); 
-
 }
 
