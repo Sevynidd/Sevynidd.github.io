@@ -11,39 +11,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <body>
-    <div class="container m-4">
+    <div class="container m-4" id="container">
         <div class="input-container">
             <input type="text" class="form-control" id="searchbar_betreff" placeholder="Suche nach Betreff" onkeyup="filterSuche('searchbar_betreff', 0)">
-            <input type="text" class="form-control" id="searchbar_datum" placeholder="Suche nach datum" onkeyup="filterSuche('searchbar_datum', 1)">
-            <input type="text" class="form-control" id="searchbar_kategorie" placeholder="Suche nach Betreff" onkeyup="filterSuche('searchbar_kategorie', 2)">
-            <input type="text" class="form-control" id="searchbar_status" placeholder="Suche nach Betreff" onkeyup="filterSuche('searchbar_status', 3)">
-        </div>
-        <table class="table table-hover table-striped" id="Table_Tickets">
-            <thead> 
-                <tr>
-                    <th>Betreff</th>
-                    <th>Datum</th>
-                    <th>Kategorie</th>
-                    <th>Status</th>
-                </tr>
-            </thead> 
-            <tbody>
-                <tr>
-                    <td>Betreff 1 </td>
-                    <td>29.03.2023</td>
-                    <td>Vemas</td>
-                    <td>Offen</td>
-                </tr>
-            </tbody>  
-            <tbody>
-            <tr>
-                <td>Vemas ist mal wieder AMSBGD KHAGWEGFIUQZEGRVKJQWHEG RFKHAGSDGC KCAJHSEGFkaputt </td>
-                <td>18.02.2023</td>
-                <td>Hardware</td>
-                <td>Geschlossen</td>
-            </tr>
-            </tbody>  
-        </table>           
+            <input type="text" class="form-control" id="searchbar_datum" placeholder="Suche nach Datum" onkeyup="filterSuche('searchbar_datum', 1)">
+            <input type="text" class="form-control" id="searchbar_kategorie" placeholder="Suche nach Kategorie" onkeyup="filterSuche('searchbar_kategorie', 2)">
+            <input type="text" class="form-control" id="searchbar_status" placeholder="Suche nach Status" onkeyup="filterSuche('searchbar_status', 3)">
+        </div>       
     </div>
 </body>
 </html>

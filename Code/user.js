@@ -1,6 +1,6 @@
 const styles = getComputedStyle(document.body);
 const highlightColor = styles.getPropertyValue("--highlight");
-var editorText, betrifftAlle, prioValue, catValue, betreffText;
+var editorText, betrifftAlle, prioValue, catValue, betreffText, erstellDatum;
 var Buttons = [
     document.getElementById("btn-dashboard"),
     document.getElementById("btn-ticketCreate"),
@@ -57,7 +57,7 @@ function saveTicket() {
     catValue =  kategorie.value;
     prioValue = prioritaet.value;
     betrifftAlle = checkBoxVisible.checked;
-    const date = Date();
+    erstellDatum = Date();
     console.log(betreffText, prioValue, catValue, betrifftAlle, date);
  
 
@@ -100,17 +100,59 @@ document.body.addEventListener('click', function (event) {
 }); 
 
 function setTickets() {
-    $("#content-container").load("/UserIncludes/Tickets.php"); 
+    $("#content-container").load("/UserIncludes/Tickets.php", function(responseTxt, statusTxt, xhr) {
+        if (statusTxt == "success") {
+            ticketsLaden();
+        } else if (statusTxt == "error") {
+        }
+      });
+
 }
 
 function ticketsLaden() {
-    var betreffTickets = document.getElementById("Table_Tickets");
-    var td = betreffTickets.getElementsByTagName('td')[0];
-    td.innerHTML = 'New value';
+    const tickets = [
+        { betreff: betreffText , datum: erstellDatum, kategorie: 'Vemas', status: 'Offen' },
+        { betreff: 'Vemas ist mal wieder AMSBGD KHAGWEGFIUQZEGRVKJQWHEG RFKHAGSDGC KCAJHSEGFkaputt', datum: '18.02.2023', kategorie: 'Hardware', status: 'Geschlossen' }
+    ];
+    
+    const container = document.getElementById("container");
+    const table = document.createElement('table');
+    table.classList.add('table', 'table-hover', 'table-striped');
+    
+    const thead = document.createElement('thead');
+    const headRow = document.createElement('tr');
+    const headers = ['Betreff', 'Datum', 'Kategorie', 'Status'];
+    for (const header of headers) {
+        const th = document.createElement('th');
+        th.textContent = header;
+        headRow.appendChild(th);
+    }
+    thead.appendChild(headRow);
+    table.appendChild(thead);
+    
+    const tbody = document.createElement('tbody');
+    for (const ticket of tickets) {
+        const row = document.createElement('tr');
+        const betreffCell = document.createElement('td');
+        betreffCell.textContent = ticket.betreff;
+        row.appendChild(betreffCell);
+        const datumCell = document.createElement('td');
+        datumCell.textContent = ticket.datum;
+        row.appendChild(datumCell);
+        const kategorieCell = document.createElement('td');
+        kategorieCell.textContent = ticket.kategorie;
+        row.appendChild(kategorieCell);
+        const statusCell = document.createElement('td');
+        statusCell.textContent = ticket.status;
+        row.appendChild(statusCell);
+        tbody.appendChild(row);
+    }
+    table.appendChild(tbody);
+    
+    container.appendChild(table);
 }
            
 function filterSuche(searchbar, column) {
-
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById(searchbar);
     filter = input.value.toUpperCase();
