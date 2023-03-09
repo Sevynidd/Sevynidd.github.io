@@ -7,6 +7,7 @@ var Buttons = [
     document.getElementById("btn-tickets")
 ];
 
+
 window.onload = function () {
     if (sessionStorage.getItem("Benutzername") != "benutzer") {
         window.location.href = "/error.html";   
@@ -103,8 +104,28 @@ function setTickets() {
 }
 
 function ticketsLaden() {
-    var betreffTickets = document.getElementById("Betreff_Tickets");
+    var betreffTickets = document.getElementById("Table_Tickets");
     var td = betreffTickets.getElementsByTagName('td')[0];
     td.innerHTML = 'New value';
 }
            
+function filterSuche(searchbar, column) {
+
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById(searchbar);
+    filter = input.value.toUpperCase();
+    table = document.getElementById("Table_Tickets");
+    tr = table.getElementsByTagName("tr");
+  
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[column];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+}
