@@ -1,6 +1,6 @@
 const styles = getComputedStyle(document.body);
 const highlightColor = styles.getPropertyValue("--highlight");
-var editorText; 
+var editorText, betrifftAlle, prioValue, catValue, betreffText;
 var Buttons = [
     document.getElementById("btn-dashboard"),
     document.getElementById("btn-ticketCreate"),
@@ -30,9 +30,19 @@ for (let i = 0; i < Buttons.length; i++) {
         Buttons[i].style.background = highlightColor;
     });
 }
+
+function setDashboard() {
+    $("#content-container").load("/UserIncludes/Dashboard.php");      
+}
+
+
+function setTicketCreate() {
+    $("#content-container").load("/UserIncludes/TicketCreate.php");    
+}
+
 function saveTicket() {    
     var betreff = document.getElementById("Betreff");
-    var betreffText = betreff.value;
+    betreffText = betreff.value;
     if (betreffText === "") {
         return;
     }
@@ -43,9 +53,9 @@ function saveTicket() {
     
 
     editorText = quill.getText(0);
-    var catValue =  kategorie.value;
-    var prioValue = prioritaet.value;
-    var betrifftAlle = checkBoxVisible.checked;
+    catValue =  kategorie.value;
+    prioValue = prioritaet.value;
+    betrifftAlle = checkBoxVisible.checked;
     const date = Date();
     console.log(betreffText, prioValue, catValue, betrifftAlle, date);
  
@@ -86,18 +96,15 @@ document.body.addEventListener('click', function (event) {
     if (event.target.id === 'btn-cancel') {
         resetValues();
     }
-});
-
-function setDashboard() {
-    $("#content-container").load("/UserIncludes/Dashboard.php");      
-}
-
-function setTicketCreate() {
-    $("#content-container").load("/UserIncludes/TicketCreate.php");    
-}
-  
+}); 
 
 function setTickets() {
     $("#content-container").load("/UserIncludes/Tickets.php"); 
 }
 
+function ticketsLaden() {
+    var betreffTickets = document.getElementById("Betreff_Tickets");
+    var td = betreffTickets.getElementsByTagName('td')[0];
+    td.innerHTML = 'New value';
+}
+           
