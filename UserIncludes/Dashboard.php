@@ -14,13 +14,13 @@
 
         <div class="col-12">
             <div class="card text-white mb-4 shadow-sm py-4" id="card-welcome">
-                <img class="rounded-circle ms-4" src="/Bilder/Benutzer.png" width=60px height=60px> 
+                <img class="rounded-circle ms-4" src="/Bilder/Benutzer.png" width=60px height=60px>
                 <div class="card-body">
-                       
+
                     <h5 class="card-title" id="Username">Guten Tag, Test!</h5>
-                    <script type ="text/javascript">
-                        document.getElementById("Username").innerText = 
-                        "Guten Tag, " + sessionStorage.getItem("Benutzername") + "!";   
+                    <script type="text/javascript">
+                    document.getElementById("Username").innerText =
+                        "Guten Tag, " + sessionStorage.getItem("Benutzername") + "!";
                     </script>
                     <p class="card-text">Some dummy text to make up the card's content. You can replace it anytime.</p>
                 </div>
@@ -29,6 +29,7 @@
 
         <div class="col-6">
             <div class="card text-white mb-4 shadow-sm">
+                <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill" id="badge">3</span>
                 <div class="card-body">
                     <h5 class="card-title">Offene eigene Tickets</h5>
                     <p class="card-text">Some dummy text to make up the card's content. You can replace it anytime.</p>
@@ -38,6 +39,7 @@
 
         <div class="col-6">
             <div class="card text-white mb-4 shadow-sm">
+            <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill" id="badge">5+</span>
                 <div class="card-body">
                     <h5 class="card-title">Offene allgemeine Tickets</h5>
                     <p class="card-text">Some dummy text to make up the card's content. You can replace it anytime.</p>

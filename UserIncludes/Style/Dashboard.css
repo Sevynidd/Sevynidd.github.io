@@ -10,3 +10,7 @@
     background-color: var(--secondary-color);
     border: none;
 }
+#badge {
+    background-color: var(--highlight);
+    font-size: 16px;
+}
