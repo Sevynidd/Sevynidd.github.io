@@ -89,7 +89,7 @@ document.body.addEventListener('click', function (event) {
 });
 
 function setDashboard() {
-    $("#content-container").load("/UserIncludes/Dashboard.php");      
+    $("#content-container").load("/UserIncludes/Dashboard.php");   
 }
 
 function setTicketCreate() {
