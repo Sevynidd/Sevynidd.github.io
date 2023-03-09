@@ -48,15 +48,15 @@ function saveTicket() {
 }
 
 function resetValues() {
-    const catDD = document.getElementById("cat");
-    const prioDD = document.getElementById("prio");
-    const alleCB = document.getElementById("cb_alle");
-    const betreff = document.getElementById("Betreff");
+    var kategorie = document.getElementById("Kategorie");
+    var prioritaet = document.getElementById("Prioritaet");
+    var checkBoxVisible = document.getElementById("checkboxVisible");
+    var betreff = document.getElementById("Betreff");
 
     quill.deleteText(0,quill.getLength());
-    prioDD.tabIndex = 1;
-    catDD.tabIndex = 1;
-    alleCB.checked = false;
+    prioritaet.value = 1;
+    kategorie.value = 1;
+    checkBoxVisible.checked = false;
     betreff.value = "";
 }
 

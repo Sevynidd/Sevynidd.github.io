@@ -15,9 +15,11 @@
     -o-border-radius: 10px;
 }
 .background-color-editor {
+    position: relative;
     background: white;
-    width: 150px;
-    height: 200px;
+    width: 100px;
+    min-height: 250px;
+    height: fit-content;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;

@@ -30,22 +30,22 @@
             <div class="col-md-4">
                 <div class="input-group">
                     <span class="input-group-text">Priorität</span>
-                    <select class="form-select">
-                        <option value="2" selected>Kann weiterarbeiten</option>
-                        <option value="1">Kann nicht weiterarbeiten</option>
+                    <select class="form-select" id="Prioritaet">
+                        <option value="1" selected>Kann weiterarbeiten</option>
+                        <option value="2">Kann nicht weiterarbeiten</option>
                     </select>
                 </div>
             </div>
             <div class="col-md-2">
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" name="checkboxVisible" id="checkboxVisible" checked>
-                    <label class="form-check-label" for="checkboxVisible">für alle sichtbar</label>
+                    <input type="checkbox" class="form-check-input" name="checkboxVisible" id="checkboxVisible">
+                    <label class="form-check-label" for="checkboxVisible">Ticket für alle sichtbar</label>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="input-group">
                     <span class="input-group-text">Kategorie</span>
-                    <select class="form-select">
+                    <select class="form-select" id="Kategorie">
                         <option value="1" selected>Vemas</option>
                         <option value="2">PC-Probleme</option>
                         <option value="3">Neue Hardware - Anfrage</option>
@@ -53,7 +53,7 @@
                 </div>
             </div>
         </div>
-        <div class="row my-4">
+        <div class="row mt-5">
             <div class="background-color-editor">
                 <div id="editor"></div>
                 <script>
@@ -99,13 +99,10 @@
                 });
                 </script>
             </div>
-            
-
-            <button class="btn btn-primary" id="btn-submit" type="submit">Ticket erstellen</Button>  
-            <button class="btn btn-primary" id="btn-cancel" type="submit">Inhalt löschen</Button>  
            
         </div>
-
+        <button class="btn btn-primary" id="btn-submit" type="submit">Ticket erstellen</Button>  
+        <button class="btn btn-primary" id="btn-cancel" type="submit">Inhalt löschen</Button>  
     </div>
 </body>
 
