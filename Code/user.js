@@ -46,20 +46,17 @@ function saveTicket() {
     betreffText = betreff.value;
     if (betreffText === "") {
         return;
-    }
-    
+    }    
     var kategorie = document.getElementById("Kategorie");
     var prioritaet = document.getElementById("Prioritaet");
-    var checkBoxVisible = document.getElementById("checkboxVisible");
-    
+    var checkBoxVisible = document.getElementById("checkboxVisible");    
 
     editorText = quill.getText(0);
     catValue =  kategorie.value;
     prioValue = prioritaet.value;
     betrifftAlle = checkBoxVisible.checked;
     erstellDatum = Date();
-    console.log(betreffText, prioValue, catValue, betrifftAlle, date);
- 
+    console.log(betreffText, prioValue, catValue, betrifftAlle, erstellDatum);
 
     resetValues();
     const form = document.getElementById("container-info");
@@ -103,32 +100,17 @@ function setTickets() {
     $("#content-container").load("/UserIncludes/Tickets.php", function(responseTxt, statusTxt, xhr) {
         if (statusTxt == "success") {
             ticketsLaden();
-        } else if (statusTxt == "error") {
-        }
-      });
-
+        } 
+    });
 }
 
 function ticketsLaden() {
     const tickets = [
+
         { betreff: betreffText , datum: erstellDatum, kategorie: 'Vemas', status: 'Offen' },
         { betreff: 'Vemas ist mal wieder AMSBGD KHAGWEGFIUQZEGRVKJQWHEG RFKHAGSDGC KCAJHSEGFkaputt', datum: '18.02.2023', kategorie: 'Hardware', status: 'Geschlossen' }
     ];
-    
-    const container = document.getElementById("container");
-    const table = document.createElement('table');
-    table.classList.add('table', 'table-hover', 'table-striped');
-    
-    const thead = document.createElement('thead');
-    const headRow = document.createElement('tr');
-    const headers = ['Betreff', 'Datum', 'Kategorie', 'Status'];
-    for (const header of headers) {
-        const th = document.createElement('th');
-        th.textContent = header;
-        headRow.appendChild(th);
-    }
-    thead.appendChild(headRow);
-    table.appendChild(thead);
+    const table = document.getElementById("Tickets_Tabelle")
     
     const tbody = document.createElement('tbody');
     for (const ticket of tickets) {
@@ -148,15 +130,13 @@ function ticketsLaden() {
         tbody.appendChild(row);
     }
     table.appendChild(tbody);
-    
-    container.appendChild(table);
 }
            
 function filterSuche(searchbar, column) {
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById(searchbar);
     filter = input.value.toUpperCase();
-    table = document.getElementById("Table_Tickets");
+    table = document.getElementById("Tickets_Tabelle");
     tr = table.getElementsByTagName("tr");
   
     for (i = 0; i < tr.length; i++) {
