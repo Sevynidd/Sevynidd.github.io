@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <div class="container mx-4 px-5 py-5">
+    <div class="container mx-4 p-5">
         <form method="post">
             <div id="container-info"></div>
             <div class="row mb-1">
