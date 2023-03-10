@@ -33,7 +33,8 @@
 
 #btn-submit {
     width: 15%;
-    height: 40px;
+    min-width: 100px;
+    height: fit-content;
     border: 2px solid;
     background: var(--highlight);
     border-radius: 25px;
@@ -46,7 +47,6 @@
     font-weight: 700;
     cursor: pointer;
     outline: none;
-    margin-top: 25px;
 }
 
 #btn-submit:hover {
@@ -67,9 +67,11 @@
 }
 
 #btn-cancel {
+    position: absolute;
+    right: 50px;
     width: 15%;
-    height: 40px;
-    margin-left: 69%;
+    min-width: 100px;
+    height: fit-content;
     background: var(--secondary-color);
     border-radius: 25px;
     -webkit-border-radius: 25px;

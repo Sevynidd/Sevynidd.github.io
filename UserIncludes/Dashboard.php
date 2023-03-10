@@ -28,17 +28,54 @@
 
         <div class="col-6">
             <div class="card text-white mb-4 shadow-sm">
-                <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill" id="badge">3</span>
-                <div class="card-body">
+                <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill"
+                    id="badge-eigene">3</span>
+                <div class="card-body table-responsive">
                     <h5 class="card-title">Offene eigene Tickets</h5>
-                    <p class="card-text">Some dummy text to make up the card's content. You can replace it anytime.</p>
+                    <p class="card-text">
+                    <table class="table table-sm table-hover" id="table-offeneTickets">
+                        <thead>
+                            <tr>
+                                <th>Betreff</th>
+                                <th>Datum</th>
+                                <th>Kategorie</th>
+                                <th>Status</th>
+                                <th>Priorität</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Vemas ist kaputt</td>
+                                <td>09.03.2023</td>
+                                <td>Vemas</td>
+                                <td>Offen</td>
+                                <td>Kann nicht weiterarbeiten</td>
+                            </tr>
+                            <tr>
+                                <td>Kamera für Homeoffice</td>
+                                <td>01.03.2023</td>
+                                <td>Neue Hardware - Anfrage</td>
+                                <td>Offen</td>
+                                <td>Kann weiterarbeiten</td>
+                            </tr>
+                            <tr>
+                                <td>PC startet nicht</td>
+                                <td>10.03.2023</td>
+                                <td>PC-Probleme</td>
+                                <td>Offen</td>
+                                <td>Kann nicht weiterarbeiten</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </p>
                 </div>
             </div>
         </div>
 
         <div class="col-6">
             <div class="card text-white mb-4 shadow-sm">
-            <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill" id="badge">5+</span>
+                <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill"
+                    id="badge-allgemeine">5+</span>
                 <div class="card-body">
                     <h5 class="card-title">Offene allgemeine Tickets</h5>
                     <p class="card-text">Some dummy text to make up the card's content. You can replace it anytime.</p>

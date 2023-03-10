@@ -10,7 +10,8 @@
     background-color: var(--secondary-color);
     border: none;
 }
-#badge {
+#badge-eigene,
+#badge-allgemeine {
     background-color: var(--highlight);
     font-size: 16px;
 }

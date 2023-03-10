@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <div class="container mx-4 px-5 py-5">
+    <div class="container mx-4 p-5">
         <form method="post">
             <div id="container-info"></div>
             <div class="row mb-1">
@@ -104,8 +104,8 @@
                 </div>
             
             </div>
-            <button class="btn btn-primary" id="btn-submit" type="submit">Ticket erstellen</Button>  
-            <button class="btn btn-primary" id="btn-cancel" type="submit">Inhalt löschen</Button>  
+            <button class="btn btn-primary mt-4" id="btn-submit" type="submit">Ticket erstellen</Button>  
+            <button class="btn btn-primary mt-4" id="btn-cancel" type="submit">Inhalt löschen</Button>  
         </form>
     </div>
 </body>
