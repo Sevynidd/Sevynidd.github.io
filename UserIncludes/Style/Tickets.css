@@ -1,0 +1,39 @@
+.container {
+    height: fit-content;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 10%);
+    -webkit-transform: translate(-50%, 10%);
+    -moz-transform: translate(-50%, 10%);
+    -ms-transform: translate(-50%, 10%);
+    -o-transform: translate(-50%, 10%);
+    background: var(--secondary-color);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+}
+
+table {
+    width: 100%;
+}
+  
+table td {
+    margin: auto;
+    text-align: left;
+    width: calc(100%/6);
+}
+
+.table th {
+    width: calc(100%/6);    
+}
+
+.table-hover {
+    color: white;
+}

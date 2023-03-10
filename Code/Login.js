@@ -5,12 +5,20 @@ var EmailEdit = document.getElementById("inputEmail");
 var PasswortEdit = document.getElementById("inputPassword");
 
 function LogIn() {
-    if ((EmailEdit.value == "admin@spdata.de") && (PasswortEdit.value == "admin")) {
+    var EmailEditInhalt = EmailEdit.value;
+    var PasswortEditInhalt = PasswortEdit.value;
+
+    if ((EmailEditInhalt == "admin@spdata.de") && (PasswortEditInhalt == "admin")) {
+        sessionStorage.setItem("Benutzername", EmailEditInhalt.split("@")[0]);
         window.location.href = "/View/admin.html";
-    } else if ((EmailEdit.value == "benutzer@spdata.de") && (PasswortEdit.value == "benutzer")) {
+    } else if ((EmailEditInhalt == "benutzer@spdata.de") && (PasswortEditInhalt == "benutzer")) {
+        sessionStorage.setItem("Benutzername", EmailEditInhalt.split("@")[0]);
         window.location.href = "/View/user.html";
     } else {
-        //PopUp_Text("Die Anmeldedaten sind falsch");
+        const form = document.getElementById("container-error");
+        if (form.innerHTML === "") {
+            form.innerHTML += '<div class="alert alert-danger alert-dismissible fade show"><strong>Fehler!</strong> Die Anmeldedaten sind falsch. <button type="button" class="btn-close" data-bs-dismiss="alert"></button> </div>';  
+        }
     }
 }
 
@@ -31,4 +39,19 @@ PasswortEdit.addEventListener("keypress", function (event) {
         event.preventDefault();
         LogIn();
     }
+});
+
+$(document).ready(function() {
+    $("#password a").on('click', function(event) {
+        event.preventDefault();
+        if($('#password input').attr("type") == "text"){
+            $('#password input').attr('type', 'password');
+            $('#password i').addClass( "fa-eye-slash" );
+            $('#password i').removeClass( "fa-eye" );
+        }else if($('#password input').attr("type") == "password"){
+            $('#password input').attr('type', 'text');
+            $('#password i').removeClass( "fa-eye-slash" );
+            $('#password i').addClass( "fa-eye" );
+        }
+    });
 });

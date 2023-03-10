@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" dir="ltr">
+<html lang="de" dir="ltr" data-bs-theme="dark">
 
 <head>
   <meta charset="utf-8">
@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="/Style/global.css">
   <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
   <script type="text/javascript" src="/Code/user.js" defer></script>
@@ -16,40 +18,41 @@
 
 <body>
   <nav class="navBar">
+
     <img class="SP_Data_Logo" src="/Bilder/Logo SP_Data ohne Claim inverted.png" alt="SP_Data Logo ohne Claim" width="150px">
 
-    <ul class="navBar-items-container">
-      <li class="navBar-buttons">
-        <button class="btn" id="btn-dashboard"><i class="fa-solid fa-house fa-inverse fa-xl"></i>
-          <p>Dashboard</p>
+    <ul class="navBar-items-container mx-4">
+
+      <div class="row">
+        <button class="btn btn-primary my-1 text-start border-0" id="btn-dashboard">
+          <i class="fa-solid fa-house fa-inverse fa-xl me-2"></i>
+          Dashboard
+        </button>  
+      </div>  
+      <div class="row">
+        <button class="btn btn-primary my-1 text-start border-0" id="btn-ticketCreate">
+          <i class="fa-solid fa-pen fa-inverse  fa-xl me-2"></i>
+          Ticket erstellen
         </button>
-      </li>
-      <li class="navBar-buttons">
-        <button class="btn" id="btn-ticketCreate"><i class="fa-solid fa-pen fa-inverse  fa-xl"></i>
-          <p>Ticket erstellen</p>
+      </div>
+      <div class="row">
+        <button class="btn btn-primary my-1 text-start border-0" id="btn-tickets">
+          <i class="fa-solid fa-ticket fa-inverse  fa-xl me-2"></i>
+          Tickets
         </button>
-      </li>
-      <li class="navBar-buttons">
-        <button class="btn" id="btn-tickets"><i class="fa-solid fa-ticket fa-inverse  fa-xl"></i>
-          <p>Tickets</p>
-        </button>
-      </li>
+      </div>
     </ul>
   </nav>
-  <ul class="user-container">
-    <li class="navBar-buttons-bottom">
-      <p>Version</p>
-      <i id="version-background">
-        <i id="version-status"></i>
-        Alpha
-    </i>
-    </li>
-    <li class="navBar-buttons-bottom" id="Benutzer">
-      <i class="fa-solid fa-b fa-inverse fa-l"></i> 
-      <p>Hier könnte ihr Name stehen</p>
-    </li>
-  </ul>
-
+  <div class="user-container">
+    <div class="navBar-buttons-bottom">
+      <img src="/Bilder/Benutzer.png" class="rounded-circle me-3" alt="Bild des Users" 
+      width="40px" height="40px">
+      <p class="text-white mt-2" id="benutzername">Hier könnte ihr Name stehen</p>
+      <script type="text/javascript">
+        document.getElementById("benutzername").innerText = sessionStorage.getItem("Benutzername");
+      </script>
+    </div>
+  </div>
   <div class="content-container" id="content-container">
   </div>
 </body>

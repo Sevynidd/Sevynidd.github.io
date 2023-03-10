@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <title>Error</title>
+    <link rel="stylesheet" href="/Style/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="alert alert-danger fade show">
+        <h4 class="alert-heading"><i class="fa-solid fa-triangle-exclamation"></i>
+            Oops! Willst du etwa ohne dich angemeldet zu haben auf diese Seite? &#128561
+        </h4>
+
+        <p>
+            Bitte melde dich vorher an um dir diese wunderschöne Seite anschauen zu können.
+        </p>
+        <p>
+            Hier ein random Katzenbild für deine Missetat.
+        </p>
+        <img src="https://cataas.com/cat?height=350" alt="Katzenbild">
+        <hr>
+        <p class="mb-0">
+            Mit dem Button unten &#11015 gelangst du wieder auf die Login-Seite zurück.
+        </p>
+    </div>
+    <button class="btn btn-primary btn-lg ms-3" id="ButtonLogin">Login-Seite</button>
+
+</body>
+
+<script>
+    ButtonLogin.addEventListener("click", function (event) {
+        event.preventDefault();
+        window.location.href = "/index.html";
+    });    
+</script>
+
+</html>
