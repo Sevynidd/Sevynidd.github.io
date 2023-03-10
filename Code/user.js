@@ -7,6 +7,7 @@ var Buttons = [
     document.getElementById("btn-tickets")
 ];
 
+const tickets = [];
 
 window.onload = function () {
     if (sessionStorage.getItem("Benutzername") != "benutzer") {
@@ -104,12 +105,13 @@ function setTickets() {
     });
 }
 
-function ticketsLaden() {
-    const tickets = [
+function addTicket(betreff, kategorie, prioritaet, status, benutzer, datum) {
+    const neuesTicket = {betreff, kategorie, prioritaet, status, benutzer, datum};
+    ticket.push(neuesTicket);
+}
 
-        { betreff: betreffText , datum: erstellDatum, kategorie: 'Vemas', status: 'Offen' },
-        { betreff: 'Vemas ist mal wieder AMSBGD KHAGWEGFIUQZEGRVKJQWHEG RFKHAGSDGC KCAJHSEGFkaputt', datum: '18.02.2023', kategorie: 'Hardware', status: 'Geschlossen' }
-    ];
+function ticketsLaden() {
+    
     const table = document.getElementById("Tickets_Tabelle")
     
     const tbody = document.createElement('tbody');
@@ -118,15 +120,25 @@ function ticketsLaden() {
         const betreffCell = document.createElement('td');
         betreffCell.textContent = ticket.betreff;
         row.appendChild(betreffCell);
-        const datumCell = document.createElement('td');
-        datumCell.textContent = ticket.datum;
-        row.appendChild(datumCell);
         const kategorieCell = document.createElement('td');
         kategorieCell.textContent = ticket.kategorie;
         row.appendChild(kategorieCell);
+        const priorityCell = document.createElement('td');
+        priorityCell.textContent = ticket.prioritaet;
+        row.appendChild(priorityCell);
         const statusCell = document.createElement('td');
         statusCell.textContent = ticket.status;
         row.appendChild(statusCell);
+        const userCell = document.createElement('td');
+        userCell.textContent = ticket.benutzer;
+        row.appendChild(userCell);
+
+
+
+        const datumCell = document.createElement('td');
+        datumCell.textContent = ticket.datum;
+        row.appendChild(datumCell);
+
         tbody.appendChild(row);
     }
     table.appendChild(tbody);
