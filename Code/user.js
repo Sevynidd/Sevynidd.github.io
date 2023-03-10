@@ -162,43 +162,51 @@ function ticketsLaden() {
     const table = document.getElementById("Tickets_Tabelle")
     
     const tbody = document.createElement('tbody');
+    let i = 0;
     for (const ticket of tickets) {
         const row = document.createElement('tr');
-        row.setAttribute("data-toggle", "collapse");
-        row.setAttribute("data-target", "#accordion");
-        row.setAttribute("class", "clickable");
+        row.setAttribute("data-bs-toggle", "collapse");
+        row.setAttribute("data-bs-target", "#accordion" + [i]);
+        row.setAttribute("class", "accordion-item collapsed");
+
         const rowInhalt = document.createElement('tr');
         const betreffCell = document.createElement('td');
         betreffCell.textContent = ticket.betreff;
+
         row.appendChild(betreffCell);
         const kategorieCell = document.createElement('td');
         kategorieCell.textContent = ticket.kategorie;
         row.appendChild(kategorieCell);
+
         const priorityCell = document.createElement('td');
         priorityCell.textContent = ticket.prioritaet;
         row.appendChild(priorityCell);
+
         const statusCell = document.createElement('td');
         statusCell.textContent = ticket.status;
         row.appendChild(statusCell);
+
         const userCell = document.createElement('td');
         userCell.textContent = ticket.benutzer;
         row.appendChild(userCell);
-        const inhaltCelle = document.createElement('td');
-        inhaltCelle.setAttribute("colspan", "6");
-        const inhalt = document.createElement('div'); 
-        inhalt.setAttribute("class", "collapse"); 
-        inhalt.setAttribute("id", "accordion");
-        inhalt.textContent = editorText;
-        inhaltCelle.appendChild(inhalt);
-        rowInhalt.appendChild(inhaltCelle);
 
         const datumCell = document.createElement('td');
         datumCell.textContent = ticket.datum;
         row.appendChild(datumCell);
+                
+        const inhaltCelle = document.createElement('td');
+        inhaltCelle.setAttribute("colspan", "6");
+        const inhalt = document.createElement('div'); 
+        inhalt.setAttribute("class", "accordion-collapse collapse"); 
+        inhalt.setAttribute("id", "accordion" + [i]);
+        inhalt.textContent = editorText;
+        inhaltCelle.appendChild(inhalt);
+        rowInhalt.appendChild(inhaltCelle);
 
        
         tbody.appendChild(row);
         tbody.appendChild(rowInhalt);
+        i++;
     }
     table.appendChild(tbody);
 }

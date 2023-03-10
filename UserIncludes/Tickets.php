@@ -19,8 +19,8 @@
             <input type="text" class="form-control" id="searchbar_benutzer" placeholder="Suche nach Benutzer" onkeyup="filterSuche('searchbar_benutzer', 4)">
             <input type="text" class="form-control" id="searchbar_datum" placeholder="Suche nach Datum" onkeyup="filterSuche('searchbar_datum', 5)">
         </div> 
-        <div class = "table-responive"> 
-            <table class="table accordion table-bordered" id="Tickets_Tabelle">
+        <div> 
+            <table class="table table-hover table-bordered" id="Tickets_Tabelle">
             <thead>
                 <tr>
                     <th onclick="sortiereTabelle(0)" scope="col">Betreff</th>
@@ -30,9 +30,9 @@
                     <th onclick="sortiereTabelle(4)" scope="col">Benutzer</th>  
                     <th onclick="sortiereTabelle(5)" scope="col">Datum</th>                
                 </tr>
-            </thead>
+            </thead>   
             </table>  
-        </div> 
+        </div>
     </div>
 </body>
 </html>
