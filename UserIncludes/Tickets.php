@@ -25,8 +25,9 @@
             <tr>
                 <th scope="col">Betreff</th>
                 <th scope="col">Kategorie</th>
+                <th scope="col">Priorität</th>
                 <th scope="col">Status</th>
-                <th scope="col">Benutzer</th>
+                <th scope="col">Benutzer</th>  
                 <th scope="col">Datum</th>                
             </tr>
         </thead>
