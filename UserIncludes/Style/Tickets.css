@@ -26,8 +26,12 @@ table {
   
 table td {
     margin: auto;
-    text-align: center;
-    width: 20%;
+    text-align: left;
+    width: calc(100%/6);
+}
+
+.table th {
+    width: calc(100%/6);    
 }
 
 .table-hover {
