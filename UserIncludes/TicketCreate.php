@@ -104,8 +104,8 @@
                 </div>
             
             </div>
-            <button class="btn btn-primary" id="btn-submit" type="submit">Ticket erstellen</Button>  
-            <button class="btn btn-primary" id="btn-cancel" type="submit">Inhalt löschen</Button>  
+            <button class="btn btn-primary mt-4" id="btn-submit" type="submit">Ticket erstellen</Button>  
+            <button class="btn btn-primary mt-4" id="btn-cancel" type="submit">Inhalt löschen</Button>  
         </form>
     </div>
 </body>

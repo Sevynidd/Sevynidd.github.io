@@ -47,7 +47,6 @@
     font-weight: 700;
     cursor: pointer;
     outline: none;
-    margin-top: 25px;
 }
 
 #btn-submit:hover {
@@ -68,10 +67,11 @@
 }
 
 #btn-cancel {
+    position: absolute;
+    right: 50px;
     width: 15%;
     min-width: 100px;
     height: fit-content;
-    margin-left: 69%;
     background: var(--secondary-color);
     border-radius: 25px;
     -webkit-border-radius: 25px;
