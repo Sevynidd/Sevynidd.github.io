@@ -3,6 +3,7 @@
 
 <head>
     <title>Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="/Bilder/Ticketsystem.png">
     <link rel="stylesheet" href="/UserIncludes/Style/Dashboard.css" type="text/css">
     <link rel="stylesheet" href="/Style/global.css" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
