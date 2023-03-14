@@ -30,7 +30,7 @@
         <div class="col-6">
             <div class="card text-white mb-4 shadow-sm">
                 <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill"
-                    id="badge-eigene">3</span>
+                    id="badge-eigene"></span>
                 <div class="card-body table-responsive">
                     <h5 class="card-title">Deine Tickets</h5>
                     <p class="card-text">

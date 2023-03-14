@@ -50,11 +50,22 @@ function setBadges() {
       
   anzahlTicketsAllgemein = document.getElementById("table-allgemeineTickets").rows.length - 1;
   badgeAllgemein = document.getElementById("badge-allgemeine");
+
+  anzahlTicketsEigene = document.getElementById("table-eigeneTickets").rows.length - 1;
+  badgeEigene = document.getElementById("badge-eigene");
+
   if ((anzahlTicketsAllgemein > 1) && (anzahlTicketsAllgemein/2 < 6)) {
     badgeAllgemein.textContent = anzahlTicketsAllgemein/2;
   }
   else if (anzahlTicketsAllgemein/2 > 5) {
     badgeAllgemein.textContent = "5+";
+  }
+
+  if ((anzahlTicketsEigene > 1) && (anzahlTicketsEigene/2 < 6)) {
+    badgeEigene.textContent = anzahlTicketsEigene/2;
+  }
+  else if (anzahlTicketsEigene/2 > 5) {
+    badgeEigene.textContent = "5+";
   }
 }
 
