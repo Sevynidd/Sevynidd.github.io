@@ -18,11 +18,8 @@
                 <img class="rounded-circle ms-4" src="/Bilder/Benutzer.png" width=60px height=60px>
                 <div class="card-body">
 
-                    <h5 class="card-title mt-2" id="Username">Guten Tag, Test!</h5>
-                    <script type="text/javascript">
-                    document.getElementById("Username").innerText =
-                        "Guten Tag, " + sessionStorage.getItem("Benutzername") + "!";
-                    </script>
+                    <h5 class="card-title mt-2" id="Username"></h5>
+                    <h6 class="text-muted" id="WarumHier"></h6>
                 </div>
             </div>
         </div>

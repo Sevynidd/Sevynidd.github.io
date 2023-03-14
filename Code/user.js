@@ -21,7 +21,7 @@ window.onload = function () {
 }
 
 window.onunload = function () {
-  sessionStorage.removeItem("Benutzername");
+  //sessionStorage.removeItem("Benutzername");
 }
 
 for (let i = 0; i < Buttons.length; i++) {
@@ -44,9 +44,29 @@ function setDashboard() {
       eigeneTicketsLaden();
       allgemeineTicketsLaden();
       setBadges();
-
-
     } 
+
+    let timeNow = new Date();
+    let timeNowHours = timeNow.getHours();
+
+    let message = "";
+
+    if ((timeNowHours >= 6) && (timeNowHours < 11)) {
+        message = "Guten Morgen";
+    } else if ((timeNowHours >= 11) && (timeNowHours < 18)) {
+        message = "Guten Tag";
+    } else if ((timeNowHours >= 18) && (timeNowHours < 20)) {
+        message = "Guten Abend";
+    } else if ((timeNowHours >= 20) || (timeNowHours < 6)) {
+        message = "Gute Nacht";
+        document.getElementById("WarumHier").innerText = 
+            "Warum bist du noch am Arbeiten?";
+    } else {
+        message = "Guten Tag";
+    }
+
+    document.getElementById("Username").innerText = message +
+        ", " + sessionStorage.getItem("Benutzername") + "!";
   });    
 }
 
