@@ -84,6 +84,14 @@ function allgemeineTicketsLaden() {
     betreffCell.textContent = ticket.betreff;
     row.appendChild(betreffCell);
 
+    const priorityCell = document.createElement('td');
+    priorityCell.textContent = ticket.prioritaet;
+    row.appendChild(priorityCell);   
+
+    const kategorieCell = document.createElement('td');
+    kategorieCell.textContent = ticket.kategorie;
+    row.appendChild(kategorieCell); 
+
     const datumCell = document.createElement('td');
     datumCell.textContent = ticket.datum;
     row.appendChild(datumCell);
@@ -91,18 +99,6 @@ function allgemeineTicketsLaden() {
     const benutzerCell = document.createElement('td');
     benutzerCell.textContent = ticket.benutzer;
     row.appendChild(benutzerCell);
-
-    const kategorieCell = document.createElement('td');
-    kategorieCell.textContent = ticket.kategorie;
-    row.appendChild(kategorieCell);
-
-    const priorityCell = document.createElement('td');
-    priorityCell.textContent = ticket.prioritaet;
-    row.appendChild(priorityCell);
-
-    const statusCell = document.createElement('td');
-    statusCell.textContent = ticket.status;
-    row.appendChild(statusCell);
 
     const inhaltCelle = document.createElement('td');
     inhaltCelle.setAttribute("colspan", "6");
@@ -129,25 +125,22 @@ function eigeneTicketsLaden() {
     row.setAttribute("data-bs-toggle", "collapse");
     row.setAttribute("data-bs-target", "#accordion" + i);
     row.setAttribute("class", "accordion-item collapsed");
+
     const betreffCell = document.createElement('td');
     betreffCell.textContent = ticket.betreff;
     row.appendChild(betreffCell);
-
-    const datumCell = document.createElement('td');
-    datumCell.textContent = ticket.datum;
-    row.appendChild(datumCell);
-
-    const kategorieCell = document.createElement('td');
-    kategorieCell.textContent = ticket.kategorie;
-    row.appendChild(kategorieCell);
 
     const priorityCell = document.createElement('td');
     priorityCell.textContent = ticket.prioritaet;
     row.appendChild(priorityCell);
 
-    const statusCell = document.createElement('td');
-    statusCell.textContent = ticket.status;
-    row.appendChild(statusCell);
+    const kategorieCell = document.createElement('td');
+    kategorieCell.textContent = ticket.kategorie;
+    row.appendChild(kategorieCell);
+
+    const datumCell = document.createElement('td');
+    datumCell.textContent = ticket.datum;
+    row.appendChild(datumCell);
 
     const inhaltCelle = document.createElement('td');
     inhaltCelle.setAttribute("colspan", "6");

@@ -37,11 +37,10 @@
                     <table class="table table-sm table-hover" id="table-eigeneTickets">
                         <thead>
                             <tr>
-                                <th>Betreff</th>
-                                <th>Datum</th>
-                                <th>Kategorie</th>
-                                <th>Status</th>
+                                <th>Betreff</th>                                
                                 <th>Priorität</th>
+                                <th>Kategorie</th>
+                                <th>Datum</th>
                             </tr>
                         </thead>        
                     </table>
@@ -61,11 +60,10 @@
                         <thead>
                             <tr>
                                 <th>Betreff</th>
+                                <th>Priorität</th> 
+                                <th>Kategorie</th>                                                           
                                 <th>Datum</th>                                
                                 <th>Benutzer</th>
-                                <th>Kategorie</th>
-                                <th>Status</th>
-                                <th>Priorität</th>
                             </tr>
                         </thead>        
                     </table>
