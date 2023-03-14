@@ -26,6 +26,9 @@
   background: transparent;
   height: 50px;
 }
+#ErreichbarkeitAdmin {
+  font-size: 14px;
+}
 .user-container {
   position: absolute;
   bottom: 5px;
