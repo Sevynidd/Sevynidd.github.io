@@ -52,7 +52,7 @@
         <div class="col-6">
             <div class="card text-white mb-4 shadow-sm">
                 <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill"
-                    id="badge-allgemeine">5+</span>
+                    id="badge-allgemeine"></span>
                 <div class="card-body">
                     <h5 class="card-title">Allgemeine Tickets</h5>
                     <p class="card-text">

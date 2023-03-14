@@ -9,6 +9,7 @@ var Buttons = [
 
 const tickets = [];
 
+
 window.onload = function () {
     if (sessionStorage.getItem("Benutzername") != "benutzer") {
         window.location.href = "/error.html";   
@@ -38,8 +39,23 @@ function setDashboard() {
     if (statusTxt == "success") {
       eigeneTicketsLaden();
       allgemeineTicketsLaden();
-      } 
+      setBadges();
+
+
+    } 
   });    
+}
+
+function setBadges() {
+      
+  anzahlTicketsAllgemein = document.getElementById("table-allgemeineTickets").rows.length - 1;
+  badgeAllgemein = document.getElementById("badge-allgemeine");
+  if ((anzahlTicketsAllgemein > 1) && (anzahlTicketsAllgemein/2 < 6)) {
+    badgeAllgemein.textContent = anzahlTicketsAllgemein/2;
+  }
+  else if (anzahlTicketsAllgemein/2 > 5) {
+    badgeAllgemein.textContent = "5+";
+  }
 }
 
 function allgemeineTicketsLaden() {
@@ -52,6 +68,7 @@ function allgemeineTicketsLaden() {
     row.setAttribute("data-bs-toggle", "collapse");
     row.setAttribute("data-bs-target", "#accordion" + i);
     row.setAttribute("class", "accordion-item collapsed");
+
     const betreffCell = document.createElement('td');
     betreffCell.textContent = ticket.betreff;
     row.appendChild(betreffCell);
