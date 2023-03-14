@@ -18,6 +18,8 @@ window.onload = function () {
     resetHighlight();
     Buttons[0].style.background = highlightColor;
     setDashboard();
+
+    $('[data-bs-toggle="tooltip"]').tooltip();
 }
 
 for (let i = 0; i < Buttons.length; i++) {

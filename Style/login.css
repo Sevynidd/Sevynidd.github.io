@@ -35,6 +35,9 @@
 #eye-slash {
   color: var(--white-color);
 }
+#inputPassword::-ms-reveal {
+  display: none;
+}
 .center form {
   box-sizing: border-box;
 }
