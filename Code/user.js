@@ -9,6 +9,7 @@ var Buttons = [
 
 const tickets = [];
 
+
 window.onload = function () {
     if (sessionStorage.getItem("Benutzername") != "benutzer") {
         window.location.href = "/error.html";   
@@ -17,6 +18,10 @@ window.onload = function () {
     resetHighlight();
     Buttons[0].style.background = highlightColor;
     setDashboard();
+}
+
+window.onunload = function () {
+  //sessionStorage.removeItem("Benutzername");
 }
 
 for (let i = 0; i < Buttons.length; i++) {
@@ -34,12 +39,151 @@ for (let i = 0; i < Buttons.length; i++) {
 }
 
 function setDashboard() {
-    $("#content-container").load("/UserIncludes/Dashboard.php");      
+  $("#content-container").load("/UserIncludes/Dashboard.php", function(responseTxt, statusTxt, xhr) {
+    if (statusTxt == "success") {
+      eigeneTicketsLaden();
+      allgemeineTicketsLaden();
+      setBadges();
+    } 
+
+    let timeNow = new Date();
+    let timeNowHours = timeNow.getHours();
+
+    let message = "";
+
+    if ((timeNowHours >= 6) && (timeNowHours < 11)) {
+        message = "Guten Morgen";
+    } else if ((timeNowHours >= 11) && (timeNowHours < 18)) {
+        message = "Guten Tag";
+    } else if ((timeNowHours >= 18) && (timeNowHours < 20)) {
+        message = "Guten Abend";
+    } else if ((timeNowHours >= 20) || (timeNowHours < 6)) {
+        message = "Gute Nacht";
+        document.getElementById("WarumHier").innerText = 
+            "Warum bist du noch am Arbeiten?";
+    } else {
+        message = "Guten Tag";
+    }
+
+    document.getElementById("Username").innerText = message +
+        ", " + sessionStorage.getItem("Benutzername") + "!";
+  });    
+}
+
+function setBadges() {
+      
+  anzahlTicketsAllgemein = document.getElementById("table-allgemeineTickets").rows.length - 1;
+  badgeAllgemein = document.getElementById("badge-allgemeine");
+
+  anzahlTicketsEigene = document.getElementById("table-eigeneTickets").rows.length - 1;
+  badgeEigene = document.getElementById("badge-eigene");
+
+  if ((anzahlTicketsAllgemein > 1) && (anzahlTicketsAllgemein/2 < 6)) {
+    badgeAllgemein.textContent = anzahlTicketsAllgemein/2;
+  }
+  else if (anzahlTicketsAllgemein/2 > 5) {
+    badgeAllgemein.textContent = "5+";
+  }
+
+  if ((anzahlTicketsEigene > 1) && (anzahlTicketsEigene/2 < 6)) {
+    badgeEigene.textContent = anzahlTicketsEigene/2;
+  }
+  else if (anzahlTicketsEigene/2 > 5) {
+    badgeEigene.textContent = "5+";
+  }
+}
+
+function allgemeineTicketsLaden() {
+  const table = document.getElementById("table-allgemeineTickets");
+  const tbody = document.createElement('tbody');
+
+  for (let i = 0; i < tickets.length; i++) {
+    const ticket = tickets[i];
+    const row = document.createElement('tr');
+    row.setAttribute("data-bs-toggle", "collapse");
+    row.setAttribute("data-bs-target", "#accordion" + i);
+    row.setAttribute("class", "accordion-item collapsed");
+
+    const betreffCell = document.createElement('td');
+    betreffCell.textContent = ticket.betreff;
+    row.appendChild(betreffCell);
+
+    const priorityCell = document.createElement('td');
+    priorityCell.textContent = ticket.prioritaet;
+    row.appendChild(priorityCell);   
+
+    const kategorieCell = document.createElement('td');
+    kategorieCell.textContent = ticket.kategorie;
+    row.appendChild(kategorieCell); 
+
+    const datumCell = document.createElement('td');
+    datumCell.textContent = ticket.datum;
+    row.appendChild(datumCell);
+
+    const benutzerCell = document.createElement('td');
+    benutzerCell.textContent = ticket.benutzer;
+    row.appendChild(benutzerCell);
+
+    const inhaltCelle = document.createElement('td');
+    inhaltCelle.setAttribute("colspan", "6");
+    const inhalt = document.createElement('div');
+    inhalt.setAttribute("class", "accordion-collapse collapse");
+    inhalt.setAttribute("id", "accordion" + i);
+    inhalt.textContent = editorText;
+    inhaltCelle.appendChild(inhalt);
+    const rowInhalt = document.createElement('tr');
+    rowInhalt.appendChild(inhaltCelle);
+    tbody.appendChild(row);
+    tbody.appendChild(rowInhalt);
+  }
+  table.appendChild(tbody);
+}
+
+function eigeneTicketsLaden() {
+  const table = document.getElementById("table-eigeneTickets");
+  const tbody = document.createElement('tbody');
+
+  for (let i = 0; i < tickets.length; i++) {
+    const ticket = tickets[i];
+    const row = document.createElement('tr');
+    row.setAttribute("data-bs-toggle", "collapse");
+    row.setAttribute("data-bs-target", "#accordion" + i);
+    row.setAttribute("class", "accordion-item collapsed");
+
+    const betreffCell = document.createElement('td');
+    betreffCell.textContent = ticket.betreff;
+    row.appendChild(betreffCell);
+
+    const priorityCell = document.createElement('td');
+    priorityCell.textContent = ticket.prioritaet;
+    row.appendChild(priorityCell);
+
+    const kategorieCell = document.createElement('td');
+    kategorieCell.textContent = ticket.kategorie;
+    row.appendChild(kategorieCell);
+
+    const datumCell = document.createElement('td');
+    datumCell.textContent = ticket.datum;
+    row.appendChild(datumCell);
+
+    const inhaltCelle = document.createElement('td');
+    inhaltCelle.setAttribute("colspan", "6");
+    const inhalt = document.createElement('div');
+    inhalt.setAttribute("class", "accordion-collapse collapse");
+    inhalt.setAttribute("id", "accordion" + i);
+    inhalt.textContent = editorText;
+    inhaltCelle.appendChild(inhalt);
+    const rowInhalt = document.createElement('tr');
+    rowInhalt.appendChild(inhaltCelle);
+    tbody.appendChild(row);
+    tbody.appendChild(rowInhalt);
+  }
+  table.appendChild(tbody);
 }
 
 
 function setTicketCreate() {
-    $("#content-container").load("/UserIncludes/TicketCreate.php");    
+    $("#content-container").load("/UserIncludes/TicketCreate.php");  
 }
 
 function saveTicket() {    
@@ -113,7 +257,6 @@ function addTicket(betreff, kategorie, prioritaet, status, benutzer, datum, edit
 }
 
 function sortiereTabelle(n) {
-
     var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
     table = document.getElementById("Tickets_Tabelle");
     switching = true;
@@ -150,7 +293,7 @@ function sortiereTabelle(n) {
         switchcount ++;
       } else {
         if (switchcount == 0 && dir == "asc") {
-
+          //richtung absteigend
           dir = "desc";
           switching = true;
         }
@@ -159,50 +302,55 @@ function sortiereTabelle(n) {
   }
 
 function ticketsLaden() {
-    const table = document.getElementById("Tickets_Tabelle")
-    
+    const table = document.getElementById("Tickets_Tabelle");
     const tbody = document.createElement('tbody');
-    for (const ticket of tickets) {
-        const row = document.createElement('tr');
-        row.setAttribute("data-toggle", "collapse");
-        row.setAttribute("data-target", "#accordion");
-        row.setAttribute("class", "clickable");
-        const rowInhalt = document.createElement('tr');
-        const betreffCell = document.createElement('td');
-        betreffCell.textContent = ticket.betreff;
-        row.appendChild(betreffCell);
-        const kategorieCell = document.createElement('td');
-        kategorieCell.textContent = ticket.kategorie;
-        row.appendChild(kategorieCell);
-        const priorityCell = document.createElement('td');
-        priorityCell.textContent = ticket.prioritaet;
-        row.appendChild(priorityCell);
-        const statusCell = document.createElement('td');
-        statusCell.textContent = ticket.status;
-        row.appendChild(statusCell);
-        const userCell = document.createElement('td');
-        userCell.textContent = ticket.benutzer;
-        row.appendChild(userCell);
-        const inhaltCelle = document.createElement('td');
-        inhaltCelle.setAttribute("colspan", "6");
-        const inhalt = document.createElement('div'); 
-        inhalt.setAttribute("class", "collapse"); 
-        inhalt.setAttribute("id", "accordion");
-        inhalt.textContent = editorText;
-        inhaltCelle.appendChild(inhalt);
-        rowInhalt.appendChild(inhaltCelle);
 
-        const datumCell = document.createElement('td');
-        datumCell.textContent = ticket.datum;
-        row.appendChild(datumCell);
+    for (let i = 0; i < tickets.length; i++) {
+      const ticket = tickets[i];
+      const row = document.createElement('tr');
+      row.setAttribute("data-bs-toggle", "collapse");
+      row.setAttribute("data-bs-target", "#accordion" + i);
+      row.setAttribute("class", "accordion-item collapsed");
 
-       
-        tbody.appendChild(row);
-        tbody.appendChild(rowInhalt);
+      const betreffCell = document.createElement('td');
+      betreffCell.textContent = ticket.betreff;
+      row.appendChild(betreffCell);
+
+      const kategorieCell = document.createElement('td');
+      kategorieCell.textContent = ticket.kategorie;
+      row.appendChild(kategorieCell);
+
+      const priorityCell = document.createElement('td');
+      priorityCell.textContent = ticket.prioritaet;
+      row.appendChild(priorityCell);
+
+      const statusCell = document.createElement('td');
+      statusCell.textContent = ticket.status;
+      row.appendChild(statusCell);
+
+      const userCell = document.createElement('td');
+      userCell.textContent = ticket.benutzer;
+      row.appendChild(userCell);
+
+      const datumCell = document.createElement('td');
+      datumCell.textContent = ticket.datum;
+      row.appendChild(datumCell);
+
+      const inhaltCelle = document.createElement('td');
+      inhaltCelle.setAttribute("colspan", "6");
+      const inhalt = document.createElement('div');
+      inhalt.setAttribute("class", "accordion-collapse collapse");
+      inhalt.setAttribute("id", "accordion" + i);
+      inhalt.textContent = editorText;
+      inhaltCelle.appendChild(inhalt);
+      const rowInhalt = document.createElement('tr');
+      rowInhalt.appendChild(inhaltCelle);
+      tbody.appendChild(row);
+      tbody.appendChild(rowInhalt);
     }
     table.appendChild(tbody);
 }
-           
+        
 function filterSuche(searchbar, column) {
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById(searchbar);
@@ -222,3 +370,7 @@ function filterSuche(searchbar, column) {
       }
     }
 }
+
+Abmelden.addEventListener('click', function (event) {
+  sessionStorage.removeItem("Benutzername");
+});

@@ -3,6 +3,7 @@
 
 <head>
     <title>Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="/Bilder/Ticketsystem.png">
     <link rel="stylesheet" href="/UserIncludes/Style/Dashboard.css" type="text/css">
     <link rel="stylesheet" href="/Style/global.css" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -17,11 +18,8 @@
                 <img class="rounded-circle ms-4" src="/Bilder/Benutzer.png" width=60px height=60px>
                 <div class="card-body">
 
-                    <h5 class="card-title mt-2" id="Username">Guten Tag, Test!</h5>
-                    <script type="text/javascript">
-                    document.getElementById("Username").innerText =
-                        "Guten Tag, " + sessionStorage.getItem("Benutzername") + "!";
-                    </script>
+                    <h5 class="card-title mt-2" id="Username"></h5>
+                    <h6 class="text-muted" id="WarumHier"></h6>
                 </div>
             </div>
         </div>
@@ -29,43 +27,19 @@
         <div class="col-6">
             <div class="card text-white mb-4 shadow-sm">
                 <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill"
-                    id="badge-eigene">3</span>
+                    id="badge-eigene"></span>
                 <div class="card-body table-responsive">
-                    <h5 class="card-title">Offene eigene Tickets</h5>
+                    <h5 class="card-title">Deine Tickets</h5>
                     <p class="card-text">
-                    <table class="table table-sm table-hover" id="table-offeneTickets">
+                    <table class="table table-sm table-hover" id="table-eigeneTickets">
                         <thead>
                             <tr>
-                                <th>Betreff</th>
-                                <th>Datum</th>
-                                <th>Kategorie</th>
-                                <th>Status</th>
+                                <th>Betreff</th>                                
                                 <th>Priorität</th>
+                                <th>Kategorie</th>
+                                <th>Datum</th>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Vemas ist kaputt</td>
-                                <td>09.03.2023</td>
-                                <td>Vemas</td>
-                                <td>Offen</td>
-                                <td>Kann nicht weiterarbeiten</td>
-                            </tr>
-                            <tr>
-                                <td>Kamera für Homeoffice</td>
-                                <td>01.03.2023</td>
-                                <td>Neue Hardware - Anfrage</td>
-                                <td>Offen</td>
-                                <td>Kann weiterarbeiten</td>
-                            </tr>
-                            <tr>
-                                <td>PC startet nicht</td>
-                                <td>10.03.2023</td>
-                                <td>PC-Probleme</td>
-                                <td>Offen</td>
-                                <td>Kann nicht weiterarbeiten</td>
-                            </tr>
-                        </tbody>
+                        </thead>        
                     </table>
                     </p>
                 </div>
@@ -75,10 +49,22 @@
         <div class="col-6">
             <div class="card text-white mb-4 shadow-sm">
                 <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill"
-                    id="badge-allgemeine">5+</span>
-                <div class="card-body">
-                    <h5 class="card-title">Offene allgemeine Tickets</h5>
-                    <p class="card-text">Some dummy text to make up the card's content. You can replace it anytime.</p>
+                    id="badge-allgemeine"></span>
+                <div class="card-body table-responsive">
+                    <h5 class="card-title">Allgemeine Tickets</h5>
+                    <p class="card-text">
+                    <table class="table table-sm table-hover" id="table-allgemeineTickets">
+                        <thead>
+                            <tr>
+                                <th>Betreff</th>
+                                <th>Priorität</th> 
+                                <th>Kategorie</th>                                                           
+                                <th>Datum</th>                                
+                                <th>Benutzer</th>
+                            </tr>
+                        </thead>        
+                    </table>
+                    </p>
                 </div>
             </div>
         </div>

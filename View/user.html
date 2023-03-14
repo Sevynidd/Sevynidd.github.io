@@ -3,14 +3,14 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Ticketsystem - User</title>
+  <title>Ticketsystem</title>
+  <link rel="icon" type="image/x-icon" href="/Bilder/Ticketsystem.png">
   <link rel="stylesheet" href="/Style/user.css">
   <link rel="stylesheet" href="/Style/global.css">
   <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
   <script type="text/javascript" src="/Code/user.js" defer></script>
@@ -44,14 +44,24 @@
     </ul>
   </nav>
   <div class="user-container">
+    <div class="text-white mb-3" id="ErreichbarkeitAdmin">
+      <p class="lead">Erreichbarkeit des Administrators</p>
+      <p class="border-bottom pb-3">
+        <i class="fa-solid fa-phone fa-inverse me-2"></i>
+        xxxx/xxxxxxxxx 
+        <br>
+        <i class="fa-solid fa-envelope fa-inverse me-2"></i> 
+        vorname.nachname@spdata.de</p>
+    </div>
     <div class="navBar-buttons-bottom">
       <img src="/Bilder/Benutzer.png" class="rounded-circle me-3" alt="Bild des Users" 
       width="40px" height="40px">
-      <p class="text-white mt-2" id="benutzername">Hier könnte ihr Name stehen</p>
+      <p class="text-white mt-2" id="benutzername"></p>
       <script type="text/javascript">
         document.getElementById("benutzername").innerText = sessionStorage.getItem("Benutzername");
       </script>
     </div>
+    <a class="mt-2" id="Abmelden" href="/index.html">Abmelden</a>
   </div>
   <div class="content-container" id="content-container">
   </div>

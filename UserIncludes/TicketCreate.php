@@ -3,6 +3,7 @@
 
 <head>
     <title>Ticket Create</title>
+    <link rel="icon" type="image/x-icon" href="/Bilder/Ticketsystem.png">
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <link rel="stylesheet" href="/UserIncludes/Style/TicketCreate.css" type="text/css">
     <link rel="stylesheet" href="/Style/global.css" type="text/css">
@@ -41,7 +42,8 @@
                 </div>
                 <div class="col-md-2">
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" name="checkboxVisible" id="checkboxVisible">
+                        <input type="checkbox" class="form-check-input" name="checkboxVisible" id="checkboxVisible" 
+                        data-bs-toggle="tooltip" title="Das Ticket wird für alle in dem Reiter Tickets angezeigt">
                         <label class="form-check-label" for="checkboxVisible">Ticket für alle sichtbar</label>
                     </div>
                 </div>
@@ -104,7 +106,7 @@
                 </div>
             
             </div>
-            <button class="btn btn-primary mt-4" id="btn-submit" type="submit">Ticket erstellen</Button>  
+            <button class="btn btn-warning mt-4" id="btn-submit" type="submit">Ticket erstellen</Button>  
             <button class="btn btn-primary mt-4" id="btn-cancel" type="submit">Inhalt löschen</Button>  
         </form>
     </div>
