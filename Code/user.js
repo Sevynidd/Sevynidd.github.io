@@ -18,8 +18,10 @@ window.onload = function () {
     resetHighlight();
     Buttons[0].style.background = highlightColor;
     setDashboard();
+}
 
-    $('[data-bs-toggle="tooltip"]').tooltip();
+window.onunload = function () {
+  sessionStorage.removeItem("Benutzername");
 }
 
 for (let i = 0; i < Buttons.length; i++) {
@@ -161,7 +163,7 @@ function eigeneTicketsLaden() {
 
 
 function setTicketCreate() {
-    $("#content-container").load("/UserIncludes/TicketCreate.php");    
+    $("#content-container").load("/UserIncludes/TicketCreate.php");  
 }
 
 function saveTicket() {    
