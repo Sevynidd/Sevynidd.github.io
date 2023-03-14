@@ -34,7 +34,106 @@ for (let i = 0; i < Buttons.length; i++) {
 }
 
 function setDashboard() {
-    $("#content-container").load("/UserIncludes/Dashboard.php");      
+  $("#content-container").load("/UserIncludes/Dashboard.php", function(responseTxt, statusTxt, xhr) {
+    if (statusTxt == "success") {
+      eigeneTicketsLaden();
+      allgemeineTicketsLaden();
+      } 
+  });    
+}
+
+function allgemeineTicketsLaden() {
+  const table = document.getElementById("table-allgemeineTickets");
+  const tbody = document.createElement('tbody');
+
+  for (let i = 0; i < tickets.length; i++) {
+    const ticket = tickets[i];
+    const row = document.createElement('tr');
+    row.setAttribute("data-bs-toggle", "collapse");
+    row.setAttribute("data-bs-target", "#accordion" + i);
+    row.setAttribute("class", "accordion-item collapsed");
+    const betreffCell = document.createElement('td');
+    betreffCell.textContent = ticket.betreff;
+    row.appendChild(betreffCell);
+
+    const datumCell = document.createElement('td');
+    datumCell.textContent = ticket.datum;
+    row.appendChild(datumCell);
+
+    const benutzerCell = document.createElement('td');
+    benutzerCell.textContent = ticket.benutzer;
+    row.appendChild(benutzerCell);
+
+    const kategorieCell = document.createElement('td');
+    kategorieCell.textContent = ticket.kategorie;
+    row.appendChild(kategorieCell);
+
+    const priorityCell = document.createElement('td');
+    priorityCell.textContent = ticket.prioritaet;
+    row.appendChild(priorityCell);
+
+    const statusCell = document.createElement('td');
+    statusCell.textContent = ticket.status;
+    row.appendChild(statusCell);
+
+    const inhaltCelle = document.createElement('td');
+    inhaltCelle.setAttribute("colspan", "6");
+    const inhalt = document.createElement('div');
+    inhalt.setAttribute("class", "accordion-collapse collapse");
+    inhalt.setAttribute("id", "accordion" + i);
+    inhalt.textContent = editorText;
+    inhaltCelle.appendChild(inhalt);
+    const rowInhalt = document.createElement('tr');
+    rowInhalt.appendChild(inhaltCelle);
+    tbody.appendChild(row);
+    tbody.appendChild(rowInhalt);
+  }
+  table.appendChild(tbody);
+}
+
+function eigeneTicketsLaden() {
+  const table = document.getElementById("table-eigeneTickets");
+  const tbody = document.createElement('tbody');
+
+  for (let i = 0; i < tickets.length; i++) {
+    const ticket = tickets[i];
+    const row = document.createElement('tr');
+    row.setAttribute("data-bs-toggle", "collapse");
+    row.setAttribute("data-bs-target", "#accordion" + i);
+    row.setAttribute("class", "accordion-item collapsed");
+    const betreffCell = document.createElement('td');
+    betreffCell.textContent = ticket.betreff;
+    row.appendChild(betreffCell);
+
+    const datumCell = document.createElement('td');
+    datumCell.textContent = ticket.datum;
+    row.appendChild(datumCell);
+
+    const kategorieCell = document.createElement('td');
+    kategorieCell.textContent = ticket.kategorie;
+    row.appendChild(kategorieCell);
+
+    const priorityCell = document.createElement('td');
+    priorityCell.textContent = ticket.prioritaet;
+    row.appendChild(priorityCell);
+
+    const statusCell = document.createElement('td');
+    statusCell.textContent = ticket.status;
+    row.appendChild(statusCell);
+
+    const inhaltCelle = document.createElement('td');
+    inhaltCelle.setAttribute("colspan", "6");
+    const inhalt = document.createElement('div');
+    inhalt.setAttribute("class", "accordion-collapse collapse");
+    inhalt.setAttribute("id", "accordion" + i);
+    inhalt.textContent = editorText;
+    inhaltCelle.appendChild(inhalt);
+    const rowInhalt = document.createElement('tr');
+    rowInhalt.appendChild(inhaltCelle);
+    tbody.appendChild(row);
+    tbody.appendChild(rowInhalt);
+  }
+  table.appendChild(tbody);
 }
 
 
@@ -113,7 +212,6 @@ function addTicket(betreff, kategorie, prioritaet, status, benutzer, datum, edit
 }
 
 function sortiereTabelle(n) {
-
     var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
     table = document.getElementById("Tickets_Tabelle");
     switching = true;
@@ -150,7 +248,7 @@ function sortiereTabelle(n) {
         switchcount ++;
       } else {
         if (switchcount == 0 && dir == "asc") {
-
+          //richtung absteigend
           dir = "desc";
           switching = true;
         }
@@ -159,58 +257,55 @@ function sortiereTabelle(n) {
   }
 
 function ticketsLaden() {
-    const table = document.getElementById("Tickets_Tabelle")
-    
+    const table = document.getElementById("Tickets_Tabelle");
     const tbody = document.createElement('tbody');
-    let i = 0;
-    for (const ticket of tickets) {
-        const row = document.createElement('tr');
-        row.setAttribute("data-bs-toggle", "collapse");
-        row.setAttribute("data-bs-target", "#accordion" + [i]);
-        row.setAttribute("class", "accordion-item collapsed");
 
-        const rowInhalt = document.createElement('tr');
-        const betreffCell = document.createElement('td');
-        betreffCell.textContent = ticket.betreff;
+    for (let i = 0; i < tickets.length; i++) {
+      const ticket = tickets[i];
+      const row = document.createElement('tr');
+      row.setAttribute("data-bs-toggle", "collapse");
+      row.setAttribute("data-bs-target", "#accordion" + i);
+      row.setAttribute("class", "accordion-item collapsed");
 
-        row.appendChild(betreffCell);
-        const kategorieCell = document.createElement('td');
-        kategorieCell.textContent = ticket.kategorie;
-        row.appendChild(kategorieCell);
+      const betreffCell = document.createElement('td');
+      betreffCell.textContent = ticket.betreff;
+      row.appendChild(betreffCell);
 
-        const priorityCell = document.createElement('td');
-        priorityCell.textContent = ticket.prioritaet;
-        row.appendChild(priorityCell);
+      const kategorieCell = document.createElement('td');
+      kategorieCell.textContent = ticket.kategorie;
+      row.appendChild(kategorieCell);
 
-        const statusCell = document.createElement('td');
-        statusCell.textContent = ticket.status;
-        row.appendChild(statusCell);
+      const priorityCell = document.createElement('td');
+      priorityCell.textContent = ticket.prioritaet;
+      row.appendChild(priorityCell);
 
-        const userCell = document.createElement('td');
-        userCell.textContent = ticket.benutzer;
-        row.appendChild(userCell);
+      const statusCell = document.createElement('td');
+      statusCell.textContent = ticket.status;
+      row.appendChild(statusCell);
 
-        const datumCell = document.createElement('td');
-        datumCell.textContent = ticket.datum;
-        row.appendChild(datumCell);
-                
-        const inhaltCelle = document.createElement('td');
-        inhaltCelle.setAttribute("colspan", "6");
-        const inhalt = document.createElement('div'); 
-        inhalt.setAttribute("class", "accordion-collapse collapse"); 
-        inhalt.setAttribute("id", "accordion" + [i]);
-        inhalt.textContent = editorText;
-        inhaltCelle.appendChild(inhalt);
-        rowInhalt.appendChild(inhaltCelle);
+      const userCell = document.createElement('td');
+      userCell.textContent = ticket.benutzer;
+      row.appendChild(userCell);
 
-       
-        tbody.appendChild(row);
-        tbody.appendChild(rowInhalt);
-        i++;
+      const datumCell = document.createElement('td');
+      datumCell.textContent = ticket.datum;
+      row.appendChild(datumCell);
+
+      const inhaltCelle = document.createElement('td');
+      inhaltCelle.setAttribute("colspan", "6");
+      const inhalt = document.createElement('div');
+      inhalt.setAttribute("class", "accordion-collapse collapse");
+      inhalt.setAttribute("id", "accordion" + i);
+      inhalt.textContent = editorText;
+      inhaltCelle.appendChild(inhalt);
+      const rowInhalt = document.createElement('tr');
+      rowInhalt.appendChild(inhaltCelle);
+      tbody.appendChild(row);
+      tbody.appendChild(rowInhalt);
     }
     table.appendChild(tbody);
 }
-           
+        
 function filterSuche(searchbar, column) {
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById(searchbar);
