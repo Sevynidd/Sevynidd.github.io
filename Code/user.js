@@ -348,3 +348,7 @@ function filterSuche(searchbar, column) {
       }
     }
 }
+
+Abmelden.addEventListener('click', function (event) {
+  sessionStorage.removeItem("Benutzername");
+});
