@@ -6,8 +6,7 @@
     <link rel="icon" type="image/x-icon" href="/Bilder/Ticketsystem.png">
     <link rel="stylesheet" href="/UserIncludes/Style/Dashboard.css" type="text/css">
     <link rel="stylesheet" href="/Style/global.css" type="text/css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -29,7 +28,9 @@
                 <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill"
                     id="badge-eigene"></span>
                 <div class="card-body table-responsive">
-                    <h5 class="card-title">Deine Tickets</h5>
+                    <h5 class="card-title">Deine Tickets
+                        <button class="btn btn-warning float-end" id="btn-submit">Ticket erstellen</button>
+                    </h5>
                     <p class="card-text">
                     <table class="table table-sm table-hover" id="table-eigeneTickets">
                         <thead>
@@ -51,7 +52,9 @@
                 <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill"
                     id="badge-allgemeine"></span>
                 <div class="card-body table-responsive">
-                    <h5 class="card-title">Allgemeine Tickets</h5>
+                    <h5 class="card-title">Allgemeine Tickets
+                        <button class="btn btn-warning float-end" id="btn-submit">Ticket erstellen</button>
+                    </h5>
                     <p class="card-text">
                     <table class="table table-sm table-hover" id="table-allgemeineTickets">
                         <thead>
