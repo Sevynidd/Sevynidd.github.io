@@ -18,6 +18,16 @@ window.onload = function () {
     resetHighlight();
     Buttons[0].style.background = highlightColor;
     setDashboard();
+
+    let benutzername = sessionStorage.getItem("Benutzername").split(".");
+
+    if (benutzername[1] === undefined) {
+      benutzername[1] = "";
+    }
+
+    document.getElementById("benutzername").innerText = 
+      benutzername[0] + " " + benutzername[1];
+
 }
 
 window.onunload = function () {
@@ -47,15 +57,15 @@ function setDashboard() {
     } 
 
     let timeNow = new Date();
-    let timeNowHours = timeNow.getHours();
+    const timeNowHours = timeNow.getHours();
 
     let message = "";
 
     if ((timeNowHours >= 6) && (timeNowHours < 11)) {
         message = "Guten Morgen";
-    } else if ((timeNowHours >= 11) && (timeNowHours < 18)) {
+    } else if ((timeNowHours >= 11) && (timeNowHours < 17)) {
         message = "Guten Tag";
-    } else if ((timeNowHours >= 18) && (timeNowHours < 20)) {
+    } else if ((timeNowHours >= 17) && (timeNowHours < 20)) {
         message = "Guten Abend";
     } else if ((timeNowHours >= 20) || (timeNowHours < 6)) {
         message = "Gute Nacht";
@@ -65,8 +75,10 @@ function setDashboard() {
         message = "Guten Tag";
     }
 
+    const benutzername = sessionStorage.getItem("Benutzername").split(".");
+
     document.getElementById("Username").innerText = message +
-        ", " + sessionStorage.getItem("Benutzername") + "!";
+        ", " + benutzername[0] + " !";
   });    
 }
 
