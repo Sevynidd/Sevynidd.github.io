@@ -197,8 +197,8 @@ function saveTicket() {
     var checkBoxVisible = document.getElementById("checkboxVisible");    
 
     editorText = quill.getText(0);
-    catValue =  kategorie.value;
-    prioValue = prioritaet.value;
+    catValue =  kategorie.options[kategorie.selectedIndex].text;
+    prioValue = prioritaet.options[prioritaet.selectedIndex].text;
     betrifftAlle = checkBoxVisible.checked;
     erstellDatum = Date();
     status = "offen";
