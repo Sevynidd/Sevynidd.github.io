@@ -194,13 +194,18 @@ function saveTicket() {
     }    
     var kategorie = document.getElementById("Kategorie");
     var prioritaet = document.getElementById("Prioritaet");
-    var checkBoxVisible = document.getElementById("checkboxVisible");    
+    var checkBoxVisible = document.getElementById("checkboxVisible"); 
+   
 
     editorText = quill.getText(0);
     catValue =  kategorie.options[kategorie.selectedIndex].text;
     prioValue = prioritaet.options[prioritaet.selectedIndex].text;
     betrifftAlle = checkBoxVisible.checked;
-    erstellDatum = Date();
+    erstellDatum = new Date();
+    var day = erstellDatum.getDate();
+    var month = erstellDatum.getMonth() + 1;
+    var year = erstellDatum.getFullYear();
+    var erstellDatum = day + "." + month + "." + year;
     status = "offen";
     console.log(betreffText, prioValue, catValue, betrifftAlle, erstellDatum);
 
